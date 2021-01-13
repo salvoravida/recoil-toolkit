@@ -24,7 +24,7 @@ yarn add recoil recoil-toolkit
 - [Advanced](https://github.com/salvoravida/recoil-toolkit/tree/master/docs/advanced.md)
 
 
-## Recoil State Managment Pattern 1
+## ⚙️ State Managment Pattern
 
 ```
 --------------------------------------------------------------------
