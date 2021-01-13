@@ -110,3 +110,29 @@ export const useRemoveItemTask = () => useRecoilTask(removeItemTask, []);
 export const useEditItemTask = () => useRecoilTask(editItemTask, []);
 export const useEditAndRemoveTask = () => useRecoilTask(editAndRemoveTask, []);
 ```
+
+### view
+```typescript
+ function Todolist() {
+   const { loading, data, error } = useTodoList();
+   return 
+      //...
+ }    
+
+function TodoItemAdd() {
+   const addItemTask = useAddItemTask();
+
+   const inputRef = useRef<HTMLInputElement>(null);
+   const addItem = () => {
+      if (inputRef.current && inputRef.current.value) {
+         addItemTask.execute(inputRef.current.value);
+         inputRef.current.value = '';
+      }
+   };
+
+   return 
+      //...
+ } 
+ 
+ // ....
+```   
