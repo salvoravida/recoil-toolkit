@@ -1,7 +1,7 @@
-# recoil-toolkit (readme writing in progress...)
+# recoil-toolkit
 Helpers for Recoil, the next generation state management library.
 
----
+(readme writing in progress...)
 
 ....
 
