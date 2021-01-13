@@ -3,6 +3,13 @@ Recoil is the next generation state management library: CM safe, memoized, atomi
 
 `recoil-toolkit` is a set of helpers for writing great apps with less effort.
 
+Some features already included:
+
+- task manager integrated
+- loading states with stacks
+- error stack
+- immutable atomic updaters
+
 (readme writing in progress...)
 
 ....
