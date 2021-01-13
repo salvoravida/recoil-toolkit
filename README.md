@@ -1,5 +1,5 @@
 # recoil-toolkit
-Recoil is the next generation state management library: CM safe, memoized, atomic, transactional. [recoiljs.org](https://recoiljs.org)
+Recoil is the next generation state management library: CM safe, memoized, atomic, transactional. [recoiljs.org](https://recoiljs.org){:target="_blank"}
 
 ## ℹ️ Abstract
 `recoil-toolkit` is a set of helpers for writing great apps with less effort.
@@ -21,9 +21,7 @@ yarn add recoil recoil-toolkit
 ```
 ## 📖 Documentation
 
-- [Api guide](https://github.com/salvoravida/recoil-toolkit/tree/master/README.md)
-- [Advanced](https://github.com/salvoravida/recoil-toolkit/tree/master/docs/advanced.md)
-
+- [Api guide](https://github.com/salvoravida/recoil-toolkit/tree/master/docs) (work in progress...)
 
 ## ⚙️ State Managment Pattern
 
@@ -160,7 +158,7 @@ If you are interested in contributing to `recoil-toolkit`, open an issue or a pr
 
 ## 🎉 Thanks
 
-...
+Thank You, Open Source!
 
 ## 📜 License
 
