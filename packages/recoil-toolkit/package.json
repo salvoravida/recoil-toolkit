@@ -1,0 +1,50 @@
+{
+  "name": "recoil-toolkit",
+  "version": "0.0.1",
+  "description": "recoil-toolkit",
+  "main": "./build/es5/index.js",
+  "module": "./build/es6/index.js",
+  "typings": "./src/index.ts",
+  "types": "./src/index.ts",
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
+  "scripts": {
+    "build:clean": "rimraf build",
+    "build:es5": "tsc -p tsconfigEs5.json",
+    "build:es6": "tsc -p tsconfigEs6.json",
+    "build": "npm run build:clean && npm run build:es5 && npm run build:es6",
+    "watch": "tsc -p tsconfigEs6.json -w",
+    "prepare": "npm run build",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salvoravida/recoil-toolkit"
+  },
+  "keywords": [
+    "recoil-toolkit",
+    "react",
+    "recoil",
+    "redux",
+    "toolkit"
+  ],
+  "author": "Salvatore Ravidà",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/salvoravida/recoil-toolkit/issues"
+  },
+  "homepage": "https://github.com/salvoravida/recoil-toolkit#readme",
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0",
+    "recoil": "^0.1.2"
+  },
+  "dependencies": {
+    "tiny-invariant": "^1.1.0"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^4.1.3"
+  }
+}
