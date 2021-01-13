@@ -5,7 +5,7 @@ Helpers for Recoil, the next generation state management library.
 
 ....
 
-## Recoil State Managment Pattern 1 (redux-saga like)
+## Recoil State Managment Pattern 1
 
 ```
 --------------------------------------------------------------------
