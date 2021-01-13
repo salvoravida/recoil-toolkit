@@ -12,9 +12,10 @@ export function ErrorStack() {
             position: 'top',
             duration: 2000,
             status: 'error',
-            title: '[' + error.taskId + '] ' + error.error,
+            title: `[${error.taskId}] ${error.error}`,
          });
       }
    }, [error, toast]);
+
    return null;
 }

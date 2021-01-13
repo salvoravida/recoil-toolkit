@@ -1,3 +1,6 @@
+import { delay, push, RecoilTaskInterface, removeObj, updateObj } from 'recoil-toolkit';
+import { itemStatus, todoList } from './atoms';
+import { ItemStatus } from './types';
 import {
    Item,
    delRemoteTodoItem,
@@ -5,9 +8,6 @@ import {
    putRemoteTodoItem,
    getRemoteTodoList,
 } from '../server';
-import { push, RecoilTaskInterface, removeObj, updateObj } from 'recoil-toolkit';
-import { itemStatus, todoList } from './atoms';
-import { ItemStatus } from './types';
 
 export const getTodoListTask = ({ set }: RecoilTaskInterface) => async () => {
    const items = (await getRemoteTodoList()) as Item[];
@@ -24,10 +24,8 @@ export const removeItemTask = ({ set }: RecoilTaskInterface) => async (id: numbe
       set(itemStatus(id), ItemStatus.Deleting);
       await delRemoteTodoItem(id);
       set(itemStatus(id), ItemStatus.Deleted);
-      set(
-         todoList,
-         removeObj<Item>({ id }),
-      );
+      await delay(1000);
+      set(todoList, removeObj<Item>({ id }));
    } catch (e) {
       set(itemStatus(id), ItemStatus.Idle);
       throw e;

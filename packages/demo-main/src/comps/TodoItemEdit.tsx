@@ -1,9 +1,8 @@
-import { Box, Button, Input, InputGroup, InputRightElement, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { useEditItemTask, useItemLocked, useItemStatus } from '../recoil';
-import { Item } from '../server';
+import { Box, Button, Input, InputGroup, InputRightElement, Text } from '@chakra-ui/react';
+import { useEditItemTask, useItemLocked, useItemStatus, ItemStatus } from '../recoil';
 import { TodoItemRemove } from './TodoItemRemove';
-import { ItemStatus } from '../recoil/types';
+import { Item } from '../server';
 
 export function TodoItemEdit({ id, text }: Item) {
    const editTask = useEditItemTask();
@@ -61,7 +60,7 @@ export function TodoItemEdit({ id, text }: Item) {
          </Box>
          <Box marginLeft={'auto'} d={'flex'}>
             <Button
-               minW={'140px'}
+               minW={'150px'}
                marginLeft={'10px'}
                onClick={() => editTask.execute({ id, text: editText })}
                isLoading={editTask.loading}

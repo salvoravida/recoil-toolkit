@@ -36,7 +36,7 @@ export const postRemoteTodoItem = (text: string) => {
          RemoteTodoList = [...RemoteTodoList, newItem];
          console.log('api <- postRemoteTodoItem ...', newItem);
          resolve(newItem);
-      }, 3500);
+      }, 2500);
    });
 };
 
@@ -60,7 +60,7 @@ export const putRemoteTodoItem = (item: Item) => {
          RemoteTodoList[idx] = { ...item };
          console.log('api <- putRemoteTodoItem ...', { ...item });
          resolve({ ...item });
-      }, 3500);
+      }, 2500);
    });
 };
 
@@ -76,6 +76,6 @@ export const delRemoteTodoItem = (id: number) => {
          RemoteTodoList = [...RemoteTodoList.filter(i => i.id !== id)];
          resolve(true);
          console.log('api <- delRemoteTodoItem ...', id);
-      }, 3500);
+      }, 2500);
    });
 };

@@ -1,11 +1,9 @@
 import React, { useRef, memo } from 'react';
 import { Box, Button, Input } from '@chakra-ui/react';
 import { useAddItemTask } from '../recoil';
-import { useTestTask } from '../recoil/test';
 
-export function TodoItemAdd() {
+function TodoItemAdd() {
    const addItemTask = useAddItemTask();
-   const testTask = useTestTask();
 
    const inputRef = useRef<HTMLInputElement>(null);
    const addItem = () => {
@@ -27,15 +25,14 @@ export function TodoItemAdd() {
             }}
          />
          <Box padding={'20px 0'} d={'flex'}>
-            <Button minW={'140px'} marginLeft={'20px'} onClick={addItem}>
+            <Button minW={'150px'} marginLeft={'20px'} onClick={addItem}>
                Add
             </Button>
             <Button
-               minW={'140px'}
+               minW={'150px'}
                marginLeft={'20px'}
                onClick={() => {
-                  testTask.execute();
-                  //  addItemTask.execute("")
+                  addItemTask.execute('');
                }}
             >
                Add Empty

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Box, Button, Heading, Skeleton, Stack, Text } from '@chakra-ui/react';
+import { useIsLoading } from 'recoil-toolkit';
 import { useTodoList } from '../recoil';
 import { TodoItemEdit } from './TodoItemEdit';
-import { useIsLoading } from 'recoil-toolkit';
 
 export function Todolist() {
    const { loading, data, execute: refresh } = useTodoList();
@@ -15,7 +15,7 @@ export function Todolist() {
          <Box d={'flex'} padding={'20px 0'} alignItems={'center'}>
             <Heading fontSize="xl">List</Heading>
             <Button
-               minW={'140px'}
+               minW={'150px'}
                onClick={() => refresh()}
                isLoading={loading}
                marginLeft={'auto'}

@@ -1,22 +1,23 @@
 import React from 'react';
 import { Button } from '@chakra-ui/react';
-import { useItemLocked, useRemoveItemTask } from '../recoil';
+import { ItemStatus, useItemLocked, useItemStatus, useRemoveItemTask } from '../recoil';
 
 export function TodoItemRemove({ id }: { id: number }) {
    const removeTask = useRemoveItemTask();
    const locked = useItemLocked(id);
+   const [status] = useItemStatus(id);
    return (
       <Button
-         minW={'140px'}
+         minW={'150px'}
          marginLeft={'10px'}
          onClick={() => {
             removeTask.execute(id);
          }}
-         isLoading={removeTask.loading}
+         isLoading={removeTask.loading && status !== ItemStatus.Deleted}
          isDisabled={locked}
-         loadingText={'Removing ...'}
+         loadingText={'Deleting ...'}
       >
-         {removeTask.success ? 'Deleted' : 'Remove'}
+         {status === ItemStatus.Deleted ? 'Deleted' : 'Delete'}
       </Button>
    );
 }
