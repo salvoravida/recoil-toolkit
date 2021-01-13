@@ -1,15 +1,16 @@
 # recoil-toolkit
-Recoil is the next generation state management library: CM safe, memoized, atomic, transactional. https://recoiljs.org
+Recoil is the next generation state management library: CM safe, memoized, atomic, transactional.[recoiljs.org](https://recoiljs.org)
 
 ## ℹ️ Abstract
 `recoil-toolkit` is a set of helpers for writing great apps with less effort.
 
-Some features already included:
+What you get out of the box:
 
 - task manager integrated
-- loading states with stacks
+- loading stacks
 - error stack
 - immutable atomic updaters
+- ... more coming soon... stay tuned!
 
 ## 🧰 Installation
 
@@ -29,7 +30,7 @@ yarn add recoil recoil-toolkit
 ```
 --------------------------------------------------------------------
 |                                                                   |
----> atoms -> selectors -> view(hooks) -> sync-set / async-tasks --->
+---> atoms -> selectors -> view(hooks) -> set(sync)/tasks(async) --->
 ```
 
 ## Todolist CRUD demo
@@ -107,17 +108,10 @@ export const editAndRemoveTask = (cb: RecoilTaskInterface) => async (item: Item)
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { useRecoilTask } from 'recoil-toolkit';
 
-export const useGetTodoListTask = () => useRecoilTask(getTodoListTask, []);
-
-export const useTodoList = () => {
-   return {
-      ...useGetTodoListTask(),
-      data: useRecoilValue<Item[]>(todoList),
-   };
-};
-
-export const useItemStatus = (id: number) => useRecoilState(itemStatus(id));
-export const useItemLocked = (id: number) => useRecoilValue(itemLocked(id));
+export const useTodoList = () =>
+   useRecoilTask(getTodoListTask, [], {
+      dataSelector: todoList,
+   });
 
 export const useAddItemTask = () =>
    useRecoilTask(addItemTask, [], {
@@ -127,7 +121,6 @@ export const useAddItemTask = () =>
 
 export const useRemoveItemTask = () => useRecoilTask(removeItemTask, []);
 export const useEditItemTask = () => useRecoilTask(editItemTask, []);
-export const useEditAndRemoveTask = () => useRecoilTask(editAndRemoveTask, []);
 ```
 
 ### view
@@ -140,7 +133,6 @@ export const useEditAndRemoveTask = () => useRecoilTask(editAndRemoveTask, []);
 
 function TodoItemAdd() {
    const addItemTask = useAddItemTask();
-
    const inputRef = useRef<HTMLInputElement>(null);
    const addItem = () => {
       if (inputRef.current && inputRef.current.value) {
@@ -148,12 +140,17 @@ function TodoItemAdd() {
          inputRef.current.value = '';
       }
    };
-
    return 
       //...
- } 
- 
- // ....
+ }
+
+export function TodoItem({ id, text }: Item) {
+   const editTask = useEditItemTask();
+   const locked = useItemLocked(id);
+   const [status, setStatus] = useItemStatus(id);
+   return
+   //...
+}
 ```   
 
 
