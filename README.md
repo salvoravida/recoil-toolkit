@@ -32,7 +32,7 @@ yarn add recoil recoil-toolkit
 ```
 
 ## Todolist CRUD demo
-app: https://8u0zc.csb.app  src : https://codesandbox.io/s/recoil-toolkit-main-demo-8u0zc
+live: https://8u0zc.csb.app  src: [codesandbox](https://codesandbox.io/s/recoil-toolkit-main-demo-8u0zc) - [github](https://github.com/salvoravida/recoil-toolkit/tree/master/packages/demo-main)
 
 ### atoms - selectors
 
