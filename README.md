@@ -1,5 +1,5 @@
 # recoil-toolkit
-Recoil is the next generation state management library: CM safe, memoized, atomic, transactional. [recoiljs.org](https://recoiljs.org target="_blank")
+Recoil is the next generation state management library: CM safe, memoized, atomic, transactional. [recoiljs.org](https://recoiljs.org)
 
 ## ℹ️ Abstract
 `recoil-toolkit` is a set of helpers for writing great apps with less effort.
