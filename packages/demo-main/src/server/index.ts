@@ -20,7 +20,7 @@ export const postRemoteTodoItem = (text: string) => {
    return new Promise((resolve, reject) => {
       console.log('api -> postRemoteTodoItem ...', text);
       setTimeout(() => {
-         if (!text) {
+         if (!text || !text.trim()) {
             console.error('api -> postRemoteTodoItem ...', 'Empty Todo');
             return reject('Empty Todo');
          }
@@ -45,6 +45,10 @@ export const putRemoteTodoItem = (item: Item) => {
       console.log('api -> putRemoteTodoItem ...', { ...item });
       setTimeout(() => {
          const { id, text } = item;
+         if (!text || !text.trim()) {
+            console.error('api -> postRemoteTodoItem ...', 'Empty Todo');
+            return reject('Empty Todo');
+         }
          if (text.toLowerCase().indexOf('trump') >= 0) {
             console.error('api -> putRemoteTodoItem ...', '<trump> not allowed!');
             return reject('<trump> not allowed!');
