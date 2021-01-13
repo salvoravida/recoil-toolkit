@@ -22,8 +22,8 @@ export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return>(
 
    const execute = useRecoilCallback(
       ({ set, snapshot, ...rest }: RecoilTaskInterface) => async (...args: Args) => {
-         if (exclusive) {
-            const t = snapshot.getLoadable(lastTaskByKey(key || '')).getValue();
+         if (exclusive && key) {
+            const t = snapshot.getLoadable(lastTaskByKey(key)).getValue();
             if (t && t.status === TaskStatus.Running) return;
          }
          const id = uniqueId();
