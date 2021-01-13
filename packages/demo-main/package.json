@@ -1,6 +1,6 @@
 {
    "name": "recoil-toolkit-demo-main",
-   "version": "0.0.2",
+   "version": "0.0.3",
    "private": true,
    "dependencies": {
       "@chakra-ui/react": "^1.1.2",
@@ -18,7 +18,7 @@
       "react-dom": "^17.0.1",
       "react-scripts": "4.0.1",
       "recoil": "yarn:@salvoravida/recoil@^0.1.4",
-      "recoil-toolkit" : "^0.0.2"
+      "recoil-toolkit": "^0.0.3"
    },
    "devDependencies": {
       "typescript": "^4.1.3"

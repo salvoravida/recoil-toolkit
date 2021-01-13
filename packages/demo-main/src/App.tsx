@@ -11,7 +11,7 @@ function App() {
       <>
          <Box d={'flex'}>
             <Box padding={30} maxW={'1024px'} margin={'0 auto'} width={'100%'}>
-               <Heading fontSize="3xl" marginBottom={"5px"} textAlign={'center'}>
+               <Heading fontSize="3xl" marginBottom={'5px'} textAlign={'center'}>
                   Recoil Todolist CRUD Example
                </Heading>
                <Text textAlign={'center'}>Fake Api delay : 2.500 ms</Text>

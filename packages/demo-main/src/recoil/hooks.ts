@@ -1,5 +1,4 @@
 import { useRecoilTask } from 'recoil-toolkit';
-import { Item } from '../server';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { itemLocked, itemStatus, todoList } from './atoms';
 import {
@@ -10,17 +9,13 @@ import {
    removeItemTask,
 } from './tasks';
 
-export const useGetTodoListTask = () => useRecoilTask(getTodoListTask, []);
-
-export const useTodoList = () => {
-   return {
-      ...useGetTodoListTask(),
-      data: useRecoilValue<Item[]>(todoList),
-   };
-};
-
 export const useItemStatus = (id: number) => useRecoilState(itemStatus(id));
 export const useItemLocked = (id: number) => useRecoilValue(itemLocked(id));
+
+export const useTodoList = () =>
+   useRecoilTask(getTodoListTask, [], {
+      dataSelector: todoList,
+   });
 
 export const useAddItemTask = () =>
    useRecoilTask(addItemTask, [], {

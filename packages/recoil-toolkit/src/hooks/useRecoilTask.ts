@@ -5,13 +5,13 @@ import { lastTaskByKey, taskById, tasks, errorStack as errorStackAtom, loader } 
 import { pushTask, updateTaskDone, updateTaskError, pushError } from '../updaters';
 import { TaskOptions, TaskStatus, RecoilTaskInterface } from '../types';
 
-export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return>(
+export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return, T>(
    taskCreator: (a: RecoilTaskInterface) => (...args: Args) => Return,
    deps?: ReadonlyArray<unknown>,
-   options?: TaskOptions,
+   options?: TaskOptions<T>,
 ) {
    const optionsRef = useRef(options || {}); //options freeze
-   const { key, errorStack, loaderStack, exclusive } = optionsRef.current;
+   const { key, errorStack, loaderStack, exclusive, dataSelector } = optionsRef.current;
 
    if (exclusive && !key) {
       throw 'Exclusive tasks must have a key!';
@@ -19,6 +19,8 @@ export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return>(
 
    const taskId = useRef(0);
    const task = useRecoilValue(exclusive ? lastTaskByKey(key || '') : taskById(taskId.current));
+
+   const taskData: T = dataSelector ? useRecoilValue<T>(dataSelector) : task && task.data;
 
    const execute = useRecoilCallback(
       ({ set, snapshot, ...rest }: RecoilTaskInterface) => async (...args: Args) => {
@@ -49,7 +51,7 @@ export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return>(
       loading: task && task.status === TaskStatus.Running,
       execute,
       error: task && task.error,
-      data: task && task.data,
+      data: taskData,
       success: task && task.status === TaskStatus.Done,
       taskId: taskId.current,
    };

@@ -4,3 +4,4 @@ temp
 .vscode
 .idea
 build
+packages/demo-main/src/react-app-env.d.ts
