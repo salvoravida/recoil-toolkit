@@ -16,7 +16,7 @@ export const updateObj = <K extends { [k: string]: any }, T extends { [k: string
    item: Partial<T>,
    match: Partial<T>,
 ) => (s: K[]) =>
-      s.map(el => (Object.keys(match).every(k => match[k] === el[k]) ? { ...el, ...item } : el));
+   s.map(el => (Object.keys(match).every(k => match[k] === el[k]) ? { ...el, ...item } : el));
 
 export const removeObj = <T extends { [k: string]: any }>(match: Partial<T>) =>
    filter<T>(el => !Object.keys(match).every(k => match[k] === el[k]));
