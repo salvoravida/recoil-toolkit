@@ -1,4 +1,6 @@
 # recoil-toolkit
+--
+## ℹ️ Abstract
 Recoil is the next generation state management library: CM safe, memoized, atomic, transactional. https://recoiljs.org
 
 `recoil-toolkit` is a set of helpers for writing great apps with less effort.
@@ -13,6 +15,18 @@ Some features already included:
 (readme writing in progress...)
 
 ....
+## 🧰 Installation
+
+```bash
+npm i recoil recoil-toolkit
+# OR
+yarn add recoil recoil-toolkit
+```
+## 📖 Documentation
+
+- [Api guide](https://github.com/salvoravida/recoil-toolkit/tree/master/README.md)
+- [Advanced](https://github.com/salvoravida/recoil-toolkit/tree/master/docs/advanced.md)
+
 
 ## Recoil State Managment Pattern 1
 
@@ -145,3 +159,16 @@ function TodoItemAdd() {
  
  // ....
 ```   
+
+
+## 👏 Contributing
+
+If you are interested in contributing to recoil-toolkit, open an issue or a pr!
+
+## 🎉 Thanks
+
+- ....
+
+## 📜 License
+
+Spectral is 100% free and open-source, under [MIT](LICENSE).
