@@ -17,7 +17,14 @@ What you get out of the box:
 - :atom: immutable atomic updaters
 - :boom: RecoilTunnel -> use recoil from outside React
 
-🔜 more coming soon... stay tuned!
+and what is coming soon ...
+- 🔜 advanced task manager - chrome dev tools
+- 🔜 easy debugging long/duplicated/onError tasks
+- 🔜 task statistics, kpi
+- 🔜 reactive/observable pattern implementation
+- :question: any idea? open an issue!
+
+...stay tuned!
 
 ## 🧰 Installation
 
