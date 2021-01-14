@@ -37,6 +37,40 @@ yarn add recoil recoil-toolkit
 |                                                                   |
 ---> atoms -> selectors -> view(hooks) -> set(sync)/tasks(async) --->
 ```
+### Tasks
+Task is a core concept of `recoil-toolkit`. It's an async function (Promise) with a closure of RecoilTaskInterface ({set, reset, snapshot}).
+Fetching Data Sample:
+```typescript
+import { atom } from 'recoil';
+import { RecoilTaskInterface, useRecoilTask } from 'recoil-toolkit';
+
+const notifications = atom<{ id: number; text: string }[]>({
+   key: 'notifications',
+   default: [],
+});
+
+const getNotificationsTask = ({ set }: RecoilTaskInterface) => async () => {
+   const body = await fetch('/api/notifications');
+   const resp = await body.json();
+   set(notifications, resp);
+};
+
+export const NotificationsView = () => {
+   const { loading, data, error, execute: refresh } = useRecoilTask(getNotificationsTask, [], {
+      dataSelector: notifications,
+   });
+   if (loading) return 'Loading…';
+   if (error) return 'Sorry! Something went wrong. Please try again.';
+   return (
+      <div>
+         <button onClick={refresh}>Refresh</button>
+         {data.map(({ id, text }) => (
+            <Notification key={id} text={text} id={id} />
+         ))}
+      </div>
+   );
+};
+```
 
 ## 💥 Demo Todolist CRUD
 live: https://8u0zc.csb.app  src: [codesandbox](https://codesandbox.io/s/recoil-toolkit-main-demo-8u0zc) - [github](https://github.com/salvoravida/recoil-toolkit/tree/master/packages/demo-main)
