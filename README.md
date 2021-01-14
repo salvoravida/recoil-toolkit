@@ -7,7 +7,7 @@
 Recoil is the next generation state management library: CM safe, memoized, atomic, transactional. [recoiljs.org](https://recoiljs.org)
 
 ## ℹ️ Abstract
-`recoil-toolkit` is a set of helpers, patterns and best practices for writing great apps with less effort.
+`recoil-toolkit` is a set of helpers, patterns and best practices about app state management (`recoil` based) for writing great apps with less effort.
 
 What you get out of the box:
 
@@ -37,6 +37,21 @@ yarn add recoil recoil-toolkit
 
 - [Api guide](https://github.com/salvoravida/recoil-toolkit/tree/master/docs) (work in progress...)
 
+## ❤️ Core Concepts 
+*read also the official recoil guide [recoiljs.org](https://recoiljs.org)*
+
+- **Atom**: micro state 
+- **Selector** : derived state from atoms and other selectors
+- **Set**: function(microState, prev => next) dispatch micro updates
+- **Task**: async function that do something and can read(get)/write(set) to/from the store.
+
+Simple use pattern with hooks:
+```javascript
+const [state, setState] = useRecoilState(atom);
+const value = useRecoilValue(atomOrSelector);
+const { loading, data, error, execute } = useRecoilTask(task, []);
+```
+
 ## ⚙️ State Management Pattern
 
 ```
@@ -44,11 +59,26 @@ yarn add recoil recoil-toolkit
 |                                                                   |
 ---> atoms -> selectors -> view(hooks) -> set(sync)/tasks(async) --->
 ```
+
 ###  🕒 Tasks
 Task is a core concept of `recoil-toolkit`.
-Basically it's an async function (Promise) that have access to the store `({ set, reset, snapshot })`.
+Basically it's an async function (Promise) that have access to the store with a closure of `({ set, reset, snapshot })`.
 
-Fetching Data:
+```javascript
+const task = ({ set, reset, snapshot }) => async ({}) => {
+   // await do something and update store
+};
+   
+function Component(){ 
+    //recoil standard use
+    const executeTask = useRecoilCallback(task,[]);
+    //recoil-toolkit use
+    const { loading, data, error, execute } = useRecoilTask(task, []);
+   
+    return ...
+}
+```
+fetching data:
 ```typescript
 import { atom } from 'recoil';
 import { RecoilTaskInterface, useRecoilTask } from 'recoil-toolkit';
