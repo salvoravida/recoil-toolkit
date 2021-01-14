@@ -85,7 +85,7 @@ const notifyServerNotificationRead = ({ set }: RecoilTaskInterface) => async (id
 
 export const Notification = ({ id, text }: { id: number; text: string }) => {
    const read = useRecoilValue(notificationRead(id));
-   const { loading, execute: notify } = useRecoilTask(notifyServerNotificationRead, []);
+   const { loading, error, execute: notify } = useRecoilTask(notifyServerNotificationRead, []);
    return (
       <div style={{ color: read ? 'green' : 'yellow' }}>
          <p>{text}</p>
@@ -94,6 +94,7 @@ export const Notification = ({ id, text }: { id: number; text: string }) => {
                {loading ? 'Sending ...' : 'Send Read'}
             </button>
          )}
+         {error && 'Sorry, server error while set notification read!'}
       </div>
    );
 };
