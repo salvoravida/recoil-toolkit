@@ -71,7 +71,37 @@ export const NotificationsView = () => {
    );
 };
 ```
+Send Data Sample:
+```typescript
+const notificationRead = atomFamily<boolean, number>({
+   key: 'notificationRead',
+   default: false,
+});
 
+const notifyServerNotificationRead = ({ set }: RecoilTaskInterface) => async (id: number) => {
+   await fetch('/api/notification-read', { body: JSON.stringify({ id }), method: 'POST' });
+   set(notificationRead(id), true);
+};
+
+export const Notification = ({ id, text }: { id: number; text: string }) => {
+   const read = useRecoilValue(notificationRead(id));
+   const { loading, execute: notify } = useRecoilTask(notifyServerNotificationRead, []);
+   return (
+      <div style={{ color: read ? 'green' : 'yellow' }}>
+         <p>{text}</p>
+         {!read && (
+            <button disabled={loading} onClick={() => notify(id)}>
+               {loading ? 'Sending ...' : 'Send Read'}
+            </button>
+         )}
+      </div>
+   );
+};
+```
+### Advanced Task 
+... writing in progres ...
+
+---
 ## 💥 Demo Todolist CRUD
 live: https://8u0zc.csb.app  src: [codesandbox](https://codesandbox.io/s/recoil-toolkit-main-demo-8u0zc) - [github](https://github.com/salvoravida/recoil-toolkit/tree/master/packages/demo-main)
 
