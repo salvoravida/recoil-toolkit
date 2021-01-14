@@ -37,11 +37,11 @@ yarn add recoil recoil-toolkit
 |                                                                   |
 ---> atoms -> selectors -> view(hooks) -> set(sync)/tasks(async) --->
 ```
-### Tasks
+###  🕒 Tasks
 Task is a core concept of `recoil-toolkit`.
-It's an async function (Promise) that have access to the store `({ set, reset, snapshot })`.
-Fetching Data Sample:
+Basically it's an async function (Promise) that have access to the store `({ set, reset, snapshot })`.
 
+Fetching Data:
 ```typescript
 import { atom } from 'recoil';
 import { RecoilTaskInterface, useRecoilTask } from 'recoil-toolkit';
@@ -73,9 +73,7 @@ export const NotificationsView = () => {
    );
 };
 ```
-
-<p>Send Data Sample:</p>
-
+Send Data:
 ```typescript
 const notificationRead = atomFamily<boolean, number>({
    key: 'notificationRead',
