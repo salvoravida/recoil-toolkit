@@ -12,10 +12,10 @@ Recoil is the next generation state management library: CM safe, memoized, atomi
 What you get out of the box:
 
 - 📈 task manager
-- ⌚ loading stacks
+- ⌚ loading states / loader stacks
 - ❌ error stack
 - :atom: immutable atomic updaters
-- :boom: RecoilTunnel -> use recoil from outside React
+- :boom: RecoilTunnel -> read/update a recoilStore outside of React
 
 and what is coming soon ...
 - 🔜 advanced task manager - chrome dev tools
@@ -78,7 +78,7 @@ function Component(){
     return ...
 }
 ```
-fetching data:
+Fetching data example:
 ```typescript
 import { atom } from 'recoil';
 import { RecoilTaskInterface, useRecoilTask } from 'recoil-toolkit';
@@ -104,13 +104,13 @@ export const NotificationsView = () => {
       <div>
          <button onClick={refresh}>Refresh</button>
          {data.map(({ id, text }) => (
-            <Notification key={id} text={text} id={id} />
+            <NotificationItem key={id} text={text} id={id} />
          ))}
       </div>
    );
 };
 ```
-Send Data:
+Sending data example:
 ```typescript
 const notificationRead = atomFamily<boolean, number>({
    key: 'notificationRead',
@@ -122,7 +122,7 @@ const notifyServerNotificationRead = ({ set }: RecoilTaskInterface) => async (id
    set(notificationRead(id), true);
 };
 
-export const Notification = ({ id, text }: { id: number; text: string }) => {
+export const NotificationItem = ({ id, text }: { id: number; text: string }) => {
    const read = useRecoilValue(notificationRead(id));
    const { loading, error, execute: notify } = useRecoilTask(notifyServerNotificationRead, []);
    return (
