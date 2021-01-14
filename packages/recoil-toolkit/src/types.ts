@@ -1,9 +1,25 @@
-import { CallbackInterface, Loadable, RecoilValue } from 'recoil';
+import { CallbackInterface, Loadable, RecoilState, RecoilValue, Snapshot } from 'recoil';
 
 export type RecoilTaskInterface = CallbackInterface;
 
 export type RecoilGetPromise = <T>(recoilValue: RecoilValue<T>) => Promise<T>;
 export type RecoilGetLoadable = <T>(recoilValue: RecoilValue<T>) => Loadable<T>;
+export type RecoilSetState = <T>(
+   recoilVal: RecoilState<T>,
+   valOrUpdater: ((currVal: T) => T) | T,
+) => void;
+export type RecoilResetState = (recoilVal: RecoilState<any>) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
+export type RecoilGetSnapshot = () => Snapshot;
+export type RecoilGotoSnapshot = (snapshot: Snapshot) => void;
+
+export type RecoilStore = {
+   getPromise: RecoilGetPromise;
+   getLoadable: RecoilGetLoadable;
+   set: RecoilSetState;
+   reset: RecoilResetState;
+   getSnapshot: RecoilGetSnapshot;
+   gotoSnapshot: RecoilGotoSnapshot;
+};
 
 export enum TaskStatus {
    Running,
