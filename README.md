@@ -38,9 +38,9 @@ yarn add recoil recoil-toolkit
 ---> atoms -> selectors -> view(hooks) -> set(sync)/tasks(async) --->
 ```
 ### Tasks
-<p>Task is a core concept of `recoil-toolkit`.</p>
-<p>It's an async function (Promise) that have access to the store `({ set, reset, snapshot })`.</p>
-<p>Fetching Data Sample:</p>
+Task is a core concept of `recoil-toolkit`.
+It's an async function (Promise) that have access to the store `({ set, reset, snapshot })`.
+Fetching Data Sample:
 
 ```typescript
 import { atom } from 'recoil';
@@ -73,7 +73,9 @@ export const NotificationsView = () => {
    );
 };
 ```
+
 <p>Send Data Sample:</p>
+
 ```typescript
 const notificationRead = atomFamily<boolean, number>({
    key: 'notificationRead',
