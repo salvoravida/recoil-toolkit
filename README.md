@@ -13,8 +13,8 @@ What you get out of the box:
 
 - 📈 task manager
 - ⌚ loading states / loader stacks
-- ❌ error stack
-- :atom: immutable atomic updaters
+- ❌ error states / error stack
+- :atom: immutable updaters
 - :boom: RecoilTunnel -> read/update a recoilStore outside of React
 
 and what is coming soon ...
