@@ -11,11 +11,11 @@ Recoil is the next generation state management library: CM safe, memoized, atomi
 
 What you get out of the box:
 
-- task manager integrated
-- loading stacks
-- error stack
-- immutable atomic updaters
-- ... more coming soon... stay tuned!
+- 📈 task manager
+- ⌚ loading stacks
+- ❌ error stack
+- :atom: immutable atomic updaters
+- 🔜 more coming soon... stay tuned!
 
 ## 🧰 Installation
 
@@ -36,7 +36,7 @@ yarn add recoil recoil-toolkit
 ---> atoms -> selectors -> view(hooks) -> set(sync)/tasks(async) --->
 ```
 
-## Todolist CRUD demo
+## 💥 Demo Todolist CRUD
 live: https://8u0zc.csb.app  src: [codesandbox](https://codesandbox.io/s/recoil-toolkit-main-demo-8u0zc) - [github](https://github.com/salvoravida/recoil-toolkit/tree/master/packages/demo-main)
 
 ### atoms - selectors
