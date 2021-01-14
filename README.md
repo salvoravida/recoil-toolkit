@@ -16,7 +16,8 @@ What you get out of the box:
 - ❌ error stack
 - :atom: immutable atomic updaters
 - :boom: RecoilTunnel -> use recoil from outside React
-- 🔜 more coming soon... stay tuned!
+
+🔜 more coming soon... stay tuned!
 
 ## 🧰 Installation
 
