@@ -140,8 +140,12 @@ export const NotificationItem = ({ id, text }: { id: number; text: string }) => 
 };
 ```
 ### 🔨 Advanced Task Concepts
-... writing in progres ...
 
+... writing in progress ...
+
+## :electron: RecoilReduxTunnel
+
+... writing in progress ...
 
 ## 💥 Demo Todolist CRUD
 live: https://8u0zc.csb.app  src: [codesandbox](https://codesandbox.io/s/recoil-toolkit-main-demo-8u0zc) - [github](https://github.com/salvoravida/recoil-toolkit/tree/master/packages/demo-main)
