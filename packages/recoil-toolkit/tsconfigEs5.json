@@ -14,7 +14,7 @@
       "isolatedModules": true,
       "jsx": "react",
       "noImplicitAny": false,
-      "declaration": false,
+      "declaration": true,
       "outDir": "./build/es5",
       "allowUnusedLabels": false,
       "diagnostics": false,

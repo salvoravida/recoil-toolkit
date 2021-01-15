@@ -1,6 +1,5 @@
 import { useEffect, useRef, memo } from 'react';
 import { useGotoRecoilSnapshot } from 'recoil';
-import { RecoilStore } from '../../types';
 import {
    useRecoilCurrentGetLoadable,
    useRecoilCurrentGetPromise,
@@ -8,50 +7,7 @@ import {
    useRecoilCurrentSet,
    useRecoilCurrentSnap,
 } from '../hooks';
-
-interface RecoilStores {
-   [name: string]: RecoilStore | undefined;
-}
-
-const recoilStores: RecoilStores = {};
-
-const DEFAULT_STORE = '$defaultStore$';
-
-const pendigGetStorePromises: {
-   resolve: (value: RecoilStore) => void;
-   reject: (reason?: any) => void;
-   name: string;
-   pending: boolean;
-}[] = [];
-
-const flushGetStorePending = (name: string) => {
-   pendigGetStorePromises.forEach(p => {
-      if (p.pending && p.name === name) {
-         // @ts-ignore
-         if (recoilStores[name]) {
-            // @ts-ignore
-            p.resolve(recoilStores[name]);
-         } else p.reject('no store found');
-         p.pending = false;
-      }
-   });
-};
-
-export function getRecoilStore(name: string = DEFAULT_STORE) {
-   return new Promise<RecoilStore>((resolve, reject) => {
-      if (recoilStores[name]) {
-         // @ts-ignore
-         resolve(recoilStores[name]);
-      } else {
-         pendigGetStorePromises.push({
-            resolve,
-            reject,
-            name,
-            pending: true,
-         });
-      }
-   });
-}
+import { DEFAULT_STORE, flushGetStorePending, recoilStores } from './getStore';
 
 export const RecoilTunnel = memo(({ name = DEFAULT_STORE }: { name?: string }) => {
    const storeName = useRef(name || DEFAULT_STORE);

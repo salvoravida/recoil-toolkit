@@ -1,4 +1,4 @@
 export * from './useRecoilRequest';
-export * from './useRecoilSelector';
+export * from './useRecoilAsyncSelector';
 export * from './useRecoilLocalTask';
 export * from './recoilStore';

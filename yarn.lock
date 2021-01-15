@@ -10003,7 +10003,7 @@ readdirp@~3.5.0:
   dependencies:
     picomatch "^2.2.1"
 
-"recoil@yarn:@salvoravida/recoil@^0.1.4":
+"recoil@npm:@salvoravida/recoil@^0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@salvoravida/recoil/-/recoil-0.1.4.tgz#97242e89c94e14b250f3bcc56988476c2ffe6118"
   integrity sha512-fgpw6VTXMXxFAp0UlTnPC6YZKpjoPlhRbo+8X3CXLJW8VDwVAY1NKh2cFoyPT3AoRpw6uCJJG9N8GCKEvNhK6A==
@@ -10024,6 +10024,14 @@ redent@^3.0.0:
   dependencies:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
+
+redux@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.5.tgz#4db5de5816e17891de8a80c424232d06f051d93f"
+  integrity sha512-VSz1uMAH24DM6MF72vcojpYPtrTUu3ByVWfPL1nPfVRb5mZVTve5GnNCUV53QM/BZ66xfWrm0CTWoM+Xlz8V1w==
+  dependencies:
+    loose-envify "^1.4.0"
+    symbol-observable "^1.2.0"
 
 regenerate-unicode-properties@^8.2.0:
   version "8.2.0"
@@ -11192,6 +11200,11 @@ svgo@^1.0.0, svgo@^1.2.2:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+symbol-observable@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
+  integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
 
 symbol-tree@^3.2.4:
   version "3.2.4"

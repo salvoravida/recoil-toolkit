@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { useRecoilValueLoadable, RecoilValue } from 'recoil';
 
-export const useRecoilSelector = <V>(selector: RecoilValue<V>) => {
+type SelectorReturn<V> = { loading: boolean; data?: V; error?: unknown };
+
+export const useRecoilAsyncSelector = <V>(selector: RecoilValue<V>): SelectorReturn<V> => {
    const { state, contents } = useRecoilValueLoadable<V>(selector);
    const loading = state === 'loading';
    const error = state === 'hasError' ? contents : undefined;
