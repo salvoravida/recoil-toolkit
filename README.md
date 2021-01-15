@@ -16,7 +16,7 @@ What you get out of the box:
 - ❌ error states / error stack
 - :atom: immutable updaters
 - :boom: RecoilTunnel -> read/update a recoilStore outside of React
-- :boom: RecoilReduxTunnel -> create mixed selectors derived from atoms and redux state (very usefull for update big apps to recoil!)
+- :electron: RecoilReduxTunnel -> create selectors derived from atoms and redux (easy upgrade big redux apps to recoil!)
 
 and what is coming soon ...
 - 🔜 advanced task manager - chrome dev tools
