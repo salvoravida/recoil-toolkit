@@ -16,7 +16,7 @@ What you get out of the box:
 - ❌ error states / error stack
 - :atom: immutable updaters
 - :boom: RecoilTunnel -> read/update a recoilStore outside of React
-- :electron: RecoilReduxTunnel -> create selectors derived from atoms and redux (easy upgrade big redux apps to recoil!)
+- :electron: ReduxTunnel -> mix redux and recoil selectors (gradually upgrade redux apps to recoil!)
 
 and what is coming soon ...
 - 🔜 advanced task manager - chrome dev tools
@@ -143,7 +143,7 @@ export const NotificationItem = ({ id, text }: { id: number; text: string }) => 
 
 ... writing in progress ...
 
-## :electron: RecoilReduxTunnel
+## :electron: ReduxTunnel
 
 ... writing in progress ...
 
