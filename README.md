@@ -208,7 +208,8 @@ const maxCounterType = selector<string>({
 });
 
 function App() {
-   const reduxCount = useReduxSelector(getReduxCount);   //useReduxSelector it's an alias of useRecoilValue(reduxSelector(sel))
+   const reduxCount = useReduxSelector(getReduxCount);  
+   //useReduxSelector it's an alias of useRecoilValue(reduxSelector(sel))
    //const reduxCount = useRecoilValue(reduxSelector(getReduxCount)); 
    const dispatch = useReduxDispatch();
    const [counter, setCounter] = useRecoilState(counterAtom);
