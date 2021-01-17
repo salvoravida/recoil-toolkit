@@ -50,6 +50,9 @@ Simple use pattern with hooks:
 ```javascript
 const [state, setState] = useRecoilState(atom);
 const value = useRecoilValue(atomOrSelector);
+//with recoil only
+const execute = useRecoilCallback(task,[]);
+//with recoil-toolkit
 const { loading, data, error, execute } = useRecoilTask(task, []);
 ```
 
@@ -71,9 +74,9 @@ const task = ({ set, reset, snapshot }) => async ({}) => {
 };
    
 function Component(){ 
-    //recoil standard use
-    const executeTask = useRecoilCallback(task,[]);
-    //recoil-toolkit use
+    //with recoil only
+    const execute = useRecoilCallback(task,[]);
+    //with recoil-toolkit
     const { loading, data, error, execute } = useRecoilTask(task, []);
    
     return ...
@@ -143,7 +146,7 @@ export const NotificationItem = ({ id, text }: { id: number; text: string }) => 
 
 ... writing in progress ...
 
-## :boom: RecoilTunnel
+### :boom: RecoilTunnel
 RecoilTunnel capture the current recoil store instance, and allow you to use it outside of React.
 https://codesandbox.io/s/k6ri5
 
@@ -179,7 +182,7 @@ getRecoilStore().then(store => {
 });
 ```
 
-## :electron: ReduxTunnel
+### :electron: ReduxTunnel
 Read, Write from/to Redux. Mix redux and recoil selectors (gradually upgrade redux apps to recoil!)
 https://zhb1x.csb.app/ - src: https://codesandbox.io/s/zhb1x
 
