@@ -12,5 +12,5 @@ export const reduxStore = createStore((state: { count: number } = { count: 0 }, 
          };
       default:
          return state;
-   }
-});
+   }// @ts-ignore
+}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
