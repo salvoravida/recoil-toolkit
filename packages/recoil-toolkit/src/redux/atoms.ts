@@ -1,12 +1,11 @@
-import { atom, selectorFamily, useRecoilValue } from 'recoil';
+import { atom, selectorFamily } from 'recoil';
 import { uniqueId } from '../_core';
+import { ReduxSelectorFunc } from './types';
 
-type SelectorFunc = (s: any) => unknown;
+const reduxSelectorsMap = new Map<number, ReduxSelectorFunc>();
+const reduxSelectorsMapInv = new Map<ReduxSelectorFunc, number>();
 
-const reduxSelectorsMap = new Map<number, (s: unknown) => unknown>();
-const reduxSelectorsMapInv = new Map<(s: unknown) => unknown, number>();
-
-const getSelectorId = (selectorFunc: SelectorFunc): number => {
+function getSelectorId(selectorFunc: ReduxSelectorFunc): number {
    let cachedSelectorId = reduxSelectorsMapInv.get(selectorFunc);
    if (!cachedSelectorId) {
       const id = uniqueId();
@@ -15,14 +14,14 @@ const getSelectorId = (selectorFunc: SelectorFunc): number => {
       cachedSelectorId = id;
    }
    return cachedSelectorId;
-};
+}
 
 export const reduxState = atom<unknown>({
    key: 'recoil-toolkit/reduxState',
    default: undefined,
 });
 
-const reduxSelectorFamily = selectorFamily<any, number>({
+const reduxSelectorFamily = selectorFamily<unknown, number>({
    key: 'recoil-toolkit/reduxSelectors',
    get: (selectorId: number) => ({ get }) => {
       const currentReduxState = get(reduxState);
@@ -31,9 +30,6 @@ const reduxSelectorFamily = selectorFamily<any, number>({
    },
 });
 
-export const reduxSelector = (selector: SelectorFunc) =>
-   reduxSelectorFamily(getSelectorId(selector));
-
-export function useReduxSelector<T>(selector: SelectorFunc) {
-   return useRecoilValue<T>(reduxSelector(selector));
+export function reduxSelector(selector: ReduxSelectorFunc) {
+   return reduxSelectorFamily(getSelectorId(selector));
 }

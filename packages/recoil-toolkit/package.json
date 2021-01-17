@@ -37,8 +37,13 @@
    },
    "homepage": "https://github.com/salvoravida/recoil-toolkit#readme",
    "peerDependencies": {
-      "react": "^16.8.0 || ^17.0.0",
+      "react": "^16.8.3 || ^17",
       "recoil": "^0.1.2"
+   },
+   "peerDependenciesMeta": {
+      "redux": {
+         "optional": true
+      }
    },
    "dependencies": {
       "tiny-invariant": "^1.1.0"
