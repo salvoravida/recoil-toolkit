@@ -1,6 +1,6 @@
 {
    "name": "recoil-toolkit",
-   "version": "0.0.4",
+   "version": "0.0.5",
    "description": "recoil-toolkit",
    "main": "./build/es5/index.js",
    "module": "./build/es6/index.js",
@@ -10,6 +10,11 @@
       "node": ">=10",
       "npm": ">=6"
    },
+   "files": [
+      "build",
+      "src",
+      "index.d.ts"
+   ],
    "scripts": {
       "build:clean": "rimraf build",
       "build:es5": "tsc -p tsconfigEs5.json",
