@@ -233,6 +233,9 @@ ReactDOM.render(
    document.getElementById('root'),
 );
 ```
+Note: you can use `react-redux` useSelector/useDispatch to access reduxStore, instead of useReduxSelector from `recoil-toolkit`, or both at same time.
+https://codesandbox.io/s/czobq
+
 
 ## 💥 Demo Todolist CRUD
 live: https://8u0zc.csb.app  src: [codesandbox](https://codesandbox.io/s/recoil-toolkit-main-demo-8u0zc) - [github](https://github.com/salvoravida/recoil-toolkit/tree/master/packages/demo-main)
