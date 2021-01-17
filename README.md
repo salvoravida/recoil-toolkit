@@ -181,7 +181,7 @@ getRecoilStore().then(store => {
 ## :electron: ReduxTunnel
 Read, Write from/to Redux. Mix redux and recoil selectors (gradually upgrade redux apps to recoil!)
 
-```typescript
+```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { atom, RecoilRoot, useRecoilValue, useRecoilState, selector } from 'recoil';
