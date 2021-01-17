@@ -27,7 +27,7 @@ export const flushGetStorePending = (name: string) => {
    });
 };
 
-export function getRecoilStore(name: string = DEFAULT_STORE) {
+export function getRecoilStore(name: string = DEFAULT_STORE): Promise<RecoilStore> {
    return new Promise<RecoilStore>((resolve, reject) => {
       if (recoilStores[name]) {
          // @ts-ignore

@@ -1,1 +1,1 @@
-export type ReduxSelectorFunc = (s: unknown) => unknown;
+export type ReduxSelectorFunc = (s: any) => unknown;
