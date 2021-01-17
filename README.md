@@ -143,10 +143,64 @@ export const NotificationItem = ({ id, text }: { id: number; text: string }) => 
 };
 ```
 ### 🔨 Advanced Task Concepts
+Task can have options for advanced use case.
+```typescript
+ type TaskOptions = {
+   key?: string;
+   errorStack?: boolean;
+   loaderStack?: boolean | string;
+   exclusive?: boolean;
+};
+```
+Send error to global errorStack:
+```typescript
+import { useRecoilTask, useLastError } from 'recoil-toolkit';
 
-... writing in progress ...
+export const useAdvancedTask = () =>
+   useRecoilTask(advancedTask, [], {
+      errorStack: true,
+   });
 
-### :boom: RecoilTunnel
+// somewhere in your ui ...
+const lastError = useLastError();
+```
+Use a common loader stack:
+```typescript
+import { useRecoilTask, useIsLoading } from 'recoil-toolkit';
+
+export const useAdvancedTask1 = () =>
+   useRecoilTask(advancedTask1, [], {
+      loaderStack: 'global',
+   });
+   
+export const useAdvancedTask2 = () =>
+   useRecoilTask(advancedTask2, [], {
+      loaderStack: 'global',
+   });
+
+// somewhere in your ui ...
+const isGlobalLoading = useIsLoading('global');
+```
+Exclusive tasks (no double run):
+```typescript
+export const useAdvancedExclusiveTask = () =>
+   useRecoilTask(advancedTask, [], {
+      key:'advancedTask',  
+      exclusive:true   // no double run
+   });
+
+
+function ComponentA(){
+   const {loading, data, error, execute} = useAdvancedExclusiveTask();
+   // ....
+}
+
+function ComponentB(){
+   const {loading, data, error, execute} = useAdvancedExclusiveTask();
+   // ....
+}
+```
+## :boom: RecoilTunnel
 RecoilTunnel capture the current recoil store instance, and allow you to use it outside of React.
 https://codesandbox.io/s/k6ri5
 
@@ -182,7 +236,7 @@ getRecoilStore().then(store => {
 });
 ```
 
-### :electron: ReduxTunnel
+## :electron: ReduxTunnel
 Read, Write from/to Redux. Mix redux and recoil selectors (gradually upgrade redux apps to recoil!)
 https://zhb1x.csb.app/ - src: https://codesandbox.io/s/zhb1x
 
