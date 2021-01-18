@@ -153,7 +153,7 @@ export const NotificationItem = ({ id, text }: { id: number; text: string }) => 
    );
 };
 ```
-### 🔨 Advanced Task
+### 🔨 Advanced Tasks
 Task can have options for advanced use case.
 ```typescript
  type TaskOptions = {
