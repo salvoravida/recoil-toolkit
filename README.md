@@ -56,7 +56,7 @@ yarn add recoil recoil-toolkit
 
 Simple use pattern with hooks:
 ```javascript
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue, useRecoilCallback } from 'recoil';
 import { useRecoilTask } from 'recoil-toolkit';
 
 //in your component ...
