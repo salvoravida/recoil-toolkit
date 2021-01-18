@@ -48,9 +48,13 @@ yarn add recoil recoil-toolkit
 
 Simple use pattern with hooks:
 ```javascript
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilTask } from 'recoil-toolkit';
+
+//in your component ...
 const [state, setState] = useRecoilState(atom);
 const value = useRecoilValue(atomOrSelector);
-//with recoil only
+//with recoil
 const execute = useRecoilCallback(task,[]);
 //with recoil-toolkit
 const { loading, data, error, execute } = useRecoilTask(task, []);
@@ -74,7 +78,7 @@ const task = ({ set, reset, snapshot }) => async ({}) => {
 };
    
 function Component(){ 
-    //with recoil only
+    //with recoil
     const execute = useRecoilCallback(task,[]);
     //with recoil-toolkit
     const { loading, data, error, execute } = useRecoilTask(task, []);
