@@ -1,7 +1,14 @@
 import { useRecoilCallback, useRecoilValue } from 'recoil';
 import { useRef } from 'react';
 import { uniqueId, hide, show } from '../_core';
-import { lastTaskByKey, taskById, tasks, errorStack as errorStackAtom, loader } from '../atoms';
+import {
+   lastTaskByKey,
+   taskById,
+   tasks,
+   errorStack as errorStackAtom,
+   loader,
+   DEFAULT_LOADER,
+} from '../atoms';
 import { pushTask, updateTaskDone, updateTaskError, pushError } from '../updaters';
 import { TaskOptions, TaskStatus, RecoilTaskInterface } from '../types';
 
@@ -31,7 +38,7 @@ export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return, T>(
          const id = uniqueId();
          taskId.current = id;
          try {
-            if (loaderStack) set(loader(loaderStack), show);
+            if (loaderStack) set(loader(loaderStack === true ? DEFAULT_LOADER : loaderStack), show);
             set(tasks, pushTask({ id, options, args }));
             const data = await taskCreator({ set, snapshot, ...rest })(...args);
             set(tasks, updateTaskDone({ data, id }));
@@ -41,7 +48,7 @@ export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return, T>(
                set(errorStackAtom, pushError({ key, error, taskId: id }));
             }
          } finally {
-            if (loaderStack) set(loader(loaderStack), hide);
+            if (loaderStack) set(loader(loaderStack === true ? DEFAULT_LOADER : loaderStack), hide);
          }
       },
       deps,

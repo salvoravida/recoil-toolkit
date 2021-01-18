@@ -21,6 +21,7 @@ export type RecoilStore = {
    gotoSnapshot: RecoilGotoSnapshot;
 };
 
+// eslint-disable-next-line no-shadow
 export enum TaskStatus {
    Running,
    Error,
@@ -30,10 +31,8 @@ export enum TaskStatus {
 export type TaskOptions<T = unknown> = {
    key?: string;
    errorStack?: boolean;
-   loaderStack?: string;
+   loaderStack?: string | boolean;
    exclusive?: boolean;
-   startAuto?: boolean;
-   startAutoArgs?: ReadonlyArray<unknown>;
    dataSelector?: RecoilValue<T>;
 };
 
