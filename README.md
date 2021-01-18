@@ -225,6 +225,55 @@ function ComponentB(){
    // ....
 }
 ```
+### Immutable updaters
+Recoil atom set api need an immutable updater function, recoil-toolkit has a built in lib for common cases.
+Number atoms:
+```typescript
+import { inc, dec, decAbs, show, hide } from '/recoil-toolkit';
+
+export const counter = atom<number>({
+   key: 'counter',
+   default: 0,
+});
+
+set(counter, inc);     // set(counter, s=>s+1)
+set(counter, dec);     // set(counter, s=>s-1)
+set(counter, decAbs);  // dec to zero
+set(counter, show);    // alias for inc (loader stack)
+set(counter, hide);    // alias for decAbs (loader stack)
+```
+Boolean atoms:
+```typescript
+import { and, or, not, toggle } from '/recoil-toolkit';
+
+export const flag = atom<boolean>({
+   key: 'counter',
+   default: false,
+});
+
+set(flag, and(value));    // set(counter, s=>s && !!value)
+set(flag, or(value);      // set(counter, s=>s || !!value)
+set(flag, not);           // set(counter, s=>!s)
+set(flag, toggle);        // alias for not
+```
+Array atoms:
+```typescript
+import { push, pushTop, unshift, reverse, filter, updateObj, removeObj } from '/recoil-toolkit';
+
+export list flag = atom<any[]>({
+   key: 'counter',
+   default: [],
+});
+
+set(list, push(value));                 // push value to array and return a new array
+set(list, unshift(value);               // insert at top and return a new array
+set(list, pushTop(value);               // alias for unshift
+set(list, reverse);                     // revers array and return a new array
+set(list, filter(predicate));           // set(list, l=>l.filter(predicate)
+set(list, updateObj(value, match));     // update item, based on match ({id} for example)
+set(list, removeObj(value, match));     // remove item, based on match ({id} for example)
+```
+
 ## :boom: RecoilTunnel
 RecoilTunnel capture the current recoil store instance, and allow you to use it outside of React.
 https://codesandbox.io/s/k6ri5
