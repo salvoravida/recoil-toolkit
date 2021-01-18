@@ -225,8 +225,8 @@ function ComponentB(){
    // ....
 }
 ```
-### Immutable updaters
-Recoil atom set api need an immutable updater function, recoil-toolkit has a built in lib for common cases.
+### :wrench: Immutable updaters
+Recoil atom set api need an immutable updater function, `recoil-toolkit` has a built in lib for common cases.
 Number atoms:
 ```typescript
 import { inc, dec, decAbs, show, hide } from '/recoil-toolkit';
@@ -260,7 +260,7 @@ Array atoms:
 ```typescript
 import { push, pushTop, unshift, reverse, filter, updateObj, removeObj } from '/recoil-toolkit';
 
-export list flag = atom<any[]>({
+export const list = atom<any[]>({
    key: 'counter',
    default: [],
 });
