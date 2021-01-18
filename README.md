@@ -40,6 +40,7 @@ yarn add recoil recoil-toolkit
 - [State Management Pattern](https://github.com/salvoravida/recoil-toolkit#%EF%B8%8F-state-management-pattern)
   + [Tasks](https://github.com/salvoravida/recoil-toolkit#-tasks)
   + [Advanced Tasks](https://github.com/salvoravida/recoil-toolkit#-advanced-tasks)
+  + [Immutable updaters](https://github.com/salvoravida/recoil-toolkit#wrench-immutable-updaters)
 - [Recoil Tunnel](https://github.com/salvoravida/recoil-toolkit#boom-recoiltunnel)
 - [Redux Tunnel](https://github.com/salvoravida/recoil-toolkit#electron-reduxtunnel)
 - [Demo Todolist CRUD](https://github.com/salvoravida/recoil-toolkit#-demo-todolist-crud)
