@@ -34,9 +34,16 @@ npm i recoil recoil-toolkit
 # OR
 yarn add recoil recoil-toolkit
 ```
-## 📖 Documentation
+## 📖 Table of contents
 
-- [Api guide](https://github.com/salvoravida/recoil-toolkit/tree/master/docs) (work in progress...)
+- [Core Concepts](https://github.com/salvoravida/recoil-toolkit#%EF%B8%8F-core-concepts)
+- [State Management Pattern](https://github.com/salvoravida/recoil-toolkit#%EF%B8%8F-state-management-pattern)
+  + [Tasks](https://github.com/salvoravida/recoil-toolkit#-tasks)
+  + [Advanced Tasks](https://github.com/salvoravida/recoil-toolkit#-advanced-tasks)
+- [Recoil Tunnel](https://github.com/salvoravida/recoil-toolkit#boom-recoiltunnel)
+- [Redux Tunnel](https://github.com/salvoravida/recoil-toolkit#electron-reduxtunnel)
+- [Demo Todolist CRUD](https://github.com/salvoravida/recoil-toolkit#-demo-todolist-crud)
+- [Contributing](https://github.com/salvoravida/recoil-toolkit#-contributing)
 
 ## ❤️ Core Concepts 
 *read before the official recoil guide [recoiljs.org](https://recoiljs.org)*
