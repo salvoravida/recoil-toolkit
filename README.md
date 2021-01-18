@@ -174,16 +174,30 @@ import { useRecoilTask, useIsLoading } from 'recoil-toolkit';
 
 export const useAdvancedTask1 = () =>
    useRecoilTask(advancedTask1, [], {
-      loaderStack: 'global',
+      loaderStack: true,
    });
    
 export const useAdvancedTask2 = () =>
    useRecoilTask(advancedTask2, [], {
-      loaderStack: 'global',
+      loaderStack: true,
    });
 
 // somewhere in your ui ...
-const isGlobalLoading = useIsLoading('global');
+const isGlobalLoading = useIsLoading();
+```
+loaderStack can be a string, so you can have many loader stacks if needed. 
+```
+export const useAdvancedTask1 = () =>
+   useRecoilTask(advancedTask1, [], {
+      loaderStack: 'widgetA',
+   });
+export const useAdvancedTask2 = () =>
+   useRecoilTask(advancedTask2, [], {
+      loaderStack: 'widgetA',
+   });
+
+// somewhere in your ui ...
+const isWidgetALoading = useIsLoading('widgetA');
 ```
 Exclusive tasks (no double run):
 ```typescript
@@ -203,6 +217,7 @@ function ComponentB(){
    const {loading, data, error, execute} = useAdvancedExclusiveTask();
    // ....
 }
+// ComponentA,ComponentB read from the same task instance, that is exclusive. So if componentA already execute the task, componentB, will see the same loading, data, error...
 ```
 ## :boom: RecoilTunnel
 RecoilTunnel capture the current recoil store instance, and allow you to use it outside of React.
