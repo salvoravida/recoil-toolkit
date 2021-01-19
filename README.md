@@ -60,6 +60,10 @@ Simple use pattern with hooks:
 import { useRecoilState, useRecoilValue, useRecoilCallback } from 'recoil';
 import { useRecoilTask } from 'recoil-toolkit';
 
+const task = ({ set, reset, snapshot }) => async () => {
+   // await do something and update store
+};
+
 //in your component ...
 const [state, setState] = useRecoilState(atom);
 const value = useRecoilValue(atomOrSelector);
@@ -402,6 +406,8 @@ https://codesandbox.io/s/czobq
 |Can read Redux states |  💡 `recoil-toolkit`  | ✅  **yes**|
 |Use outside React  |  💡 `recoil-toolkit`   | ✅  **yes**|
 |Dev Tools |  ⚠️ wip...   | ✅  **yes**|
+
+Performance: Recoil subscriptions are on atom/selector updaters, while in Redux are on all actions. So if you have N connected component and dispatch an action that should trigger only one component, even if re-render is stopped by useSelector optimization, redux have to execute N subscribtion callbacks.
 
 ## 💥 Demo Todolist CRUD
 live: https://8u0zc.csb.app  src: [codesandbox](https://codesandbox.io/s/recoil-toolkit-main-demo-8u0zc) - [github](https://github.com/salvoravida/recoil-toolkit/tree/master/packages/demo-main)
