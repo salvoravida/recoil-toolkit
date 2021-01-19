@@ -86,7 +86,7 @@ Task is a core concept of `recoil-toolkit`.
 Basically it's an async function (Promise) that have access to the store with a closure of `({ set, reset, snapshot })`.
 
 ```javascript
-const task = ({ set, reset, snapshot }) => async ({}) => {
+const task = ({ set, reset, snapshot }) => async () => {
    // await do something and update store
 };
    
