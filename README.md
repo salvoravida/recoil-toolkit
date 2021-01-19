@@ -43,6 +43,7 @@ yarn add recoil recoil-toolkit
   + [Immutable updaters](https://github.com/salvoravida/recoil-toolkit#wrench-immutable-updaters)
 - [Recoil Tunnel](https://github.com/salvoravida/recoil-toolkit#boom-recoiltunnel)
 - [Redux Tunnel](https://github.com/salvoravida/recoil-toolkit#electron-reduxtunnel)
+- [Recoil vs Redux](https://github.com/salvoravida/recoil-toolkit#-recoil-vs-redux)
 - [Demo Todolist CRUD](https://github.com/salvoravida/recoil-toolkit#-demo-todolist-crud)
 - [Contributing](https://github.com/salvoravida/recoil-toolkit#-contributing)
 
@@ -373,17 +374,17 @@ https://codesandbox.io/s/czobq
 
 |  | Recoil | Redux |
 | --- |--- |---  |
-|Performance|          ✅  **O(1)** |    ❌  O(n)|
-|Concurrent Mode        |  ✅  **yes**       |      ❌  no|
-|Combine states   |  ✅  **graph**      |     ❌  tree|
+|Performance|          ✅  **O(1)** |    ❌ O(n)|
+|Concurrent Mode        |  ✅  **yes**       |      ❌ no|
+|Combine states   |  ✅  **graph**      |     ❌ tree|
 |Boilerplate       | ✅  **1x**     |       ❌  5x|
-|Hooks           |✅  **built in**     |    🔶`react-redux`
-|Async         |  ✅  **built in**     |   🔶 `redux-saga`|
-|Memoized       | ✅  **built in**     |💡`reselect`|
-|Dynamic store  | ✅  **built in**     |    💡`injectReducer`|
-|Can read Recoil states |  ✅  **yes**   | ❌  no|
-|Can read Redux states |  💡`recoil-toolkit`  | ✅  **yes**|
-|Use outside React  |  💡`recoil-toolkit`   | ✅  **yes**|
+|Hooks           |✅  **built in**     |    💡 `react-redux`
+|Async         |  ✅  **built in**     |   💡 `redux-saga`|
+|Memoized       | ✅  **built in**     |💡 `reselect`|
+|Dynamic store  | ✅  **built in**     |    💡 `injectReducer`|
+|Can read Recoil states |  ✅  **yes**   | ❌ no|
+|Can read Redux states |  💡 `recoil-toolkit`  | ✅  **yes**|
+|Use outside React  |  💡 `recoil-toolkit`   | ✅  **yes**|
 
 ## 💥 Demo Todolist CRUD
 live: https://8u0zc.csb.app  src: [codesandbox](https://codesandbox.io/s/recoil-toolkit-main-demo-8u0zc) - [github](https://github.com/salvoravida/recoil-toolkit/tree/master/packages/demo-main)
