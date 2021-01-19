@@ -155,6 +155,22 @@ export const NotificationItem = ({ id, text }: { id: number; text: string }) => 
    );
 };
 ```
+Tasks composition: simple create macro tasks by composing micro tasks
+```typescript
+export const removeItemTask = (rti: RecoilTaskInterface) => async (id: number) => {
+   // ...
+};
+
+export const editItemTask = (rti: RecoilTaskInterface) => async (item: Item) => {
+   // ...
+};
+
+// task composition example
+export const editAndRemoveTask = (rti: RecoilTaskInterface) => async (item: Item) => {
+   await editItemTask(rti)(item);
+   await removeItemTask(rti)(item.id);
+};
+```
 ### 🔨 Advanced Tasks
 Task can have options for advanced use case.
 ```typescript
