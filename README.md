@@ -369,7 +369,21 @@ ReactDOM.render(
 ```
 Note: you can use `react-redux` useSelector/useDispatch to access reduxStore, instead of useReduxSelector from `recoil-toolkit`, or both at same time.
 https://codesandbox.io/s/czobq
+## ⚡ Recoil vs Redux
 
+|  | Recoil | Redux |
+| --- |--- |---  |
+|Performance|          ✅  **O(1)** |    ❌  O(n)|
+|Concurrent Mode        |  ✅  **yes**       |      ❌  no|
+|Combine states   |  ✅  **graph**      |     ❌  tree|
+|Boilerplate       | ✅  **1x**     |       ❌  5x|
+|Hooks           |✅  **built in**     |    🔶`react-redux`
+|Async         |  ✅  **built in**     |   🔶 `redux-saga`|
+|Memoized       | ✅  **built in**     |💡`reselect`|
+|Dynamic store  | ✅  **built in**     |    💡`injectReducer`|
+|Can read Recoil states |  ✅  **yes**   | ❌  no|
+|Can read Redux states |  💡`recoil-toolkit`  | ✅  **yes**|
+|Use outside React  |  💡`recoil-toolkit`   | ✅  **yes**|
 
 ## 💥 Demo Todolist CRUD
 live: https://8u0zc.csb.app  src: [codesandbox](https://codesandbox.io/s/recoil-toolkit-main-demo-8u0zc) - [github](https://github.com/salvoravida/recoil-toolkit/tree/master/packages/demo-main)
