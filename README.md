@@ -385,6 +385,7 @@ https://codesandbox.io/s/czobq
 |Can read Recoil states |  ✅  **yes**   | ❌ no|
 |Can read Redux states |  💡 `recoil-toolkit`  | ✅  **yes**|
 |Use outside React  |  💡 `recoil-toolkit`   | ✅  **yes**|
+|Dev Tools |  ⚠️ wip...   | ✅  **yes**|
 
 ## 💥 Demo Todolist CRUD
 live: https://8u0zc.csb.app  src: [codesandbox](https://codesandbox.io/s/recoil-toolkit-main-demo-8u0zc) - [github](https://github.com/salvoravida/recoil-toolkit/tree/master/packages/demo-main)
