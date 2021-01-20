@@ -52,7 +52,7 @@ yarn add recoil recoil-toolkit
 
 - **Atom**: micro state 
 - **Selector** : derived state from atoms and other selectors
-- **Set**: function(microState, prev => next) dispatch micro updates
+- **Set**: function(atom, prev => next) set next atom value
 - **Task**: async function that do something and can read(get)/write(set) to/from the store.
 
 Simple use pattern with hooks:
@@ -408,6 +408,18 @@ https://codesandbox.io/s/czobq
 |Dev Tools |  ⚠️ wip...   | ✅  **yes**|
 
 Performance: Recoil subscriptions are on atom/selector updaters, while in Redux are on all actions. So if you have N connected component and dispatch an action that should trigger only one component, even if re-render is stopped by useSelector optimization, redux have to execute N subscribtion callbacks.
+
+Redux will never be cm safe, without performance issue (like re-rendering everything) because it hasn't the commit phase. 
+`dispatch` is sync (instantly executed) while `set` is async, it enqueues updaters.
+
+Atomic states design allow you more flexiblity while thinking your app as small autonomous building blocks (widgets) eventually interconnected if needed (atoms, selectors, graph connection)
+
+You could have less than 5x boilerplate with redux, with many wrappers like RTK or redux-query, but even that you will write less code more powerful witn recoil. Set(atom, value), Execute Task are much more easy concepts to managed with , than dispatch, actions, reducers, sagas, etc...
+
+ReduxTunnel (read redux states from recoil selectors) helps you to gradually migrate your redux monolithic app to recoil atomic states.
+
+DevTools: ok redux-devtools are much mature than recoilize or some others for recoil. But it is only a matter of time ...
+
 
 ## 💥 Demo Todolist CRUD
 live: https://8u0zc.csb.app  src: [codesandbox](https://codesandbox.io/s/recoil-toolkit-main-demo-8u0zc) - [github](https://github.com/salvoravida/recoil-toolkit/tree/master/packages/demo-main)
