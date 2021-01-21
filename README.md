@@ -48,7 +48,7 @@ yarn add recoil recoil-toolkit
 - [Contributing](https://github.com/salvoravida/recoil-toolkit#-contributing)
 
 ## ❤️ Core Concepts 
-*read before the official recoil guide [recoiljs.org](https://recoiljs.org)*
+*First of all: read the official recoil guide [recoiljs.org](https://recoiljs.org)*
 
 - **Atom**: micro state 
 - **Selector** : derived state from atoms and other selectors
