@@ -8,4 +8,5 @@ module.exports = {
    },
    collectCoverage: true,
    collectCoverageFrom: ['src/**/*.{tsx,ts}'],
+   coverageReporters: ['json-summary', 'text'],
 };

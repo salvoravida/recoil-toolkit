@@ -21,7 +21,7 @@
       "build:es6": "tsc -p tsconfigEs6.json",
       "build": "npm run build:clean && npm run build:es5 && npm run build:es6",
       "test" : "jest",
-      "test:coverage" : "jest --coverage",
+      "test:coverage" : "jest --coverage && npx make-coverage-badge --output-path=cov-badge.svg",
       "watch": "tsc -p tsconfigEs6.json -w",
       "prepare": "npm run build",
       "prepublish": "npm run build"
