@@ -21,7 +21,7 @@ export const flushGetStorePending = (name: string) => {
          if (recoilStores[name]) {
             // @ts-ignore
             p.resolve(recoilStores[name]);
-         } else p.reject('no store found');
+         } else p.reject(new Error('no store found'));
          p.pending = false;
       }
    });

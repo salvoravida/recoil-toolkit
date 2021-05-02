@@ -10,7 +10,7 @@ import {
 import { DEFAULT_STORE, flushGetStorePending, recoilStores } from './getStore';
 
 export const RecoilTunnel = memo(({ name = DEFAULT_STORE }: { name?: string }) => {
-   const storeName = useRef(name || DEFAULT_STORE);
+   const storeName = useRef(name);
 
    const getPromise = useRecoilCurrentGetPromise();
    const getLoadable = useRecoilCurrentGetLoadable();

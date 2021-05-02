@@ -9,9 +9,7 @@ export function useReduxSelector(selector: ReduxSelectorFunc) {
 }
 
 export function useReduxDispatch() {
-   const reduxContext = useContext(RecoilReduxContext);
-   if (!reduxContext) throw 'ReduxTunnel not found!';
-   const { store } = reduxContext;
-   if (!store) throw 'reduxStore not found!';
+   const { store } = useContext(RecoilReduxContext);
+   if (!store) throw new Error('ReduxTunnel with reduxStore not found!');
    return store.dispatch;
 }

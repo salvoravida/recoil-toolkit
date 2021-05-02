@@ -5,3 +5,4 @@ temp
 .idea
 build
 packages/demo-main/src/react-app-env.d.ts
+packages/recoil-toolkit/coverage/

@@ -4,8 +4,8 @@
    "description": "recoil-toolkit",
    "main": "./build/es5/index.js",
    "module": "./build/es6/index.js",
-   "typings": "./src/index.ts",
-   "types": "./src/index.ts",
+   "typings": "./build/es6/index.d.ts",
+   "types": "./build/es6/index.d.ts",
    "engines": {
       "node": ">=10",
       "npm": ">=6"
@@ -13,7 +13,6 @@
    "files": [
       "build",
       "src",
-      "index.d.ts",
       "README.md"
    ],
    "scripts": {
@@ -21,6 +20,8 @@
       "build:es5": "tsc -p tsconfigEs5.json",
       "build:es6": "tsc -p tsconfigEs6.json",
       "build": "npm run build:clean && npm run build:es5 && npm run build:es6",
+      "test" : "jest",
+      "test:coverage" : "jest --coverage",
       "watch": "tsc -p tsconfigEs6.json -w",
       "prepare": "npm run build",
       "prepublish": "npm run build"
@@ -55,7 +56,14 @@
       "tiny-invariant": "^1.1.0"
    },
    "devDependencies": {
+      "@testing-library/react": "^11.2.6",
+      "@testing-library/react-hooks":"^5.1.2",
+      "@types/jest": "^26.0.23",
+      "@types/react": "^17.0.4",
       "rimraf": "^3.0.2",
+      "redux": "^4.1.0",
+      "redux-mock-store": "^1.5.4",
+      "ts-jest": "^26.5.5",
       "typescript": "^4.1.3"
    }
 }

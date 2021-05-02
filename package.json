@@ -19,6 +19,8 @@
    },
    "homepage": "https://github.com/salvoravida/recoil-toolkit#readme",
    "scripts": {
+      "toolkit:test": "yarn workspace recoil-toolkit run test",
+      "toolkit:test:coverage": "yarn workspace recoil-toolkit run test:coverage",
       "toolkit:build": "yarn workspace recoil-toolkit run build",
       "toolkit:watch": "yarn workspace recoil-toolkit run watch",
       "demo-main:start": "yarn workspace recoil-toolkit-demo-main start"

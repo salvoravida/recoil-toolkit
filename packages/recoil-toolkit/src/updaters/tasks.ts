@@ -22,7 +22,7 @@ export const pushTask = ({
    } as Task);
 
 export const updateTaskDone = ({ data, id }: { data?: any; id: number }) =>
-   updateObj<Task, Partial<Task>>(
+   updateObj<Task>(
       { status: TaskStatus.Done, data, endAt: new Date() },
       {
          id,
@@ -30,6 +30,6 @@ export const updateTaskDone = ({ data, id }: { data?: any; id: number }) =>
    );
 
 export const updateTaskError = ({ error, id }: { error?: any; id: number }) =>
-   updateObj<Task, Partial<Task>>({ status: TaskStatus.Error, error, endAt: new Date() } as Task, {
+   updateObj<Task>({ status: TaskStatus.Error, error, endAt: new Date() } as Task, {
       id,
    });
