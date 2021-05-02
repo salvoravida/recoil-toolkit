@@ -1,15 +1,15 @@
-import React from 'react';
+import * as React from 'react';
 import { atom, RecoilRoot, useRecoilValue } from 'recoil';
 import { renderHook } from '@testing-library/react-hooks';
 import { act } from '@testing-library/react';
-import { RecoilTaskInterface } from '../types';
 import {
+   RecoilTaskInterface,
    useRecoilTask,
    delay,
    useRecoilRequest,
    useRecoilLocalTask,
    useRecoilAsyncSelector,
-} from '../index';
+} from '../src';
 
 const requestAtom = atom({
    key: 'requestAtom',

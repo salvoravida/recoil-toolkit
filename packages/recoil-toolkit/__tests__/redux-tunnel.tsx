@@ -1,12 +1,9 @@
-/* eslint-disable indent,no-use-before-define */
-// @ts-ignore
-import React from 'react';
+import * as React from 'react';
 import { act } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import { atom, RecoilRoot, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { createStore } from 'redux';
-import { inc } from '../_core';
-import { reduxSelector, ReduxTunnel, useReduxDispatch, useReduxSelector } from '../redux';
+import { inc, reduxSelector, ReduxTunnel, useReduxDispatch, useReduxSelector } from '../src';
 
 const getStore = () =>
    createStore((state: { count: number } = { count: 0 }, action) => {

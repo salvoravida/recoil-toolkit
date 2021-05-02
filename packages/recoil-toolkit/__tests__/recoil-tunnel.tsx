@@ -1,10 +1,8 @@
+import * as React from 'react';
 import { atom, RecoilRoot, useRecoilValue } from 'recoil';
 import { renderHook } from '@testing-library/react-hooks';
 import { act } from '@testing-library/react';
-// @ts-ignore
-// eslint-disable-next-line no-use-before-define
-import React from 'react';
-import { getRecoilStore, inc, RecoilTunnel } from '../_core';
+import { getRecoilStore, inc, RecoilTunnel } from '../src';
 
 const counterAtom = atom({
    key: 'counterAtom',

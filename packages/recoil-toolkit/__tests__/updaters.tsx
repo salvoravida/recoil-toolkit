@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { atom, RecoilRoot, useRecoilState } from 'recoil';
 import { renderHook } from '@testing-library/react-hooks';
 import { act } from '@testing-library/react';
@@ -19,7 +19,7 @@ import {
    filter,
    updateObj,
    removeObj,
-} from '../_core';
+} from '../src';
 
 const counterAtom = atom({
    key: 'counterAtom',

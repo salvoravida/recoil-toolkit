@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
-import { delay, uniqueId, useMountedRef } from '../_core';
+import { delay, uniqueId, useMountedRef } from '../src';
 
 describe('core - helpers ', () => {
    test('uniqueId increment', () => {

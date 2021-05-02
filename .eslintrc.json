@@ -28,6 +28,7 @@
       "no-unused-expressions": 0,
       "spaced-comment": 0,
       "no-throw-literal": "off",
+      "no-use-before-define": "off",
       "@typescript-eslint/ban-ts-comment": "off",
       "@typescript-eslint/no-use-before-define": ["error"],
       "@typescript-eslint/explicit-function-return-type": "off",
