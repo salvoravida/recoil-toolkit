@@ -21,7 +21,7 @@ describe('Recoil tunnel tests ', () => {
          <RecoilRoot>
             <RecoilTunnel />
             {children}
-         </RecoilRoot>
+        </RecoilRoot>
       );
       const { result } = renderHook(() => useCounterAtom(), { wrapper });
       expect(result.current).toEqual(0);
@@ -35,9 +35,9 @@ describe('Recoil tunnel tests ', () => {
    test('Can set recoil atom outside react with name ', () => {
       const wrapper = ({ children }) => (
          <RecoilRoot>
-            <RecoilTunnel name={'RecoilStoreTest1'} />
+            <RecoilTunnel name="RecoilStoreTest1" />
             {children}
-         </RecoilRoot>
+        </RecoilRoot>
       );
       const promise = getRecoilStore('RecoilStoreTest1');
       const { result } = renderHook(() => useCounterAtom(), { wrapper });

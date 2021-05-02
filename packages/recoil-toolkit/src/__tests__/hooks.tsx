@@ -3,7 +3,13 @@ import { atom, RecoilRoot, useRecoilValue } from 'recoil';
 import { renderHook } from '@testing-library/react-hooks';
 import { act } from '@testing-library/react';
 import { RecoilTaskInterface } from '../types';
-import { useRecoilTask, delay, useRecoilRequest } from '../index';
+import {
+   useRecoilTask,
+   delay,
+   useRecoilRequest,
+   useRecoilLocalTask,
+   useRecoilAsyncSelector,
+} from '../index';
 
 const requestAtom = atom({
    key: 'requestAtom',
@@ -22,7 +28,9 @@ const notifications = atom<{ id: number; text: string }[]>({
 
 const getNotificationsTask = ({ set }: RecoilTaskInterface) => async () => {
    await delay(500);
-   set(notifications, [{ id: 1, text: 'string' }]);
+   const data = [{ id: 1, text: 'string' }];
+   set(notifications, data);
+   return data;
 };
 
 const useNotificationsTask = () => {
@@ -55,5 +63,26 @@ describe('hooks tests ', () => {
       expect(result.current.loading).toEqual(true);
       await waitForNextUpdate();
       expect(result.current.data).toEqual([{ id: 1, text: 'string' }]);
+   });
+
+   test('useRecoilLocalTask', async () => {
+      const wrapper = ({ children }) => <RecoilRoot>{children}</RecoilRoot>;
+      const { result, waitForNextUpdate } = renderHook(
+         () => useRecoilLocalTask(getNotificationsTask, []),
+         { wrapper },
+      );
+      act(() => {
+         result.current.execute();
+      });
+      expect(result.current.loading).toEqual(true);
+      await waitForNextUpdate();
+      expect(result.current.data).toEqual([{ id: 1, text: 'string' }]);
+   });
+
+   test('useRecoilAsyncSelector', async () => {
+      const wrapper = ({ children }) => <RecoilRoot>{children}</RecoilRoot>;
+      const { result } = renderHook(() => useRecoilAsyncSelector(notifications), { wrapper });
+
+      expect(result.current.loading).toEqual(false);
    });
 });

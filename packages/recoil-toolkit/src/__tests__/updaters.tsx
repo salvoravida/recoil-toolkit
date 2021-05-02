@@ -17,7 +17,8 @@ import {
    push,
    pushTop,
    filter,
-   updateObj, removeObj,
+   updateObj,
+   removeObj,
 } from '../_core';
 
 const counterAtom = atom({
@@ -182,11 +183,10 @@ describe('updaters tests ', () => {
          { id: 2, name: 'name2' },
       ]);
       act(() => {
-         result.current.set(removeObj<ObjAtom>( { id:2}));
+         result.current.set(
+            removeObj<ObjAtom>({ id: 2 }),
+         );
       });
-      expect(result.current.value).toEqual([
-         { id: 1, name: 'newName' },
-
-      ]);
+      expect(result.current.value).toEqual([{ id: 1, name: 'newName' }]);
    });
 });

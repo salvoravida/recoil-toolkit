@@ -65,7 +65,7 @@ describe('Redux tunnel tests ', () => {
       const wrapper = ({ children }) => (
          <RecoilRoot>
             <ReduxTunnel reduxStore={getStore()}>{children}</ReduxTunnel>
-         </RecoilRoot>
+        </RecoilRoot>
       );
       const { result } = renderHook(() => useReduxCounter(), { wrapper });
       expect(result.current.reduxCount).toEqual(0);
