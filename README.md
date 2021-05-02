@@ -1,9 +1,8 @@
 # recoil-toolkit
 <p align="center">
   <a href="https://www.npmjs.com/package/recoil-toolkit"><img src="https://img.shields.io/npm/v/recoil-toolkit.svg?style=flat-square"></a>
-  <a href="https://www.npmjs.com/package/recoil-toolkit"><img src="https://img.shields.io/npm/dt/recoil-toolkit.svg?style=flat-square"></a><br/>
+  <a href="https://www.npmjs.com/package/recoil-toolkit"><img src="https://img.shields.io/npm/dt/recoil-toolkit.svg?style=flat-square"></a>
   <a href="https://www.npmjs.com/package/recoil-toolkit"><img src="./packages/recoil-toolkit/cov-badge.svg"></a><br/>
-
 </p>
 
 Recoil is the next generation state management library: CM safe, memoized, atomic, transactional. [recoiljs.org](https://recoiljs.org)
