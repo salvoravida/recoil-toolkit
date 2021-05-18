@@ -8,7 +8,12 @@ export const useRecoilCurrentGetLoadable = (): RecoilGetLoadable =>
    useRecoilCallback(({ snapshot: { getLoadable } }) => getLoadable, []);
 
 export const useRecoilCurrentSnap = (): (() => Snapshot) =>
-   useRecoilCallback(({ snapshot }) => () => snapshot, []);
+   useRecoilCallback(
+      ({ snapshot }) =>
+         () =>
+            snapshot,
+      [],
+   );
 
 export const useRecoilCurrentSet = () => useRecoilCallback(({ set }) => set, []);
 

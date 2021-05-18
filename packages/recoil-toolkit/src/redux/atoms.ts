@@ -23,11 +23,13 @@ export const reduxState = atom<unknown>({
 
 const reduxSelectorFamily = selectorFamily<unknown, number>({
    key: 'recoil-toolkit/reduxSelectors',
-   get: (selectorId: number) => ({ get }) => {
-      const currentReduxState = get(reduxState);
-      const selectorFunc = reduxSelectorsMap.get(selectorId);
-      return currentReduxState && selectorFunc ? selectorFunc(currentReduxState) : undefined;
-   },
+   get:
+      (selectorId: number) =>
+      ({ get }) => {
+         const currentReduxState = get(reduxState);
+         const selectorFunc = reduxSelectorsMap.get(selectorId);
+         return currentReduxState && selectorFunc ? selectorFunc(currentReduxState) : undefined;
+      },
 });
 
 export function reduxSelector(selector: ReduxSelectorFunc) {

@@ -37,7 +37,7 @@ export const editItemTask = ({ set }: RecoilTaskInterface) => async (item: Item)
       set(itemStatus(item.id), ItemStatus.Saving);
       await putRemoteTodoItem(item);
       set(itemStatus(item.id), ItemStatus.Idle);
-      set(todoList, updateObj(item, { id: item.id }));
+      set(todoList, updateObj<Item>(item, { id: item.id }));
    } catch (e) {
       set(itemStatus(item.id), ItemStatus.Editing);
       throw e;

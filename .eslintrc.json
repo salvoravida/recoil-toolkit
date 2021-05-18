@@ -14,7 +14,9 @@
       "jest": true
    },
    "rules": {
-      "indent": ["error", 3],
+      "indent": ["error", 3, { "SwitchCase": 1 }],
+      "react/jsx-indent": ["error", 3],
+      "react/jsx-indent-props": ["error", 3],
       "no-underscore-dangle": "off",
       "camelcase": 0,
       "import/prefer-default-export": 0,

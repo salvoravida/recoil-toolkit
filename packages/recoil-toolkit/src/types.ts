@@ -28,29 +28,29 @@ export enum TaskStatus {
    Done,
 }
 
-export type TaskOptions<T = unknown> = {
+export type TaskOptions<Data = unknown> = {
    key?: string;
    errorStack?: boolean;
    loaderStack?: string | boolean;
    exclusive?: boolean;
-   dataSelector?: RecoilValue<T>;
+   dataSelector?: RecoilValue<Data>;
 };
 
-export type Task = {
+export type Task<Data = unknown, Error = unknown> = {
    id: number;
    status: TaskStatus;
    args: ReadonlyArray<unknown>;
    startedAt: Date;
    endAt?: Date;
-   error?: any;
-   data?: any;
+   error?: Error;
+   data?: Data;
    options?: TaskOptions;
-   extra?: any;
+   extra?: unknown;
 };
 
 export type ErrorAtom = {
    id: number;
    key?: string;
-   error: any;
+   error?: unknown;
    taskId?: number;
 };

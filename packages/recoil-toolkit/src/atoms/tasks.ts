@@ -13,18 +13,22 @@ export const runningTasks = selector<Task[]>({
 
 export const taskById = selectorFamily<Task | undefined, number>({
    key: 'recoil-toolkit/taskById',
-   get: (id: number) => ({ get }) => {
-      return get(tasks).find(t => t.id === id);
-   },
+   get:
+      (id: number) =>
+      ({ get }) => {
+         return get(tasks).find(t => t.id === id);
+      },
 });
 
 export const lastTaskByKey = selectorFamily<Task | undefined, string>({
    key: 'recoil-toolkit/lastTaskType',
-   get: (key: string) => ({ get }) => {
-      return get(tasks)
-         .filter(t => t?.options?.key === key)
-         .pop();
-   },
+   get:
+      (key: string) =>
+      ({ get }) => {
+         return get(tasks)
+            .filter(t => t?.options?.key === key)
+            .pop();
+      },
 });
 
 export const useRunningTasks = () => useRecoilValue(runningTasks);

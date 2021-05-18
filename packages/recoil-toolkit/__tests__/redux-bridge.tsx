@@ -3,7 +3,7 @@ import { act } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import { atom, RecoilRoot, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { createStore } from 'redux';
-import { inc, reduxSelector, ReduxTunnel, useReduxDispatch, useReduxSelector } from '../src';
+import { inc, reduxSelector, ReduxBridge, useDispatch, useSelector } from '../src';
 
 const getStore = () =>
    createStore((state: { count: number } = { count: 0 }, action) => {
@@ -36,8 +36,8 @@ const maxCounterType = selector<string>({
 });
 
 function useReduxCounter() {
-   const reduxCount = useReduxSelector(getReduxCount);
-   const dispatch = useReduxDispatch();
+   const reduxCount = useSelector(getReduxCount);
+   const dispatch = useDispatch();
    const [recoilCounter, setCounter] = useRecoilState(counterAtom);
    const maxType = useRecoilValue(maxCounterType);
    const incrementRedux = () => dispatch({ type: 'INCREMENT' });
@@ -51,18 +51,19 @@ function useReduxCounter() {
    };
 }
 
-describe('Redux tunnel tests ', () => {
-   test('ReduxTunnel not found error', () => {
+describe('ReduxBridge tests ', () => {
+   test('ReduxBridge not found error', () => {
       const wrapper = ({ children }) => <RecoilRoot>{children}</RecoilRoot>;
       const { result } = renderHook(() => useReduxCounter(), { wrapper });
-      expect(result.error).toEqual(Error('ReduxTunnel with reduxStore not found!'));
+      expect(result.error).toEqual(Error('ReduxBridge with store not found!'));
    });
 
    test('Recoil selector can access redux store', () => {
+      const store = getStore();
       const wrapper = ({ children }) => (
          <RecoilRoot>
-            <ReduxTunnel reduxStore={getStore()}>{children}</ReduxTunnel>
-        </RecoilRoot>
+            <ReduxBridge store={store}>{children}</ReduxBridge>
+         </RecoilRoot>
       );
       const { result } = renderHook(() => useReduxCounter(), { wrapper });
       expect(result.current.reduxCount).toEqual(0);

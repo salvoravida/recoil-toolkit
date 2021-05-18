@@ -18,11 +18,13 @@ export const lastError = selector<ErrorAtom | undefined>({
 
 export const lastErrorType = selectorFamily<ErrorAtom | undefined, string>({
    key: 'recoil-toolkit/lastErrorType',
-   get: (key: string) => ({ get }) => {
-      return get(errorStack)
-         .filter(e => e.key === key)
-         .pop();
-   },
+   get:
+      (key: string) =>
+      ({ get }) => {
+         return get(errorStack)
+            .filter(e => e.key === key)
+            .pop();
+      },
 });
 
 export const useLastError = (key?: string) => useRecoilValue(key ? lastErrorType(key) : lastError);

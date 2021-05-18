@@ -1,21 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { RecoilRoot } from 'recoil';
-import { RecoilTunnel, ReduxTunnel } from 'recoil-toolkit';
+import { RecoilTunnel, ReduxBridge } from 'recoil-toolkit';
 import { ChakraProvider } from '@chakra-ui/react';
-import App from './App';
-import { reduxStore } from './reduxStore';
 import { CurrentTime } from './CurrentTime';
+import { store } from './store';
+
+import App from './App';
 
 ReactDOM.render(
    <RecoilRoot>
       <RecoilTunnel />
-      <ReduxTunnel reduxStore={reduxStore}>
+      <ReduxBridge store={store}>
          <CurrentTime />
          <ChakraProvider>
             <App />
          </ChakraProvider>
-      </ReduxTunnel>
+      </ReduxBridge>
    </RecoilRoot>,
    document.getElementById('root'),
 );

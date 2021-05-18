@@ -4,12 +4,12 @@ import { reduxSelector } from './atoms';
 import { ReduxSelectorFunc } from './types';
 import { RecoilReduxContext } from './context';
 
-export function useReduxSelector(selector: ReduxSelectorFunc) {
+export function useSelector(selector: ReduxSelectorFunc) {
    return useRecoilValue(reduxSelector(selector));
 }
 
-export function useReduxDispatch() {
+export function useDispatch() {
    const { store } = useContext(RecoilReduxContext);
-   if (!store) throw new Error('ReduxTunnel with reduxStore not found!');
+   if (!store) throw new Error('ReduxBridge with store not found!');
    return store.dispatch;
 }

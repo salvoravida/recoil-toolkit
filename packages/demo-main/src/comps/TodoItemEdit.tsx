@@ -42,7 +42,7 @@ export function TodoItemEdit({ id, text }: Item) {
                         </Button>
                      </InputRightElement>
                   </InputGroup>
-                  <Text color="red.300">{editTask.error || ''}</Text>
+                  <Text color="red.300">{editTask.error as string || ''}</Text>
                </Box>
             ) : (
                <Text

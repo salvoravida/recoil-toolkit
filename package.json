@@ -19,16 +19,16 @@
    },
    "homepage": "https://github.com/salvoravida/recoil-toolkit#readme",
    "scripts": {
-      "toolkit:test": "yarn workspace recoil-toolkit run test",
-      "toolkit:test:coverage": "yarn workspace recoil-toolkit run test:coverage",
       "toolkit:build": "yarn workspace recoil-toolkit run build",
       "toolkit:watch": "yarn workspace recoil-toolkit run watch",
+      "toolkit:test": "yarn workspace recoil-toolkit run test",
+      "toolkit:test:coverage": "yarn workspace recoil-toolkit run test:coverage",
       "demo-main:start": "yarn workspace recoil-toolkit-demo-main start"
    },
    "devDependencies": {
       "@typescript-eslint/eslint-plugin": "^4.22.0",
       "@typescript-eslint/parser": "^4.22.0",
-      "eslint": "^7.17.0",
+      "eslint": "^7.26.0",
       "eslint-config-airbnb": "^18.2.1",
       "eslint-config-prettier": "^7.1.0",
       "eslint-plugin-import": "^2.22.1",
@@ -36,7 +36,7 @@
       "eslint-plugin-react": "^7.22.0",
       "eslint-plugin-react-hooks": "^4.2.0",
       "react": "^17.0.1",
-      "recoil": "npm:@salvoravida/recoil@^0.1.4",
+      "recoil": "^0.3.0",
       "rimraf": "^3.0.2",
       "prettier": "^2.2.1",
       "typescript": "^4.1.3"

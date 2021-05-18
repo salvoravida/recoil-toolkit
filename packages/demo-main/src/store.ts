@@ -1,6 +1,8 @@
 import { createStore } from 'redux';
 
-export const reduxStore = createStore((state: { count: number } = { count: 0 }, action) => {
+export type State = { count: number };
+
+export const store = createStore((state: State = { count: 0 }, action) => {
    switch (action.type) {
       case 'INCREMENT':
          return {

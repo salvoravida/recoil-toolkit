@@ -17,8 +17,8 @@
       "react": "^17.0.1",
       "react-dom": "^17.0.1",
       "react-scripts": "4.0.1",
-      "recoil": "npm:@salvoravida/recoil@^0.1.4",
-      "recoil-toolkit": "^0.0.3",
+      "recoil": "^0.3.0",
+      "recoil-toolkit": "^0.1.0",
       "redux": "^4.0.5"
    },
    "devDependencies": {

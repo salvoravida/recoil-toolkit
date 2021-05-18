@@ -19,7 +19,7 @@ describe('Recoil tunnel tests ', () => {
          <RecoilRoot>
             <RecoilTunnel />
             {children}
-        </RecoilRoot>
+         </RecoilRoot>
       );
       const { result } = renderHook(() => useCounterAtom(), { wrapper });
       expect(result.current).toEqual(0);

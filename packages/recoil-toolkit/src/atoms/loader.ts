@@ -9,7 +9,10 @@ export const loader = atomFamily<number, string>({
 
 export const isLoading = selectorFamily<boolean, string>({
    key: 'recoil-toolkit/loader/isLoading',
-   get: (key: string) => ({ get }) => get(loader(key)) > 0,
+   get:
+      (key: string) =>
+      ({ get }) =>
+         get(loader(key)) > 0,
 });
 
 export const useIsLoading = (key?: string) => useRecoilValue(isLoading(key || DEFAULT_LOADER));

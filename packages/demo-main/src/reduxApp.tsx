@@ -1,26 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { atom, RecoilRoot, useRecoilValue, useRecoilState, selector } from 'recoil';
-import { inc, reduxSelector, ReduxTunnel, useReduxDispatch, useReduxSelector } from 'recoil-toolkit';
+import { inc, reduxSelector, ReduxBridge, useDispatch, useSelector } from 'recoil-toolkit';
+import { store, State } from './store';
 
-//reduxStore is a simple counter { counter:0 }
-import { reduxStore } from './reduxStore';
-const getReduxCount = (s: { count: number }) => s.count;
+const getReduxCount = (s: State) => s.count;
 
 const counterAtom = atom({ key: 'counter', default: 0 });
+
 const maxCounterType = selector<string>({
    key: 'maxCounter',
    get: ({ get }) => {
       const re = get(counterAtom);
-      //reduxSelector allow recoil to reactive on redux selector change (memoized)
       const rx = get(reduxSelector(getReduxCount)) as number;
       return re === rx ? '' : re > rx ? 'recoil' : 'redux';
    },
 });
 
 function App() {
-   const reduxCount = useReduxSelector(getReduxCount);
-   const dispatch = useReduxDispatch();
+   const reduxCount = useSelector(getReduxCount);
+   const dispatch = useDispatch();
    const [counter, setCounter] = useRecoilState(counterAtom);
    const maxType = useRecoilValue(maxCounterType);
    return (
@@ -40,9 +39,9 @@ function App() {
 
 ReactDOM.render(
    <RecoilRoot>
-      <ReduxTunnel reduxStore={reduxStore}>
+      <ReduxBridge store={store}>
          <App />
-      </ReduxTunnel>
+      </ReduxBridge>
    </RecoilRoot>,
    document.getElementById('root'),
 );

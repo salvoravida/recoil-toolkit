@@ -17,7 +17,7 @@ What you get out of the box:
 - ❌ error states / error stack
 - :atom: immutable updaters
 - :boom: RecoilTunnel -> read/update a recoilStore outside of React
-- :electron: ReduxTunnel -> mix redux and recoil selectors (gradually upgrade redux apps to recoil!)
+- :electron: ReduxBridge -> mix redux and recoil selectors (gradually upgrade redux apps to recoil!)
 
 and what is coming soon ...
 - 🔜 advanced task manager - chrome dev tools
@@ -43,7 +43,7 @@ yarn add recoil recoil-toolkit
   + [Advanced Tasks](https://github.com/salvoravida/recoil-toolkit#-advanced-tasks)
   + [Immutable updaters](https://github.com/salvoravida/recoil-toolkit#wrench-immutable-updaters)
 - [Recoil Tunnel](https://github.com/salvoravida/recoil-toolkit#boom-recoiltunnel)
-- [Redux Tunnel](https://github.com/salvoravida/recoil-toolkit#electron-reduxtunnel)
+- [Redux Tunnel](https://github.com/salvoravida/recoil-toolkit#electron-reduxbridge)
 - [Recoil vs Redux](https://github.com/salvoravida/recoil-toolkit#-recoil-vs-redux)
 - [Demo Todolist CRUD](https://github.com/salvoravida/recoil-toolkit#-demo-todolist-crud)
 - [Contributing](https://github.com/salvoravida/recoil-toolkit#-contributing)
@@ -333,7 +333,7 @@ getRecoilStore().then(store => {
 });
 ```
 
-## :electron: ReduxTunnel
+## :electron: ReduxBridge
 Read, Write from/to Redux. Mix redux and recoil selectors (gradually upgrade redux apps to recoil!)
 https://zhb1x.csb.app/ - src: https://codesandbox.io/s/zhb1x
 
@@ -341,10 +341,10 @@ https://zhb1x.csb.app/ - src: https://codesandbox.io/s/zhb1x
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { atom, RecoilRoot, useRecoilValue, useRecoilState, selector } from 'recoil';
-import { inc, reduxSelector, ReduxTunnel, useReduxDispatch, useReduxSelector } from 'recoil-toolkit';
+import { inc, reduxSelector, ReduxBridge, useDispatch, useSelector } from 'recoil-toolkit';
 
-//reduxStore is a simple counter { counter:0 }
-import { reduxStore } from './reduxStore';
+//store is a simple counter { counter:0 }
+import { store } from './store';
 const getReduxCount = (s: { count: number }) => s.count;
 
 const counterAtom = atom({ key: 'counter', default: 0 });
@@ -359,10 +359,9 @@ const maxCounterType = selector<string>({
 });
 
 function App() {
-   const reduxCount = useReduxSelector(getReduxCount);  
-   //useReduxSelector it's an alias of useRecoilValue(reduxSelector(sel))
-   //const reduxCount = useRecoilValue(reduxSelector(getReduxCount)); 
-   const dispatch = useReduxDispatch();
+   const reduxCount = useSelector(getReduxCount);  
+
+   const dispatch = useDispatch();
    const [counter, setCounter] = useRecoilState(counterAtom);
    const maxType = useRecoilValue(maxCounterType);
    return (
@@ -382,14 +381,14 @@ function App() {
 
 ReactDOM.render(
    <RecoilRoot>
-      <ReduxTunnel reduxStore={reduxStore}>
+      <ReduxBridge store={store}>
          <App />
-      </ReduxTunnel>
+      </ReduxBridge>
    </RecoilRoot>,
    document.getElementById('root'),
 );
 ```
-Note: you can use `react-redux` useSelector/useDispatch to access reduxStore, instead of useReduxSelector from `recoil-toolkit`, or both at same time.
+Note: you can use `react-redux` useSelector/useDispatch to access store, instead of useSelector from `recoil-toolkit`, or both at same time.
 https://codesandbox.io/s/czobq
 ## ⚡ Recoil vs Redux
 
@@ -417,7 +416,7 @@ Atomic states design allow you more flexiblity while thinking your app as small 
 
 You could have less than 5x boilerplate with redux, with many wrappers like RTK or redux-query, but even that you will write less code more powerful witn recoil. Set(atom, value), Execute Task are much more easy concepts to managed with , than dispatch, actions, reducers, sagas, etc...
 
-ReduxTunnel (read redux states from recoil selectors) helps you to gradually migrate your redux monolithic app to recoil atomic states.
+ReduxBridge (read redux states from recoil selectors) helps you to gradually migrate your redux monolithic app to recoil atomic states.
 
 DevTools: ok redux-devtools are much mature than recoilize or some others for recoil. But it is only a matter of time ...
 

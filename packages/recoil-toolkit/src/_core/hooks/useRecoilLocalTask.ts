@@ -21,35 +21,36 @@ export function useRecoilLocalTask<Args extends ReadonlyArray<unknown>, Return>(
       success: false,
    });
    const execute = useRecoilCallback(
-      (b: CallbackInterface) => async (...args: Args) => {
-         try {
-            if (mounted.current) {
-               setTask(t => ({
-                  ...t,
-                  error: undefined,
-                  success: false,
-                  loading: true,
-               }));
+      (b: CallbackInterface) =>
+         async (...args: Args) => {
+            try {
+               if (mounted.current) {
+                  setTask(t => ({
+                     ...t,
+                     error: undefined,
+                     success: false,
+                     loading: true,
+                  }));
+               }
+               const data = await taskCreator(b)(...args);
+               if (mounted.current) {
+                  setTask(t => ({
+                     ...t,
+                     data,
+                     success: true,
+                     loading: false,
+                  }));
+               }
+            } catch (error) {
+               if (mounted.current) {
+                  setTask(t => ({
+                     ...t,
+                     error,
+                     loading: false,
+                  }));
+               }
             }
-            const data = await taskCreator(b)(...args);
-            if (mounted.current) {
-               setTask(t => ({
-                  ...t,
-                  data,
-                  success: true,
-                  loading: false,
-               }));
-            }
-         } catch (error) {
-            if (mounted.current) {
-               setTask(t => ({
-                  ...t,
-                  error,
-                  loading: false,
-               }));
-            }
-         }
-      },
+         },
       deps,
    );
    return { ...task, execute };

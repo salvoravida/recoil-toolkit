@@ -12,10 +12,10 @@ import {
 import { pushTask, updateTaskDone, updateTaskError, pushError } from '../updaters';
 import { TaskOptions, TaskStatus, RecoilTaskInterface } from '../types';
 
-export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return, T>(
+export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return = void, Data = unknown>(
    taskCreator: (a: RecoilTaskInterface) => (...args: Args) => Return,
    deps?: ReadonlyArray<unknown>,
-   options?: TaskOptions<T>,
+   options?: TaskOptions<Data>,
 ) {
    const optionsRef = useRef(options || {}); //options freeze
    const { key, errorStack, loaderStack, exclusive, dataSelector } = optionsRef.current;
@@ -27,39 +27,42 @@ export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return, T>(
    const taskId = useRef(0);
    const task = useRecoilValue(exclusive ? lastTaskByKey(key || '') : taskById(taskId.current));
 
-   const taskData: T = dataSelector ? useRecoilValue<T>(dataSelector) : task && task.data;
+   const taskData = dataSelector ? useRecoilValue(dataSelector) : task?.data;
 
    const execute = useRecoilCallback(
-      ({ set, snapshot, ...rest }: RecoilTaskInterface) => async (...args: Args) => {
-         if (exclusive && key) {
-            const t = snapshot.getLoadable(lastTaskByKey(key)).getValue();
-            if (t && t.status === TaskStatus.Running) return;
-         }
-         const id = uniqueId();
-         taskId.current = id;
-         try {
-            if (loaderStack) set(loader(loaderStack === true ? DEFAULT_LOADER : loaderStack), show);
-            set(tasks, pushTask({ id, options, args }));
-            const data = await taskCreator({ set, snapshot, ...rest })(...args);
-            set(tasks, updateTaskDone({ data, id }));
-         } catch (error) {
-            set(tasks, updateTaskError({ error, id }));
-            if (errorStack) {
-               set(errorStackAtom, pushError({ key, error, taskId: id }));
+      ({ set, snapshot, ...rest }: RecoilTaskInterface) =>
+         async (...args: Args) => {
+            if (exclusive && key) {
+               const t = snapshot.getLoadable(lastTaskByKey(key)).getValue();
+               if (t && t.status === TaskStatus.Running) return;
             }
-         } finally {
-            if (loaderStack) set(loader(loaderStack === true ? DEFAULT_LOADER : loaderStack), hide);
-         }
-      },
+            const id = uniqueId();
+            taskId.current = id;
+            try {
+               if (loaderStack)
+                  set(loader(loaderStack === true ? DEFAULT_LOADER : loaderStack), show);
+               set(tasks, pushTask({ id, options, args }));
+               const data = await taskCreator({ set, snapshot, ...rest })(...args);
+               set(tasks, updateTaskDone({ data, id }));
+            } catch (error) {
+               set(tasks, updateTaskError({ error, id }));
+               if (errorStack) {
+                  set(errorStackAtom, pushError({ key, error, taskId: id }));
+               }
+            } finally {
+               if (loaderStack)
+                  set(loader(loaderStack === true ? DEFAULT_LOADER : loaderStack), hide);
+            }
+         },
       deps,
    );
 
    return {
-      loading: task && task.status === TaskStatus.Running,
+      loading: task?.status === TaskStatus.Running,
       execute,
-      error: task && task.error,
-      data: taskData,
-      success: task && task.status === TaskStatus.Done,
+      error: task?.error,
+      data: taskData as Data,
+      success: task?.status === TaskStatus.Done,
       taskId: taskId.current,
    };
 }
