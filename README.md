@@ -337,55 +337,53 @@ getRecoilStore().then(store => {
 Read, Write from/to Redux. Mix redux and recoil selectors (gradually upgrade redux apps to recoil!)
 https://zhb1x.csb.app/ - src: https://codesandbox.io/s/zhb1x
 
-```jsx
+```typescript-jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { atom, RecoilRoot, useRecoilValue, useRecoilState, selector } from 'recoil';
 import { inc, reduxSelector, ReduxBridge, useDispatch, useSelector } from 'recoil-toolkit';
+import { store, State } from './store';
 
-//store is a simple counter { counter:0 }
-import { store } from './store';
-const getReduxCount = (s: { count: number }) => s.count;
+const getReduxCount = (s: State) => s.count;
 
 const counterAtom = atom({ key: 'counter', default: 0 });
+
 const maxCounterType = selector<string>({
-   key: 'maxCounter',
-   get: ({ get }) => {
-      const re = get(counterAtom);
-      //reduxSelector allow recoil to reactive on redux selector change (memoized)
-      const rx = get(reduxSelector(getReduxCount)) as number;
-      return re === rx ? '' : re > rx ? 'recoil' : 'redux';
-   },
+  key: 'maxCounter',
+  get: ({ get }) => {
+    const re = get(counterAtom);
+    const rx = get(reduxSelector(getReduxCount)) as number;
+    return re === rx ? '' : re > rx ? 'recoil' : 'redux';
+  },
 });
 
 function App() {
-   const reduxCount = useSelector(getReduxCount);  
-
-   const dispatch = useDispatch();
-   const [counter, setCounter] = useRecoilState(counterAtom);
-   const maxType = useRecoilValue(maxCounterType);
-   return (
-      <>
-         <div>
-            reduxCounter : {reduxCount}
-            <button onClick={() => dispatch({ type: 'INCREMENT' })}>dispatch</button>
-         </div>
-         <div>
-            recoilCounter : {counter}
-            <button onClick={() => setCounter(inc)}>dispatch</button>
-         </div>
-         <div>{maxType}</div>
-      </>
-   );
+  const reduxCount = useSelector(getReduxCount);
+  const dispatch = useDispatch();
+  const [counter, setCounter] = useRecoilState(counterAtom);
+  const maxType = useRecoilValue(maxCounterType);
+  return (
+          <>
+            <div>
+              reduxCounter : {reduxCount}
+              <button onClick={() => dispatch({ type: 'INCREMENT' })}>dispatch</button>
+            </div>
+            <div>
+              recoilCounter : {counter}
+              <button onClick={() => setCounter(inc)}>dispatch</button>
+            </div>
+            <div>{maxType}</div>
+          </>
+  );
 }
 
 ReactDOM.render(
-   <RecoilRoot>
-      <ReduxBridge store={store}>
-         <App />
-      </ReduxBridge>
-   </RecoilRoot>,
-   document.getElementById('root'),
+        <RecoilRoot>
+          <ReduxBridge store={store}>
+            <App />
+          </ReduxBridge>
+        </RecoilRoot>,
+        document.getElementById('root'),
 );
 ```
 Note: you can use `react-redux` useSelector/useDispatch to access store, instead of useSelector from `recoil-toolkit`, or both at same time.
