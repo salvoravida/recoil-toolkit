@@ -43,7 +43,7 @@ yarn add recoil recoil-toolkit
   + [Advanced Tasks](https://github.com/salvoravida/recoil-toolkit#-advanced-tasks)
   + [Immutable updaters](https://github.com/salvoravida/recoil-toolkit#wrench-immutable-updaters)
 - [Recoil Tunnel](https://github.com/salvoravida/recoil-toolkit#boom-recoiltunnel)
-- [Redux Tunnel](https://github.com/salvoravida/recoil-toolkit#electron-reduxbridge)
+- [Redux Bridge](https://github.com/salvoravida/recoil-toolkit#electron-reduxbridge)
 - [Recoil vs Redux](https://github.com/salvoravida/recoil-toolkit#-recoil-vs-redux)
 - [Demo Todolist CRUD](https://github.com/salvoravida/recoil-toolkit#-demo-todolist-crud)
 - [Contributing](https://github.com/salvoravida/recoil-toolkit#-contributing)
