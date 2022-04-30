@@ -1,6 +1,6 @@
 {
    "name": "recoil-toolkit",
-   "version": "0.1.0",
+   "version": "0.1.1",
    "description": "recoil-toolkit",
    "main": "./build/es5/index.js",
    "module": "./build/es6/index.js",
@@ -44,8 +44,8 @@
    },
    "homepage": "https://github.com/salvoravida/recoil-toolkit#readme",
    "peerDependencies": {
-      "react": "^16.8.3 || ^17",
-      "recoil": "^0.3.0"
+      "react": "^16.8.3 || ^17 || ^18",
+      "recoil": "^0.7.2"
    },
    "peerDependenciesMeta": {
       "redux": {
@@ -63,6 +63,6 @@
       "rimraf": "^3.0.2",
       "redux": "^4.1.0",
       "ts-jest": "^26.5.5",
-      "typescript": "^4.1.3"
+      "typescript": "^4.6.4"
    }
 }

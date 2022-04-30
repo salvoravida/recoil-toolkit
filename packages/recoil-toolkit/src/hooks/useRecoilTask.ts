@@ -1,5 +1,5 @@
 import { useRecoilCallback, useRecoilValue } from 'recoil';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { uniqueId, hide, show } from '../_core';
 import {
    lastTaskByKey,
@@ -24,8 +24,8 @@ export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return = void
       throw 'Exclusive tasks must have a key!';
    }
 
-   const taskId = useRef(0);
-   const task = useRecoilValue(exclusive ? lastTaskByKey(key || '') : taskById(taskId.current));
+   const [taskId, setTaskId] = useState(0);
+   const task = useRecoilValue(exclusive ? lastTaskByKey(key || '') : taskById(taskId));
 
    const taskData = dataSelector ? useRecoilValue(dataSelector) : task?.data;
 
@@ -37,7 +37,7 @@ export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return = void
                if (t && t.status === TaskStatus.Running) return;
             }
             const id = uniqueId();
-            taskId.current = id;
+            setTaskId(id);
             try {
                if (loaderStack)
                   set(loader(loaderStack === true ? DEFAULT_LOADER : loaderStack), show);
@@ -63,6 +63,6 @@ export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return = void
       error: task?.error,
       data: taskData as Data,
       success: task?.status === TaskStatus.Done,
-      taskId: taskId.current,
+      taskId,
    };
 }
