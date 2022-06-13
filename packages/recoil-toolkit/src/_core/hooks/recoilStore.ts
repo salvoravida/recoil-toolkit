@@ -19,4 +19,6 @@ export const useRecoilCurrentSet = () => useRecoilCallback(({ set }) => set, [])
 
 export const useRecoilCurrentReset = () => useRecoilCallback(({ reset }) => reset, []);
 
+export const useRecoilCurrentRefresh = () => useRecoilCallback(({ refresh }) => refresh, []);
+
 export const useRecoilCurrentGet = useRecoilCurrentGetPromise;

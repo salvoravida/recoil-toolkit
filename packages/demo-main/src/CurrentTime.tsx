@@ -1,6 +1,6 @@
 import React from 'react';
 import { atom, useRecoilValue } from 'recoil';
-import { getRecoilStore } from 'recoil-toolkit';
+import { delay, getRecoilStore, set } from 'recoil-toolkit';
 
 const timeAtom = atom({
    key: 'timeAtom',
@@ -16,9 +16,14 @@ export const CurrentTime = () => {
    );
 };
 
+export async function clockService(){
+   while (true){
+      await delay(999);
+      set(timeAtom, new Date());
+   }
+}
+
 getRecoilStore().then(store => {
    console.log('RecoilTunnel captured Recoil store:', store);
-   setInterval(() => {
-      store.set(timeAtom, new Date());
-   }, 999);
+   clockService();
 });

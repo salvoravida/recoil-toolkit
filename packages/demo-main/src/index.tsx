@@ -10,13 +10,14 @@ import App from './App';
 
 ReactDOM.render(
    <RecoilRoot>
-      <RecoilTunnel />
-      <ReduxBridge store={store}>
+     <RecoilTunnel >
+       <ReduxBridge store={store}>
          <CurrentTime />
          <ChakraProvider>
-            <App />
+           <App />
          </ChakraProvider>
-      </ReduxBridge>
+       </ReduxBridge>
+     </RecoilTunnel>
    </RecoilRoot>,
    document.getElementById('root'),
 );

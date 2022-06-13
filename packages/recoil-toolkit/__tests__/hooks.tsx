@@ -8,7 +8,7 @@ import {
    delay,
    useRecoilRequest,
    useRecoilLocalTask,
-   useRecoilAsyncSelector,
+   useRecoilAsyncValue,
 } from '../src';
 
 const requestAtom = atom({
@@ -79,9 +79,9 @@ describe('hooks tests ', () => {
       expect(result.current.data).toEqual([{ id: 1, text: 'string' }]);
    });
 
-   test('useRecoilAsyncSelector', async () => {
+   test('useRecoilAsyncValue', async () => {
       const wrapper = ({ children }) => <RecoilRoot>{children}</RecoilRoot>;
-      const { result } = renderHook(() => useRecoilAsyncSelector(notifications), { wrapper });
+      const { result } = renderHook(() => useRecoilAsyncValue(notifications), { wrapper });
 
       expect(result.current.loading).toEqual(false);
    });

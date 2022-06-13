@@ -1,3 +1,4 @@
+import { RecoilState } from 'recoil';
 import { RecoilStore } from '../../types';
 
 interface RecoilStores {
@@ -7,9 +8,15 @@ interface RecoilStores {
 export const recoilStores: RecoilStores = {};
 export const DEFAULT_STORE = '$defaultStore$';
 
+export function set<T>(recoilVal: RecoilState<T>, valOrUpdater: ((currVal: T) => T) | T) {
+   if (recoilStores[DEFAULT_STORE]?.set)
+      return recoilStores[DEFAULT_STORE]?.set(recoilVal, valOrUpdater);
+   throw new Error('Recoil Toolkit Tunnel not ready');
+}
+
 const pendigGetStorePromises: {
    resolve: (value: RecoilStore) => void;
-   reject: (reason?: any) => void;
+   reject: (reason?: unknown) => void;
    name: string;
    pending: boolean;
 }[] = [];
