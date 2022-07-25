@@ -412,7 +412,7 @@ Redux will never be cm safe, without performance issue (like re-rendering everyt
 
 Atomic states design allow you more flexiblity while thinking your app as small autonomous building blocks (widgets) eventually interconnected if needed (atoms, selectors, graph connection)
 
-You could have less than 5x boilerplate with redux, with many wrappers like RTK or redux-query, but even that you will write less code more powerful witn recoil. Set(atom, value), Execute Task are much more easy concepts to managed with , than dispatch, actions, reducers, sagas, etc...
+You could have less than 5x boilerplate with redux, with many wrappers like RTK or redux-query, but even that you will write less code more powerful with recoil. Set(atom, value), Execute Task are much more easy concepts to managed with , than dispatch, actions, reducers, sagas, etc...
 
 ReduxBridge (read redux states from recoil selectors) helps you to gradually migrate your redux monolithic app to recoil atomic states.
 
