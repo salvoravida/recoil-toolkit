@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Box, Button, Heading, Skeleton, Stack, Text } from '@chakra-ui/react';
 import { useIsLoading } from 'recoil-toolkit';
 import { useTodoList } from '../recoil';
@@ -7,9 +7,7 @@ import { TodoItemEdit } from './TodoItemEdit';
 export function Todolist() {
    const { loading, data, execute: refresh } = useTodoList();
    const isAdding = useIsLoading('addItemTask');
-   useEffect(() => {
-      refresh();
-   }, [refresh]);
+
    return (
       <Box>
          <Box d={'flex'} padding={'20px 0'} alignItems={'center'}>

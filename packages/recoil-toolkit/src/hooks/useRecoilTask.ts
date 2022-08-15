@@ -1,5 +1,5 @@
 import { useRecoilCallback, useRecoilValue } from 'recoil';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { uniqueId, hide, show } from '../_core';
 import {
    lastTaskByKey,
@@ -15,10 +15,10 @@ import { TaskOptions, TaskStatus, RecoilTaskInterface } from '../types';
 export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return = void, Data = unknown>(
    taskCreator: (a: RecoilTaskInterface) => (...args: Args) => Return,
    deps?: ReadonlyArray<unknown>,
-   options?: TaskOptions<Data>,
+   options?: TaskOptions<Data, Args>,
 ) {
    const optionsRef = useRef(options || {}); //options freeze
-   const { key, errorStack, loaderStack, exclusive, dataSelector } = optionsRef.current;
+   const { key, errorStack, loaderStack, exclusive, dataSelector, autoStart } = optionsRef.current;
 
    if (exclusive && !key) {
       throw 'Exclusive tasks must have a key!';
@@ -56,6 +56,12 @@ export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return = void
          },
       deps,
    );
+
+   useEffect(() => {
+      if (autoStart) {
+         execute(...autoStart);
+      }
+   }, [execute]);
 
    return {
       loading: task?.status === TaskStatus.Running,

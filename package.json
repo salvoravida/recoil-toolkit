@@ -23,7 +23,8 @@
       "toolkit:watch": "yarn workspace recoil-toolkit run watch",
       "toolkit:test": "yarn workspace recoil-toolkit run test",
       "toolkit:test:coverage": "yarn workspace recoil-toolkit run test:coverage",
-      "demo-main:start": "yarn workspace recoil-toolkit-demo-main start"
+      "demo-main:start": "yarn workspace recoil-toolkit-demo-main start",
+      "outdated": "yarn outdated"
    },
    "devDependencies": {
       "@typescript-eslint/eslint-plugin": "^5.33.0",

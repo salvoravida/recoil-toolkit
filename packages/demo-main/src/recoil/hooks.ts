@@ -15,6 +15,7 @@ export const useItemLocked = (id: number) => useRecoilValue(itemLocked(id));
 export const useTodoList = () =>
    useRecoilTask(getTodoListTask, [], {
       dataSelector: todoList,
+      autoStart: []
    });
 
 export const useAddItemTask = () =>

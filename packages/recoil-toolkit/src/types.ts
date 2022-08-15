@@ -23,12 +23,13 @@ export enum TaskStatus {
    Done,
 }
 
-export type TaskOptions<Data = unknown> = {
+export type TaskOptions<Data = unknown, Args = unknown> = {
    key?: string;
    errorStack?: boolean;
    loaderStack?: string | boolean;
    exclusive?: boolean;
    dataSelector?: RecoilValue<Data>;
+   autoStart?: Args;
 };
 
 export type Task<Data = unknown, Error = unknown> = {
