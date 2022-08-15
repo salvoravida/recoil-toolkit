@@ -1,6 +1,8 @@
 module.exports = {
+   verbose: true,
+   testEnvironmentOptions:{ url: 'http://localhost/' },
    preset: 'ts-jest',
-   testEnvironment: 'jsdom',
+   testEnvironment: 'jest-environment-jsdom',
    globals: {
       'ts-jest': {
          tsconfig: 'tsconfig.test.json',
