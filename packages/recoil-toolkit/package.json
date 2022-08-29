@@ -1,6 +1,6 @@
 {
    "name": "recoil-toolkit",
-   "version": "0.2.5",
+   "version": "0.2.6",
    "description": "recoil-toolkit",
    "main": "./build/es5/index.js",
    "module": "./build/es6/index.js",
@@ -11,6 +11,8 @@
       "npm": ">=6"
    },
    "files": [
+      "axios.d.ts",
+      "axios.js",
       "build",
       "src",
       "README.md"
