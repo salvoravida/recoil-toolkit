@@ -14,6 +14,7 @@ import {
    Toolbar,
    TaskTableContainer,
    MainTask,
+   SidebarContainer,
 } from './layout/styles';
 import mock from './mock.json';
 import { normalize, SnapshotState } from './normalize';
@@ -35,7 +36,7 @@ function App() {
    useEffect(() => {
       if (isDev) {
          // @ts-ignore
-         setMessageList([mock.data]);
+         setMessageList(Array.from({ length: 50 }).map((a) => mock.data));
          setSnapshotId(mock.data.id);
       }
       backgroundPage.connection?.onMessage.addListener(function (message: { data: SnapshotState }) {
@@ -108,20 +109,22 @@ function App() {
                      name: 'test',
                   });
                }}
-            >
+            >s
                Test Send Message To Page
             </button>
             */}
          </Header>
          <Main>
-            <Sidebar ref={ref}>
+            <SidebarContainer>
                <h1>Snapshots</h1>
-               {messageList.map((message, index) => (
-                  <SnapId onClick={() => setSnapshotId(message.id)} key={index} active={snapshotId === message.id}>
-                     Snapshot Id: {message.id}
-                  </SnapId>
-               ))}
-            </Sidebar>
+               <Sidebar ref={ref}>
+                  {messageList.map((message, index) => (
+                     <SnapId onClick={() => setSnapshotId(message.id)} key={index} active={snapshotId === message.id}>
+                        Snapshot Id: {message.id}
+                     </SnapId>
+                  ))}
+               </Sidebar>
+            </SidebarContainer>
             <MainContent>
                <Toolbar>
                   <label htmlFor="onlyModified">
@@ -132,7 +135,7 @@ function App() {
                         checked={onlyModified}
                         onChange={() => setOnlyModified((c) => !c)}
                      />
-                     onlyModified
+                     showOnlyModified
                   </label>
                   <label htmlFor="showRawNodes">
                      <input
@@ -175,8 +178,8 @@ function App() {
             <MainTask>
                <MainContent>
                   <Toolbar>
-                     <h1>Tasks: </h1>
-                     <label htmlFor="onlyRunning">
+                     <h1>Tasks</h1>
+                     <label htmlFor="onlyRunning" style={{ marginLeft: '8px' }}>
                         <input
                            type="checkbox"
                            id="onlyRunning"
@@ -184,7 +187,7 @@ function App() {
                            checked={onlyRunning}
                            onChange={() => setOnlyRunning((c) => !c)}
                         />
-                        onlyRunning
+                        showOnlyRunning
                      </label>
                   </Toolbar>
                   <TaskTableContainer>

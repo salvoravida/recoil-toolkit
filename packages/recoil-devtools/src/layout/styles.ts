@@ -48,10 +48,10 @@ export const Main = styled.div`
 export const MainTask = styled.div`
    border-top: 1px solid #8f97a5;
    display: flex;
-   max-height: 250px;
+   min-height: 250px;
 `;
 
-export const Sidebar = styled.div`
+export const SidebarContainer = styled.div`
    display: flex;
    flex-direction: column;
    gap: 4px;
@@ -67,15 +67,30 @@ export const Sidebar = styled.div`
       display: flex;
       align-content: center;
       justify-content: center;
-      line-height: 24px;
+      line-height: 28px;
       font-size: 14px;
-      color: rgb(38, 139, 210);
+      //     color: rgb(38, 139, 210);
+      color: rgb(191, 86, 139);
       margin: 0;
-      height: 31px;
+      min-height: 31px;
       margin: 0 -4px;
       border-bottom: 1px solid #8f97a5;
    }
 
+   user-select: none;
+`;
+
+export const Sidebar = styled.div`
+   display: flex;
+   flex-direction: column;
+   gap: 4px;
+
+   min-width: 200px;
+   padding: 4px;
+   font-family: monospace;
+   font-size: 12px;
+   color: white;
+   text-align: center;
    user-select: none;
    overflow: auto;
 `;
@@ -94,7 +109,7 @@ export const SnapId = styled.button<{ active?: boolean }>`
 
    &:hover {
       cursor: pointer;
-      color: rgb(38, 139, 210);
+      // color: rgb(38, 139, 210);
       background-color: white;
    }
 
@@ -144,10 +159,16 @@ export const Toolbar = styled.div`
    user-select: none;
 
    h1 {
+      width: 200px;
       font-size: 14px;
-      line-height: 19px;
-      color: rgb(38, 139, 210);
-      margin: 0;
+      //  line-height: 31px;
+      //color: rgb(38, 139, 210);
+      color: rgb(191, 86, 139);
+
+      text-align: center;
+      margin: -8px;
+      padding: 8px;
+      border-right: 1px solid #8f97a5;
    }
 `;
 

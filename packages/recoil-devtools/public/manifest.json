@@ -1,7 +1,7 @@
 {
    "manifest_version": 3,
    "name": "Recoil Toolkit DevTools",
-   "version": "0.0.2",
+   "version": "0.0.3",
    "description": "Recoil Toolkit DevTools",
    "background": {
       "service_worker": "./rtdBackgroundScript.js"

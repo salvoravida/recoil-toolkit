@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { RecoilValue, useRecoilRefresher_UNSTABLE, useRecoilValueLoadable } from 'recoil';
-import { doCancelSignal } from './signals/store';
+import { doCancelSignal } from './signals';
 
 export type RecoilQueryValue<V> = {
    loading: boolean;
@@ -37,7 +37,7 @@ export const useRecoilQuery = <V>(
 
    useEffect(() => {
       if (options?.refreshOnMount === 'always' || (options?.refreshOnMount === 'error' && error)) {
-         refresh();
+         !loading && refresh();
       }
    }, []); //eslint-disable-line
 
