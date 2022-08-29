@@ -18,10 +18,11 @@ What you get out of the box:
 - :atom: immutable updaters
 - :boom: RecoilTunnel -> read/update a recoilStore outside of React
 - :electron: ReduxBridge -> mix redux and recoil selectors (gradually upgrade redux apps to recoil!)
+- :boom: Recoil Toolkit Devtools!
+
+<img src="https://user-images.githubusercontent.com/20126259/187104117-39bf3c29-73d7-48c3-ac0b-405dafc2f06d.png">
 
 and what is coming soon ...
-- 🔜 advanced task manager - chrome dev tools
-- 🔜 easy debugging long/duplicated/onError tasks
 - 🔜 task statistics, kpi
 - 🔜 reactive/observable pattern implementation
 - :question: any idea? open an issue!
