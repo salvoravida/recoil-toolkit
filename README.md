@@ -20,7 +20,7 @@ What you get out of the box:
 - :electron: ReduxBridge -> mix redux and recoil selectors (gradually upgrade redux apps to recoil!)
 - :boom: Recoil Toolkit Devtools!
 
-<img src="https://user-images.githubusercontent.com/20126259/187104117-39bf3c29-73d7-48c3-ac0b-405dafc2f06d.png">
+<img src="https://user-images.githubusercontent.com/20126259/187123997-3f6e3a68-0329-4b1a-b041-ce88def23efe.png">
 
 and what is coming soon ...
 - 🔜 task statistics, kpi
