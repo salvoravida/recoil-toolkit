@@ -1,5 +1,5 @@
-import { useRecoilTask } from 'recoil-toolkit';
 import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilTask } from 'recoil-toolkit';
 import { itemLocked, itemStatus, todoList } from './atoms';
 import {
    addItemTask,
@@ -15,7 +15,7 @@ export const useItemLocked = (id: number) => useRecoilValue(itemLocked(id));
 export const useTodoList = () =>
    useRecoilTask(getTodoListTask, [], {
       dataSelector: todoList,
-      autoStart: []
+      autoStart: [],
    });
 
 export const useAddItemTask = () =>

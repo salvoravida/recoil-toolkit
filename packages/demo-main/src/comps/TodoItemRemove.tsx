@@ -1,5 +1,5 @@
-import React from 'react';
 import { Button } from '@chakra-ui/react';
+import React from 'react';
 import { ItemStatus, useItemLocked, useItemStatus, useRemoveItemTask } from '../recoil';
 
 export function TodoItemRemove({ id }: { id: number }) {

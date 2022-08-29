@@ -2,17 +2,17 @@ import { atom, selector, selectorFamily, useRecoilValue } from 'recoil';
 import { Task, TaskStatus } from '../types';
 
 export const tasks = atom<Task[]>({
-   key: 'recoil-toolkit/tasks',
+   key: '@recoil-toolkit.tasks',
    default: [],
 });
 
 export const runningTasks = selector<Task[]>({
-   key: 'recoil-toolkit/runningTasks',
+   key: '@recoil-toolkit.runningTasks',
    get: ({ get }) => get(tasks).filter(t => t.status === TaskStatus.Running),
 });
 
 export const taskById = selectorFamily<Task | undefined, number>({
-   key: 'recoil-toolkit/taskById',
+   key: '@recoil-toolkit.taskById',
    get:
       (id: number) =>
       ({ get }) => {
@@ -21,13 +21,13 @@ export const taskById = selectorFamily<Task | undefined, number>({
 });
 
 export const lastTaskByKey = selectorFamily<Task | undefined, string>({
-   key: 'recoil-toolkit/lastTaskType',
+   key: '@recoil-toolkit.lastTaskType',
    get:
       (key: string) =>
       ({ get }) => {
-         return get(tasks)
-            .filter(t => t?.options?.key === key)
-            .pop();
+            return get(tasks)
+               .filter(t => t?.options?.key === key)
+               .pop();
       },
 });
 

@@ -1,0 +1,43 @@
+{
+   "manifest_version": 3,
+   "name": "Recoil Toolkit DevTools",
+   "version": "0.0.2",
+   "description": "Recoil Toolkit DevTools",
+   "background": {
+      "service_worker": "./rtdBackgroundScript.js"
+   },
+   "permissions": [
+      "activeTab",
+      "scripting"
+   ],
+   "content_scripts": [
+      {
+         "all_frames": false,
+         "js": ["rtdContentScript.js"],
+         "matches": ["http://*/*", "https://*/*"],
+         "run_at": "document_start"
+      }
+   ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+   },
+   "author": "Salvatore Ravida'",
+   "homepage_url": "https://github.com/salvoravida/recoil-toolkit",
+   "short_name": "Recoil Toolkit DevTools",
+   "devtools_page": "devtools.html",
+   "action": {
+      "default_title": "Recoil Toolkit DevTools",
+      "default_icon": {
+         "16": "/images/recoil-icon.png",
+         "32": "/images/recoil-icon.png",
+         "48": "/images/recoil-icon.png",
+         "128": "/images/recoil-icon.png"
+      }
+   },
+   "icons": {
+      "16": "/images/recoil-icon.png",
+      "32": "/images/recoil-icon.png",
+      "48": "/images/recoil-icon.png",
+      "128": "/images/recoil-icon.png"
+   }
+}

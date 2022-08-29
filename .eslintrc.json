@@ -1,71 +1,66 @@
 {
    "root": true,
-   "extends": [
-      "airbnb",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:prettier/recommended",
-      "prettier"
-   ],
    "parser": "@typescript-eslint/parser",
-   "plugins": ["@typescript-eslint"],
-   "env": {
-      "browser": true,
-      "jasmine": true,
-      "jest": true
-   },
-   "rules": {
-      "indent": ["error", 3, { "SwitchCase": 1 }],
-      "react/jsx-indent": ["error", 3],
-      "react/jsx-indent-props": ["error", 3],
-      "no-underscore-dangle": "off",
-      "camelcase": 0,
-      "import/prefer-default-export": 0,
-      "import/no-extraneous-dependencies": 0,
-      "linebreak-style": 0,
-      "no-nested-ternary": 0,
-      "no-param-reassign": 0,
-      "no-prototype-builtins": 0,
-      "no-restricted-syntax": 0,
-      "no-return-assign": 0,
-      "no-unused-expressions": 0,
-      "spaced-comment": 0,
-      "no-throw-literal": "off",
-      "no-use-before-define": "off",
-      "@typescript-eslint/ban-ts-comment": "off",
-      "@typescript-eslint/no-use-before-define": ["error"],
-      "@typescript-eslint/explicit-function-return-type": "off",
-      "@typescript-eslint/interface-name-prefix": "off",
-      "@typescript-eslint/explicit-module-boundary-types": "off",
-      "prettier/prettier": ["error", { "singleQuote": true }],
-      "import/extensions": "off",
-      "react/jsx-filename-extension": [0],
-      "react/jsx-one-expression-per-line": 0,
-      "react/prop-types": [0],
-      "react/require-default-props": "off"
-   },
-   "overrides": [
-      {
-         "files": ["*.ts", "*.tsx"],
-         "rules": {}
-      },
-      {
-         "files": ["*.js", "*.jsx"],
-         "rules": {
-            "@typescript-eslint/explicit-function-return-type": "off",
-            "@typescript-eslint/explicit-module-boundary-types": "off",
-            "no-unused-vars": "warn"
-         }
-      }
+   "extends": [
+      "plugin:@typescript-eslint/recommended",
+      "plugin:import/recommended",
+      "plugin:import/typescript",
+      "plugin:unicorn/recommended",
+      "react-app",
+      "prettier",
+      "plugin:prettier/recommended"
    ],
-   "settings": {
-      "import/resolver": {
-         "node": {
-            "extensions": ["js", "jsx", ".ts", ".tsx"]
+   "plugins": ["unicorn", "@emotion"],
+   "rules": {
+      "@emotion/jsx-import": "error",
+      "@emotion/pkg-renaming": "error",
+      "@emotion/no-vanilla": "error",
+      "@emotion/import-from-emotion": "error",
+      "@emotion/styled-import": "error",
+      "@typescript-eslint/no-var-requires": "off",
+      "unicorn/prefer-module": "off",
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-use-before-define": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-empty-function": "warn",
+      "@typescript-eslint/no-explicit-any": "warn",
+      "import/no-unresolved": "off",
+      "import/named": "off",
+      "import/namespace": "warn",
+      "import/no-named-as-default": "off",
+      "import/export": "warn",
+      "import/order": [
+         "error",
+         {
+            "groups": ["builtin", "external", "parent", "sibling", "index"],
+            "newlines-between": "never",
+            "alphabetize": {
+               "order": "asc",
+               "caseInsensitive": true
+            }
          }
-      },
-      "react": {
-         "pragma": "React",
-         "version": "detect"
-      }
+      ],
+      "unicorn/catch-error-name": "off",
+      "unicorn/consistent-destructuring": "off",
+      "unicorn/custom-error-definition": "off",
+      "unicorn/filename-case": "off",
+      "unicorn/import-index": "off",
+      "unicorn/no-abusive-eslint-disable": "off",
+      "unicorn/no-array-reduce": "off",
+      "unicorn/no-console-spaces": "off",
+      "no-nested-ternary": "off",
+      "unicorn/no-nested-ternary": "off",
+      "unicorn/no-null": "off",
+      "unicorn/no-useless-undefined": "off",
+      "unicorn/prefer-array-flat": "off",
+      "unicorn/prefer-export-from": "off",
+      "unicorn/prefer-includes": "off",
+      "unicorn/prefer-query-selector": "off",
+      "unicorn/prefer-spread": "off",
+      "unicorn/prevent-abbreviations": "off",
+      "unicorn/numeric-separators-style": "off",
+      "unicorn/no-array-for-each": "off",
+      "unicorn/consistent-function-scoping": "off"
    }
 }

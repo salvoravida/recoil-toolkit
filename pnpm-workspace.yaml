@@ -1,0 +1,4 @@
+packages:
+  - 'packages/demo-main'
+  - 'packages/recoil-devtools'
+  - 'packages/recoil-toolkit'

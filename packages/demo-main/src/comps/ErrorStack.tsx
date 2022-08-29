@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
 import { useToast } from '@chakra-ui/react';
+import { useEffect } from 'react';
 import { useLastError } from 'recoil-toolkit';
 
 export function ErrorStack() {

@@ -14,5 +14,8 @@ export const itemStatus = atomFamily<ItemStatus, number>({
 
 export const itemLocked = selectorFamily<boolean, number>({
    key: 'itemLocked',
-   get: (id: number) => ({ get }) => get(itemStatus(id)) > ItemStatus.Editing,
+   get:
+      (id: number) =>
+      ({ get }) =>
+         get(itemStatus(id)) > ItemStatus.Editing,
 });

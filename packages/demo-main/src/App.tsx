@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
 import { Box, Checkbox, Divider, Heading, Text } from '@chakra-ui/react';
-import { Todolist } from './comps/TodoList';
-import TodoItemAdd from './comps/TodoItemAdd';
-import { TaskManager } from './comps/TaskManager';
+import React, { useState } from 'react';
 import { ErrorStack } from './comps/ErrorStack';
-
+import { TaskManager } from './comps/TaskManager';
+import TodoItemAdd from './comps/TodoItemAdd';
+import { Todolist } from './comps/TodoList';
 
 function App() {
    const [showList, setShowList] = useState(true);
    return (
       <>
-         <Box d={'flex'}>
+         <Box display={'flex'}>
             <Box padding={30} maxW={'1024px'} margin={'0 auto'} width={'100%'}>
                <Heading fontSize="3xl" marginBottom={'5px'} textAlign={'center'}>
                   Recoil Todolist CRUD Example

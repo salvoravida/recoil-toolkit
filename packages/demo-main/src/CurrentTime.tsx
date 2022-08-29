@@ -16,13 +16,14 @@ export const CurrentTime = () => {
    );
 };
 
-export async function clockService(){
-   while (true){
+export async function clockService() {
+   while (true) {
       await delay(999);
       set(timeAtom, new Date());
    }
 }
 
+// eslint-disable-next-line unicorn/prefer-top-level-await
 getRecoilStore().then(store => {
    console.log('RecoilTunnel captured Recoil store:', store);
    clockService();

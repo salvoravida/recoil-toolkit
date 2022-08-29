@@ -1,5 +1,5 @@
-import React, { useRef, memo } from 'react';
 import { Box, Button, Input } from '@chakra-ui/react';
+import React, { useRef, memo } from 'react';
 import { useAddItemTask } from '../recoil';
 
 function TodoItemAdd() {
@@ -14,7 +14,7 @@ function TodoItemAdd() {
    };
 
    return (
-      <Box d={'flex'} alignItems={'center'}>
+      <Box display={'flex'} alignItems={'center'}>
          <Input
             placeholder="New todo item"
             ref={inputRef}
@@ -24,7 +24,7 @@ function TodoItemAdd() {
                }
             }}
          />
-         <Box padding={'20px 0'} d={'flex'}>
+         <Box padding={'20px 0'} display={'flex'}>
             <Button minW={'150px'} marginLeft={'20px'} onClick={addItem}>
                Add
             </Button>

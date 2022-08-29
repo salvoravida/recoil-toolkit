@@ -1,0 +1,2875 @@
+{
+  "data": {
+    "id": "1",
+    "nodes": [
+  {
+    "key": "charting.dashboardDetails__selectorFamily/\"/dashboard/g/public/p/axelar/n/mainnet/m/network-overview\"/2",
+    "type": "selector",
+    "isModified": false,
+    "subNodes": 0,
+    "nodeSubscription": [],
+    "state": "hasValue",
+    "value": {
+      "dashModel": {
+        "_version": "1.0.0",
+        "details": {
+          "blocks": [
+            {
+              "charts": null,
+              "id": "tile/axelar/net-overview/blocks-header",
+              "title": {
+                "subtitle": "Block performance can impact the throughput and scalability of the network.",
+                "title": "Blocks"
+              },
+              "type": "tile/header"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/5a14f710-7f71-4b23-9664-946335e328b6",
+                  "viewId": "axelar/net-overview/block-interval-time/stats"
+                }
+              ],
+              "id": "tile/axelar/net-overview/block-interval-time",
+              "title": {
+                "detail": "How quickly it takes to write a block to the ledger",
+                "subtitle": "(seconds)",
+                "title": "Block Interval Time"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/da31fa1d-2cec-4eb9-aa82-59cf119f125c",
+                  "viewId": "axelar/net-overview/block-production/line"
+                }
+              ],
+              "id": "tile/axelar/net-overview/block-production",
+              "title": {
+                "detail": "Overview of blocks generated and how long it took to write to the ledger",
+                "title": "Block Production"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": null,
+              "id": "tile/axelar/net-overview/value-transferred-header",
+              "title": {
+                "subtitle": "Value transferred from external chains and value held by Axelar",
+                "title": "Value Transferred & Stored"
+              },
+              "type": "tile/header"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/16590e33-03c2-4da5-a642-d872b6252e0a",
+                  "viewId": "axelar/net-overview/value-transferred/line",
+                  "widthSplit": 75
+                },
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/515516e4-dc2d-4197-b7fb-1d336ca6e109",
+                  "minWidth": 370,
+                  "viewId": "axelar/net-overview/value-transferred/table"
+                }
+              ],
+              "id": "tile/axelar/net-overview/value-transferred",
+              "title": {
+                "detail": "Assets transferred from a connected chain using the Axelar Network. Methodology for cross-chain calculations is under refinement and subject to change",
+                "title": "Value transferred on Axelar"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/771307db-e6d1-43da-8379-16ac6d649430",
+                  "viewId": "axelar/net-overview/value-held/line",
+                  "widthSplit": 75
+                },
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/b8c6c590-6420-43bc-9da9-4242a44cfa17",
+                  "minWidth": 360,
+                  "viewId": "axelar/net-overview/value-held/table"
+                }
+              ],
+              "id": "tile/axelar/net-overview/current-value",
+              "title": {
+                "detail": "Value of assets currently held by the Axelar Network. Methodology for cross-chain calculations is under refinement and subject to change",
+                "title": "Value Held on External Chains"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": null,
+              "id": "tile/axelar/net-overview/cross-chain-info-header",
+              "title": {
+                "subtitle": "Events relating to cross-chain activity (e.g., deposits, account linking, transfers, signing) and the current bridge account addresses.",
+                "title": "Other Cross-Chain Info"
+              },
+              "type": "tile/header"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/23d3a20b-94ea-4608-b6ec-ed358a4a9529",
+                  "viewId": "axelar/net-overview/cross-info-events/stats"
+                },
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/77e4dfe2-4198-4a40-beb6-36b4dabefbf8",
+                  "viewId": "axelar/net-overview/cross-info-events/line",
+                  "widthSplit": 75
+                },
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/3662846a-0778-4a57-bee2-7325f6cfce17",
+                  "minWidth": 380,
+                  "viewId": "axelar/net-overview/cross-info-events/table"
+                }
+              ],
+              "id": "tile/axelar/net-overview/events",
+              "title": {
+                "detail": "Deposits, account linking, transfers, and signing activity relating to external chains",
+                "title": "Events"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/dd26392a-733e-4cb7-b44c-5ccf214eb3e4",
+                  "viewId": "axelar/net-overview/bridge-account-address/table"
+                }
+              ],
+              "id": "tile/axelar/net-overview/bridge-account",
+              "title": {
+                "detail": "Bridge account addresses and external token addresses",
+                "title": "Bridge account address"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/0fa53eb3-9975-4741-8266-50b73aa340d1",
+                  "viewId": "axelar/net-overview/global-corruption-signing-threshold/stats"
+                }
+              ],
+              "id": "tile/axelar/net-overview/global-corruption",
+              "title": {
+                "detail": "Amount of shares required to move an asset",
+                "title": "Global signing threshold"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/0c9b8398-987d-4a74-9ed3-7d712a3bc785",
+                  "viewId": "axelar/net-overview/active-keygen-threshold/stats"
+                }
+              ],
+              "id": "tile/axelar/net-overview/active-keygen",
+              "title": {
+                "detail": "Amount of shares required to be online for a keygen ceremony to begin",
+                "title": "Global keygen threshold"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/55cc606d-924f-4fc6-a706-81173c297e76",
+                  "viewId": "axelar/net-overview/corruption-signing-threshold/table"
+                }
+              ],
+              "id": "tile/axelar/net-overview/corruption-signing",
+              "title": {
+                "detail": "Amount of shares required to move an asset for each key",
+                "title": "Individual signing threshold"
+              },
+              "type": "tile/data"
+            }
+          ],
+          "description": "This dashboard tracks the cross-chain activity on the Axelar Network by monitoring value held, transfers, cross-chain events, bridge account addresses, and keygen/corruption signing thresholds",
+          "layout": {
+            "desktop": [
+              {
+                "h": 5,
+                "i": "tile/axelar/net-overview/blocks-header",
+                "w": 12,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/net-overview/block-interval-time",
+                "w": 12,
+                "x": 0,
+                "y": 5
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/net-overview/block-production",
+                "w": 12,
+                "x": 0,
+                "y": 12
+              },
+              {
+                "h": 5,
+                "i": "tile/axelar/net-overview/value-transferred-header",
+                "w": 12,
+                "x": 0,
+                "y": 32
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/net-overview/value-transferred",
+                "w": 12,
+                "x": 0,
+                "y": 37
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/net-overview/current-value",
+                "w": 12,
+                "x": 0,
+                "y": 57
+              },
+              {
+                "h": 5,
+                "i": "tile/axelar/net-overview/cross-chain-info-header",
+                "w": 12,
+                "x": 0,
+                "y": 77
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/net-overview/events",
+                "w": 12,
+                "x": 0,
+                "y": 82
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/net-overview/bridge-account",
+                "w": 12,
+                "x": 0,
+                "y": 102
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/net-overview/global-corruption",
+                "w": 6,
+                "x": 0,
+                "y": 122
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/net-overview/active-keygen",
+                "w": 6,
+                "x": 6,
+                "y": 122
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/net-overview/corruption-signing",
+                "w": 12,
+                "x": 0,
+                "y": 129
+              }
+            ],
+            "largeDesktop": [
+              {
+                "h": 5,
+                "i": "tile/axelar/net-overview/blocks-header",
+                "w": 12,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/net-overview/block-interval-time",
+                "w": 12,
+                "x": 0,
+                "y": 5
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/net-overview/block-production",
+                "w": 12,
+                "x": 0,
+                "y": 12
+              },
+              {
+                "h": 5,
+                "i": "tile/axelar/net-overview/value-transferred-header",
+                "w": 12,
+                "x": 0,
+                "y": 32
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/net-overview/value-transferred",
+                "w": 12,
+                "x": 0,
+                "y": 37
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/net-overview/current-value",
+                "w": 12,
+                "x": 0,
+                "y": 57
+              },
+              {
+                "h": 5,
+                "i": "tile/axelar/net-overview/cross-chain-info-header",
+                "w": 12,
+                "x": 0,
+                "y": 77
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/net-overview/events",
+                "w": 12,
+                "x": 0,
+                "y": 82
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/net-overview/bridge-account",
+                "w": 12,
+                "x": 0,
+                "y": 102
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/net-overview/global-corruption",
+                "w": 6,
+                "x": 0,
+                "y": 122
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/net-overview/active-keygen",
+                "w": 6,
+                "x": 6,
+                "y": 122
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/net-overview/corruption-signing",
+                "w": 12,
+                "x": 0,
+                "y": 129
+              }
+            ],
+            "mobile": [
+              {
+                "h": 8,
+                "i": "tile/axelar/net-overview/blocks-header",
+                "w": 2,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 9,
+                "i": "tile/axelar/net-overview/block-interval-time",
+                "w": 2,
+                "x": 0,
+                "y": 8
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/net-overview/block-production",
+                "w": 2,
+                "x": 0,
+                "y": 17
+              },
+              {
+                "h": 9,
+                "i": "tile/axelar/net-overview/value-transferred-header",
+                "w": 2,
+                "x": 0,
+                "y": 47
+              },
+              {
+                "h": 40,
+                "i": "tile/axelar/net-overview/value-transferred",
+                "w": 2,
+                "x": 0,
+                "y": 56
+              },
+              {
+                "h": 40,
+                "i": "tile/axelar/net-overview/current-value",
+                "w": 2,
+                "x": 0,
+                "y": 96
+              },
+              {
+                "h": 10,
+                "i": "tile/axelar/net-overview/cross-chain-info-header",
+                "w": 2,
+                "x": 0,
+                "y": 136
+              },
+              {
+                "h": 41,
+                "i": "tile/axelar/net-overview/events",
+                "w": 2,
+                "x": 0,
+                "y": 146
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/net-overview/bridge-account",
+                "w": 2,
+                "x": 0,
+                "y": 187
+              },
+              {
+                "h": 9,
+                "i": "tile/axelar/net-overview/global-corruption",
+                "w": 2,
+                "x": 0,
+                "y": 207
+              },
+              {
+                "h": 9,
+                "i": "tile/axelar/net-overview/active-keygen",
+                "w": 2,
+                "x": 0,
+                "y": 216
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/net-overview/corruption-signing",
+                "w": 2,
+                "x": 0,
+                "y": 225
+              }
+            ]
+          },
+          "timeRanges": [
+            "1d",
+            "1w",
+            "2w"
+          ]
+        },
+        "id": "network-overview",
+        "name": "Network Overview"
+      },
+      "dashModelId": "network-overview",
+      "fullPath": "/dashboard/g/public/p/axelar/n/mainnet/m/network-overview",
+      "name": "Network Overview",
+      "network": "mainnet",
+      "orgId": "public",
+      "protocol": "axelar"
+    }
+  },
+  {
+    "key": "charting.dashboardDetails__selectorFamily/\"/dashboard/g/public/p/axelar/n/mainnet/m/validator-details\"/4",
+    "type": "selector",
+    "isModified": false,
+    "subNodes": 0,
+    "nodeSubscription": [],
+    "state": "hasValue",
+    "value": {
+      "dashModel": {
+        "_version": "1.0.0",
+        "details": {
+          "blocks": [
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/386a45a8-4c09-4eb6-a192-dfa0d05cf631",
+                  "viewId": "axelar/val-details/address/stats"
+                }
+              ],
+              "id": "tile/axelar/val-details/address",
+              "title": {
+                "detail": "Validator Operator Address",
+                "title": "Operator Address"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/491f06df-eea2-44dd-b537-a4fb13a3af9a",
+                  "viewId": "axelar/val-details/moniker/stats"
+                }
+              ],
+              "id": "tile/axelar/val-details/moniker",
+              "title": {
+                "detail": "Associated validator moniker",
+                "title": "Moniker"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/830aa005-9aa2-46a1-a9c1-a955cb47486a",
+                  "viewId": "axelar/val-details/registered-voting-networks/table"
+                }
+              ],
+              "id": "tile/axelar/val-details/registered-network",
+              "title": {
+                "detail": "Networks a validator runs a node on and is registered to vote",
+                "title": "Registered Voting Networks"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/5c34ddc3-5f87-43ec-ad26-bfbc25c8d22c",
+                  "viewId": "axelar/val-details/commission-rate/stats"
+                }
+              ],
+              "id": "tile/axelar/val-details/commission-rate",
+              "title": {
+                "detail": "Delegator commission for staking rewards",
+                "title": "Commission Rate"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/d4c25638-bb8c-41c3-9a83-d86936124c7c",
+                  "viewId": "axelar/val-details/voting-power/stats"
+                }
+              ],
+              "id": "tile/axelar/val-details/voting-power",
+              "title": {
+                "detail": "Determined based on the staked delegated to a validator",
+                "title": "Voting Power"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/e19e133a-7b84-4fa0-bfc1-48fd54439a1b",
+                  "viewId": "axelar/val-details/status/stats"
+                }
+              ],
+              "id": "tile/axelar/val-details/status",
+              "title": {
+                "detail": "Indicates when a validator falls out of the active set",
+                "title": "Status"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/ec27f034-cf17-4c51-b957-6e9116d4be71",
+                  "viewId": "axelar/val-details/jailed-axelar/stats"
+                }
+              ],
+              "id": "tile/axelar/val-details/jailed-axelar",
+              "title": {
+                "detail": "Status of validator based on Axelar KPIs (e.g., tss, missed heartbeats)",
+                "title": "Jailed - Axelar"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/ee738b16-17d4-488c-a174-0a705abb1fa0",
+                  "viewId": "axelar/val-details/jailed-tendermint/stats"
+                }
+              ],
+              "id": "tile/axelar/val-details/jailed_tendermint",
+              "title": {
+                "detail": "Status of validator based on Tendermint KPIs (e.g., missed blocks)",
+                "title": "Jailed - Tendermint"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/52afd6c8-aec8-44fb-9e90-2e33299dd27e",
+                  "viewId": "axelar/val-details/vote-history/table"
+                }
+              ],
+              "id": "tile/axelar/val-details/vote-history",
+              "title": {
+                "detail": "Summary of validator voting on registered networks",
+                "title": "Vote History"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/6e752c6a-e579-43a6-97dc-cd7a08dc67b7",
+                  "viewId": "axelar/val-details/latest-votes/table"
+                }
+              ],
+              "id": "tile/axelar/val-details/latest-votes",
+              "title": {
+                "detail": "Details for up to the last 250 votes cast",
+                "title": "Latest Votes"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/f7a81fbb-9c6c-4681-b2c2-99d8fe88670a",
+                  "viewId": "axelar/val-details/latest-abstain-no-votes/table"
+                }
+              ],
+              "id": "tile/axelar/val-details/latest-abstain-no-votes",
+              "title": {
+                "detail": "Details of the last 100 Abstained and No votes",
+                "title": "Latest Abstain/No Votes"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/8ba9a701-4514-4ea2-ac0a-4f3cc4980d95",
+                  "viewId": "axelar/val-details/missed-heartbeats/stats"
+                },
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/00a2f96c-f823-4000-9aeb-6cf07709f043",
+                  "viewId": "axelar/val-details/missed-heartbeats/line"
+                }
+              ],
+              "id": "tile/axelar/val-details/missed-heartbeats",
+              "title": {
+                "detail": "Historical trends for missed heartbeats",
+                "title": "Missed Heartbeats"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/36eb17b1-36bf-4be3-af63-2ac0e61ce564",
+                  "viewId": "axelar/val-details/latest-missed-heartbeats/table"
+                }
+              ],
+              "id": "tile/axelar/val-details/latest-missed-heartbeats",
+              "title": {
+                "detail": "Detail and reasons for up to the last 50 missed heartbeats. When the reason field is blank, it is because the validator was late to respond to a heartbeat",
+                "title": "Latest Missed Heartbeats"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/f75b53ae-0980-41a2-ac22-5c2efd2cd589",
+                  "viewId": "axelar/val-details/delegation-stake/stats"
+                },
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/c905693c-036b-43e4-9ddc-661ec8241bbf",
+                  "viewId": "axelar/val-details/delegation-stake/line"
+                }
+              ],
+              "id": "tile/axelar/val-details/delegation-stake",
+              "title": {
+                "detail": "Historical trends for the validator’s delegations and stake",
+                "title": "Delegations & Stake"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/5855609b-7e2b-4d9b-9a65-3402ab11eb54",
+                  "viewId": "axelar/val-details/missed-blocks/stats"
+                },
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/0fef0152-949c-4350-8ade-11983f1d8281",
+                  "viewId": "axelar/val-details/missed-blocks/line"
+                }
+              ],
+              "id": "tile/axelar/val-details/missed-blocks",
+              "title": {
+                "detail": "Historical trends for missed blocks",
+                "title": "Missed blocks"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/c3210333-b586-4aeb-a32a-1aaee824499a",
+                  "viewId": "axelar/val-details/threshold-keygen-participation/stats"
+                },
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/b8116fee-4d4d-4693-99f4-9c80a5ca788e",
+                  "viewId": "axelar/val-details/threshold-keygen-participation/line"
+                }
+              ],
+              "id": "tile/axelar/val-details/threshold-keygen",
+              "title": {
+                "detail": "Validator participation in keygen events",
+                "title": "Threshold keygen participation"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/42769e0c-8054-4653-aee5-1867df5a33c5",
+                  "viewId": "axelar/val-details/failed-keygen-participation-history/table"
+                }
+              ],
+              "id": "tile/axelar/val-details/failed-keygen-participation-history",
+              "title": {
+                "detail": "Reasons for failed keygens",
+                "title": "Failed Keygen Participation History"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/238216bb-44bf-4c93-9b39-fa9ab88fa2ef",
+                  "viewId": "axelar/val-details/threshold-signing-participation/stats"
+                },
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/d41a6835-9548-4354-a27a-cf8d0144b9b2",
+                  "viewId": "axelar/val-details/threshold-signing-participation/line"
+                }
+              ],
+              "id": "tile/axelar/val-details/threshold-signing-participation",
+              "title": {
+                "detail": "Participation in requested threshold signing events",
+                "title": "Threshold signing participation"
+              },
+              "type": "tile/data"
+            }
+          ],
+          "description": "This dashboard provides a drill-down into a single validator’s performance over the selected time frame. The view is intended to support debugging of validator issues",
+          "layout": {
+            "desktop": [
+              {
+                "h": 7,
+                "i": "tile/axelar/val-details/address",
+                "w": 6,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/val-details/moniker",
+                "w": 6,
+                "x": 6,
+                "y": 0
+              },
+              {
+                "h": 21,
+                "i": "tile/axelar/val-details/registered-network",
+                "w": 6,
+                "x": 0,
+                "y": 7
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/val-details/commission-rate",
+                "w": 3,
+                "x": 9,
+                "y": 7
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/val-details/voting-power",
+                "w": 3,
+                "x": 6,
+                "y": 7
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/val-details/status",
+                "w": 6,
+                "x": 6,
+                "y": 21
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/val-details/jailed-axelar",
+                "w": 3,
+                "x": 6,
+                "y": 14
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/val-details/jailed_tendermint",
+                "w": 3,
+                "x": 9,
+                "y": 14
+              },
+              {
+                "h": 12,
+                "i": "tile/axelar/val-details/vote-history",
+                "w": 12,
+                "x": 0,
+                "y": 28
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/latest-votes",
+                "w": 12,
+                "x": 0,
+                "y": 40
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/latest-abstain-no-votes",
+                "w": 12,
+                "x": 0,
+                "y": 60
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/missed-heartbeats",
+                "w": 12,
+                "x": 0,
+                "y": 80
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/latest-missed-heartbeats",
+                "w": 12,
+                "x": 0,
+                "y": 100
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/delegation-stake",
+                "w": 12,
+                "x": 0,
+                "y": 120
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/missed-blocks",
+                "w": 12,
+                "x": 0,
+                "y": 140
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/threshold-keygen",
+                "w": 12,
+                "x": 0,
+                "y": 180
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/failed-keygen-participation-history",
+                "w": 12,
+                "x": 0,
+                "y": 200
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/threshold-signing-participation",
+                "w": 12,
+                "x": 0,
+                "y": 160
+              }
+            ],
+            "largeDesktop": [
+              {
+                "h": 7,
+                "i": "tile/axelar/val-details/address",
+                "w": 6,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/val-details/moniker",
+                "w": 6,
+                "x": 6,
+                "y": 0
+              },
+              {
+                "h": 21,
+                "i": "tile/axelar/val-details/registered-network",
+                "w": 6,
+                "x": 0,
+                "y": 7
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/val-details/commission-rate",
+                "w": 3,
+                "x": 9,
+                "y": 7
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/val-details/voting-power",
+                "w": 3,
+                "x": 6,
+                "y": 7
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/val-details/status",
+                "w": 6,
+                "x": 6,
+                "y": 21
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/val-details/jailed-axelar",
+                "w": 3,
+                "x": 6,
+                "y": 14
+              },
+              {
+                "h": 7,
+                "i": "tile/axelar/val-details/jailed_tendermint",
+                "w": 3,
+                "x": 9,
+                "y": 14
+              },
+              {
+                "h": 12,
+                "i": "tile/axelar/val-details/vote-history",
+                "w": 12,
+                "x": 0,
+                "y": 28
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/latest-votes",
+                "w": 12,
+                "x": 0,
+                "y": 40
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/latest-abstain-no-votes",
+                "w": 12,
+                "x": 0,
+                "y": 60
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/missed-heartbeats",
+                "w": 12,
+                "x": 0,
+                "y": 80
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/latest-missed-heartbeats",
+                "w": 12,
+                "x": 0,
+                "y": 100
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/delegation-stake",
+                "w": 12,
+                "x": 0,
+                "y": 120
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/missed-blocks",
+                "w": 12,
+                "x": 0,
+                "y": 140
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/threshold-keygen",
+                "w": 12,
+                "x": 0,
+                "y": 180
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/failed-keygen-participation-history",
+                "w": 12,
+                "x": 0,
+                "y": 200
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-details/threshold-signing-participation",
+                "w": 12,
+                "x": 0,
+                "y": 160
+              }
+            ],
+            "mobile": [
+              {
+                "h": 12,
+                "i": "tile/axelar/val-details/address",
+                "w": 2,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 12,
+                "i": "tile/axelar/val-details/moniker",
+                "w": 2,
+                "x": 0,
+                "y": 12
+              },
+              {
+                "h": 17,
+                "i": "tile/axelar/val-details/registered-network",
+                "w": 2,
+                "x": 0,
+                "y": 24
+              },
+              {
+                "h": 9,
+                "i": "tile/axelar/val-details/commission-rate",
+                "w": 2,
+                "x": 0,
+                "y": 41
+              },
+              {
+                "h": 9,
+                "i": "tile/axelar/val-details/voting-power",
+                "w": 2,
+                "x": 0,
+                "y": 50
+              },
+              {
+                "h": 9,
+                "i": "tile/axelar/val-details/status",
+                "w": 2,
+                "x": 0,
+                "y": 77
+              },
+              {
+                "h": 9,
+                "i": "tile/axelar/val-details/jailed-axelar",
+                "w": 2,
+                "x": 0,
+                "y": 59
+              },
+              {
+                "h": 9,
+                "i": "tile/axelar/val-details/jailed_tendermint",
+                "w": 2,
+                "x": 0,
+                "y": 68
+              },
+              {
+                "h": 21,
+                "i": "tile/axelar/val-details/vote-history",
+                "w": 2,
+                "x": 0,
+                "y": 86
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/val-details/latest-votes",
+                "w": 2,
+                "x": 0,
+                "y": 107
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/val-details/latest-abstain-no-votes",
+                "w": 2,
+                "x": 0,
+                "y": 137
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/val-details/missed-heartbeats",
+                "w": 2,
+                "x": 0,
+                "y": 167
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/val-details/latest-missed-heartbeats",
+                "w": 2,
+                "x": 0,
+                "y": 197
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/val-details/delegation-stake",
+                "w": 2,
+                "x": 0,
+                "y": 227
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/val-details/missed-blocks",
+                "w": 2,
+                "x": 0,
+                "y": 257
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/val-details/threshold-keygen",
+                "w": 2,
+                "x": 0,
+                "y": 317
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/val-details/failed-keygen-participation-history",
+                "w": 2,
+                "x": 0,
+                "y": 347
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/val-details/threshold-signing-participation",
+                "w": 2,
+                "x": 0,
+                "y": 287
+              }
+            ]
+          },
+          "timeRanges": [
+            "1d",
+            "1w",
+            "2w"
+          ],
+          "title": "Axelar Validator Details"
+        },
+        "id": "validator-details",
+        "name": "Validator Details"
+      },
+      "dashModelId": "validator-details",
+      "fullPath": "/dashboard/g/public/p/axelar/n/mainnet/m/validator-details",
+      "name": "Validator Details",
+      "network": "mainnet",
+      "orgId": "public",
+      "protocol": "axelar"
+    }
+  },
+  {
+    "key": "charting.dashboardDetails__selectorFamily/\"/dashboard/g/public/p/axelar/n/mainnet/m/validator-overview\"/3",
+    "type": "selector",
+    "isModified": false,
+    "subNodes": 0,
+    "nodeSubscription": [],
+    "state": "hasValue",
+    "value": {
+      "dashModel": {
+        "_version": "1.0.0",
+        "details": {
+          "blocks": [
+            {
+              "charts": null,
+              "id": "tile/axelar/val-overview/staking-info-header",
+              "title": {
+                "subtitle": "Validator stake, delegations, commission rate, and voting power - use this section to inform how you delegate amongst Axelar validators.",
+                "title": "Validator Staking Info"
+              },
+              "type": "tile/header"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/a9798637-c272-47fd-ad40-db20bda42c5c",
+                  "viewId": "axelar/val-overview/validator-overview/table"
+                }
+              ],
+              "id": "tile/axelar/val-overview/validator-overview",
+              "title": {
+                "detail": "Comparison of validators across staking KPIs",
+                "title": "Validator overview"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": null,
+              "id": "tile/axelar/val-overview/recent-performance-header",
+              "title": {
+                "subtitle": "This section monitors validator health by tracking missed blocks, missed heartbeats, keygen/threshold signing participation, and validator voting",
+                "title": "Recent Validator Performance"
+              },
+              "type": "tile/header"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/9db2c88d-50d6-42f3-bb89-8572cadb4390",
+                  "viewId": "axelar/val-overview/validator-activity/table"
+                }
+              ],
+              "id": "tile/axelar/val-overview/validator-activity",
+              "title": {
+                "detail": "Comparison of validators across performance KPIs",
+                "title": "Validator activity"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": null,
+              "id": "tile/axelar/val-overview/evm-voting-header",
+              "title": {
+                "subtitle": "This section delves into the statistics of recent voting on External Chain events such as deposit confirmations. Voting patterns take into account the cases where validators abstained. 'No' votes analysis represent a comparison with 'Yes' votes and therefore exclude abstains",
+                "title": "EMV Voting"
+              },
+              "type": "tile/header"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/02f49ec9-4a39-4d88-9958-d70b01ed65c0",
+                  "viewId": "axelar/val-overview/validator-voting/table"
+                }
+              ],
+              "id": "tile/axelar/val-overview/validator-voting",
+              "title": {
+                "detail": "Comparison of validators by votes record",
+                "title": "External Chain Voting"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/dd3af5fe-92a2-42bf-aab6-f36993a454d8",
+                  "viewId": "axelar/val-overview/external-chain-voting-top20/heatmap"
+                }
+              ],
+              "id": "tile/axelar/val-overview/external-chain-voting-top20",
+              "title": {
+                "detail": "External Voting Participation % by the top 20 validators by stake",
+                "title": "Voting Patterns by Validator"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/00a43400-388f-4e5b-9276-bbe7f8ac1bcf",
+                  "viewId": "axelar/val-overview/ratio-of-no-votes-by-network/heatmap",
+                  "widthSplit": 75
+                },
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/73a69602-9b70-472e-861a-08c60dd849ae",
+                  "minWidth": 530,
+                  "viewId": "axelar/val-overview/ratio-of-no-votes-by-network/table"
+                }
+              ],
+              "id": "tile/axelar/val-overview/ratio-of-no-votes-by-network",
+              "title": {
+                "detail": "Overview of the ratio of 'No' votes by network and time interval and aggregated over the complete time range",
+                "title": "Ratio of No Votes by Network"
+              },
+              "type": "tile/data"
+            },
+            {
+              "charts": [
+                {
+                  "dataId": "g/public/p/axelar/n/mainnet/c/4e7d29c5-3520-464c-a5fb-dd8984fdd485",
+                  "viewId": "axelar/val-overview/ratio-of-no-votes-by-validator/table"
+                }
+              ],
+              "id": "tile/axelar/val-overview/ratio-of-no-votes-by-validator",
+              "title": {
+                "detail": "Latest and average 'No' vote ratio over 1h intervals for validators with no votes",
+                "title": "Ratio of No Votes by Validator"
+              },
+              "type": "tile/data"
+            }
+          ],
+          "description": "This dashboard provides statistics and allows users to benchmark validators based on staking KPIs, activity, and performance.",
+          "layout": {
+            "desktop": [
+              {
+                "h": 5,
+                "i": "tile/axelar/val-overview/staking-info-header",
+                "w": 12,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-overview/validator-overview",
+                "w": 12,
+                "x": 0,
+                "y": 5
+              },
+              {
+                "h": 5,
+                "i": "tile/axelar/val-overview/recent-performance-header",
+                "w": 12,
+                "x": 0,
+                "y": 25
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-overview/validator-activity",
+                "w": 12,
+                "x": 0,
+                "y": 30
+              },
+              {
+                "h": 6,
+                "i": "tile/axelar/val-overview/evm-voting-header",
+                "w": 12,
+                "x": 0,
+                "y": 50
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-overview/validator-voting",
+                "w": 6,
+                "x": 0,
+                "y": 56
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-overview/external-chain-voting-top20",
+                "w": 6,
+                "x": 6,
+                "y": 56
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-overview/ratio-of-no-votes-by-network",
+                "w": 12,
+                "x": 0,
+                "y": 76
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-overview/ratio-of-no-votes-by-validator",
+                "w": 12,
+                "x": 0,
+                "y": 96
+              }
+            ],
+            "largeDesktop": [
+              {
+                "h": 5,
+                "i": "tile/axelar/val-overview/staking-info-header",
+                "w": 12,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-overview/validator-overview",
+                "w": 12,
+                "x": 0,
+                "y": 5
+              },
+              {
+                "h": 5,
+                "i": "tile/axelar/val-overview/recent-performance-header",
+                "w": 12,
+                "x": 0,
+                "y": 25
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-overview/validator-activity",
+                "w": 12,
+                "x": 0,
+                "y": 30
+              },
+              {
+                "h": 6,
+                "i": "tile/axelar/val-overview/evm-voting-header",
+                "w": 12,
+                "x": 0,
+                "y": 50
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-overview/validator-voting",
+                "w": 6,
+                "x": 0,
+                "y": 56
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-overview/external-chain-voting-top20",
+                "w": 6,
+                "x": 6,
+                "y": 56
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-overview/ratio-of-no-votes-by-network",
+                "w": 12,
+                "x": 0,
+                "y": 76
+              },
+              {
+                "h": 20,
+                "i": "tile/axelar/val-overview/ratio-of-no-votes-by-validator",
+                "w": 12,
+                "x": 0,
+                "y": 96
+              }
+            ],
+            "mobile": [
+              {
+                "h": 10,
+                "i": "tile/axelar/val-overview/staking-info-header",
+                "w": 2,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/val-overview/validator-overview",
+                "w": 2,
+                "x": 0,
+                "y": 10
+              },
+              {
+                "h": 14,
+                "i": "tile/axelar/val-overview/recent-performance-header",
+                "w": 2,
+                "x": 0,
+                "y": 40
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/val-overview/validator-activity",
+                "w": 2,
+                "x": 0,
+                "y": 54
+              },
+              {
+                "h": 14,
+                "i": "tile/axelar/val-overview/evm-voting-header",
+                "w": 2,
+                "x": 0,
+                "y": 84
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/val-overview/validator-voting",
+                "w": 2,
+                "x": 0,
+                "y": 98
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/val-overview/external-chain-voting-top20",
+                "w": 2,
+                "x": 0,
+                "y": 128
+              },
+              {
+                "h": 39,
+                "i": "tile/axelar/val-overview/ratio-of-no-votes-by-network",
+                "w": 2,
+                "x": 0,
+                "y": 158
+              },
+              {
+                "h": 30,
+                "i": "tile/axelar/val-overview/ratio-of-no-votes-by-validator",
+                "w": 2,
+                "x": 0,
+                "y": 197
+              }
+            ]
+          },
+          "timeRanges": [
+            "1d",
+            "1w",
+            "2w"
+          ]
+        },
+        "id": "validator-overview",
+        "name": "Validator Overview"
+      },
+      "dashModelId": "validator-overview",
+      "fullPath": "/dashboard/g/public/p/axelar/n/mainnet/m/validator-overview",
+      "name": "Validator Overview",
+      "network": "mainnet",
+      "orgId": "public",
+      "protocol": "axelar"
+    }
+  },
+  {
+    "key": "charting.dashboards",
+    "type": "selector",
+    "isModified": false,
+    "subNodes": 0,
+    "nodeSubscription": [],
+    "state": "hasValue",
+    "value": [
+      {
+        "dashModelId": "network-performance",
+        "fullPath": "/dashboard/g/public/p/algorand/n/mainnet/m/network-performance",
+        "name": "Performance & Activity",
+        "network": "mainnet",
+        "orgId": "public",
+        "protocol": "algorand",
+        "sideOrder": 0
+      },
+      {
+        "dashModelId": "consensus-participation",
+        "fullPath": "/dashboard/g/public/p/algorand/n/mainnet/m/consensus-participation",
+        "name": "Consensus Participation",
+        "network": "mainnet",
+        "orgId": "public",
+        "protocol": "algorand",
+        "sideOrder": 1
+      },
+      {
+        "dashModelId": "network-overview",
+        "fullPath": "/dashboard/g/public/p/axelar/n/mainnet/m/network-overview",
+        "name": "Network Overview",
+        "network": "mainnet",
+        "orgId": "public",
+        "protocol": "axelar",
+        "sideOrder": 0
+      },
+      {
+        "dashModelId": "validator-overview",
+        "fullPath": "/dashboard/g/public/p/axelar/n/mainnet/m/validator-overview",
+        "name": "Validator Overview",
+        "network": "mainnet",
+        "orgId": "public",
+        "protocol": "axelar",
+        "sideOrder": 1
+      },
+      {
+        "dashModelId": "validator-details",
+        "fullPath": "/dashboard/g/public/p/axelar/n/mainnet/m/validator-details",
+        "hidden": true,
+        "name": "Validator Details",
+        "network": "mainnet",
+        "orgId": "public",
+        "path": "/dashboard/axelar/validator-details/:validatorId?",
+        "protocol": "axelar",
+        "sideOrder": 2
+      },
+      {
+        "dashModelId": "consensus-performance",
+        "fullPath": "/dashboard/g/public/p/ethereum/n/mainnet/m/consensus-performance",
+        "name": "Consensus Performance",
+        "network": "mainnet",
+        "orgId": "public",
+        "path": "/dashboard/ethereum/consensus-performance",
+        "protocol": "ethereum",
+        "sideOrder": 0
+      },
+      {
+        "dashModelId": "validator-drill-down",
+        "fullPath": "/dashboard/g/public/p/ethereum/n/mainnet/m/validator-drill-down",
+        "name": "Validator Drill-Down",
+        "network": "mainnet",
+        "orgId": "public",
+        "path": "/dashboard/ethereum/validator-drill-down/:validatorId?",
+        "protocol": "ethereum",
+        "sideLink": "/dashboard/ethereum/validator-drill-down",
+        "sideOrder": 1
+      },
+      {
+        "protocol": "flow",
+        "network": "mainnet",
+        "name": "Node Details",
+        "dashModelId": "node-details",
+        "path": "/node/flow/node-details/:agentId?",
+        "sideOrder": 0,
+        "fullPath": "/dashboard/g/:groupId/p/flow/n/mainnet/m/node-details",
+        "orgId": "public"
+      },
+      {
+        "dashModelId": "network-overview",
+        "fullPath": "/dashboard/g/public/p/hedera/n/mainnet/m/network-overview",
+        "name": "Network Overview",
+        "network": "mainnet",
+        "orgId": "public",
+        "protocol": "hedera",
+        "sideOrder": 0
+      },
+      {
+        "dashModelId": "network-activity",
+        "fullPath": "/dashboard/g/f57130fd-6402-4420-a4da-c748fdc01f95/p/hedera/n/mainnet/m/network-activity",
+        "name": "Network Activity",
+        "network": "mainnet",
+        "orgId": "f57130fd-6402-4420-a4da-c748fdc01f95",
+        "protocol": "hedera",
+        "sideOrder": 1
+      },
+      {
+        "dashModelId": "account-activity",
+        "fullPath": "/dashboard/g/f57130fd-6402-4420-a4da-c748fdc01f95/p/hedera/n/mainnet/m/account-activity",
+        "name": "Account Activity",
+        "network": "mainnet",
+        "orgId": "f57130fd-6402-4420-a4da-c748fdc01f95",
+        "path": "/dashboard/hedera/account-activity/:accountId?",
+        "protocol": "hedera",
+        "sideLink": "/dashboard/hedera/account-activity/0.0.779573",
+        "sideOrder": 2
+      },
+      {
+        "dashModelId": "smart-contract-activity",
+        "fullPath": "/dashboard/g/f57130fd-6402-4420-a4da-c748fdc01f95/p/hedera/n/mainnet/m/smart-contract-activity",
+        "name": "Smart Contract Activity",
+        "network": "mainnet",
+        "orgId": "f57130fd-6402-4420-a4da-c748fdc01f95",
+        "path": "/dashboard/hedera/smart-contract-activity/:contractId?",
+        "protocol": "hedera",
+        "sideLink": "/dashboard/hedera/smart-contract-activity/0.0.834119",
+        "sideOrder": 3
+      }
+    ]
+  },
+  {
+    "key": "@recoil-toolkit.lastTaskType__selectorFamily/\"service.isOffline\"/1",
+    "type": "selector",
+    "isModified": false,
+    "subNodes": 0,
+    "nodeSubscription": [],
+    "state": "hasValue",
+    "value": {
+      "id": 2,
+      "args": [],
+      "status": 0,
+      "options": {
+        "exclusive": true,
+        "key": "service.isOffline",
+        "autoStart": []
+      },
+      "startedAt": "2022-08-24T22:27:41.746Z"
+    }
+  },
+  {
+    "key": "@recoil-toolkit.lastTaskType__selectorFamily/\"service.lastVersion\"/0",
+    "type": "selector",
+    "isModified": false,
+    "subNodes": 0,
+    "nodeSubscription": [],
+    "state": "hasValue",
+    "value": {
+      "id": 1,
+      "args": [],
+      "status": 0,
+      "options": {
+        "exclusive": true,
+        "key": "service.lastVersion",
+        "autoStart": []
+      },
+      "startedAt": "2022-08-24T22:27:41.745Z"
+    }
+  },
+  {
+    "key": "@recoil-toolkit.lastTaskType__selectorFamily/\"task.notificationUpdateemail\"/5",
+    "type": "selector",
+    "isModified": false,
+    "subNodes": 0,
+    "nodeSubscription": [],
+    "state": "hasValue",
+    "value": {
+      "id": 9,
+      "args": [
+        {
+          "name": "email",
+          "parameters": {},
+          "isEnabled": false
+        }
+      ],
+      "status": 0,
+      "options": {
+        "exclusive": true,
+        "key": "task.notificationUpdateemail"
+      },
+      "startedAt": "2022-08-24T22:28:01.348Z"
+    }
+  },
+  {
+    "key": "@recoil-toolkit.tasks",
+    "type": "atom",
+    "isModified": false,
+    "subNodes": 3,
+    "nodeSubscription": [
+      "recoil-toolkit/lastTaskType__selectorFamily/\"task.notificationUpdateemail\"/5",
+      "recoil-toolkit/lastTaskType__selectorFamily/\"service.isOffline\"/1",
+      "recoil-toolkit/lastTaskType__selectorFamily/\"service.lastVersion\"/0"
+    ],
+    "state": "hasValue",
+    "value": [
+      {
+        "id": 1,
+        "args": [],
+        "status": 0,
+        "options": {
+          "exclusive": true,
+          "key": "service.lastVersion",
+          "autoStart": []
+        },
+        "startedAt": "2022-08-24T22:27:41.745Z"
+      },
+      {
+        "id": 2,
+        "args": [],
+        "status": 0,
+        "options": {
+          "exclusive": true,
+          "key": "service.isOffline",
+          "autoStart": []
+        },
+        "startedAt": "2022-08-24T22:27:41.746Z"
+      },
+      {
+        "id": 3,
+        "args": [
+          {
+            "name": "email",
+            "parameters": {},
+            "isEnabled": true
+          }
+        ],
+        "status": 2,
+        "options": {
+          "exclusive": true,
+          "key": "task.notificationUpdateemail"
+        },
+        "startedAt": "2022-08-24T22:27:57.224Z",
+        "endAt": "2022-08-24T22:27:57.716Z"
+      },
+      {
+        "id": 4,
+        "args": [
+          {
+            "name": "email",
+            "parameters": {},
+            "isEnabled": true
+          }
+        ],
+        "status": 2,
+        "options": {
+          "exclusive": true,
+          "key": "task.notificationUpdateemail"
+        },
+        "startedAt": "2022-08-24T22:27:57.959Z",
+        "endAt": "2022-08-24T22:27:58.399Z"
+      },
+      {
+        "id": 5,
+        "args": [
+          {
+            "name": "email",
+            "parameters": {},
+            "isEnabled": false
+          }
+        ],
+        "status": 2,
+        "options": {
+          "exclusive": true,
+          "key": "task.notificationUpdateemail"
+        },
+        "startedAt": "2022-08-24T22:27:58.708Z",
+        "endAt": "2022-08-24T22:27:59.134Z"
+      },
+      {
+        "id": 6,
+        "args": [
+          {
+            "name": "email",
+            "parameters": {},
+            "isEnabled": false
+          }
+        ],
+        "status": 2,
+        "options": {
+          "exclusive": true,
+          "key": "task.notificationUpdateemail"
+        },
+        "startedAt": "2022-08-24T22:27:59.273Z",
+        "endAt": "2022-08-24T22:27:59.697Z"
+      },
+      {
+        "id": 7,
+        "args": [
+          {
+            "name": "email",
+            "parameters": {},
+            "isEnabled": true
+          }
+        ],
+        "status": 2,
+        "options": {
+          "exclusive": true,
+          "key": "task.notificationUpdateemail"
+        },
+        "startedAt": "2022-08-24T22:28:00.192Z",
+        "endAt": "2022-08-24T22:28:00.617Z"
+      },
+      {
+        "id": 8,
+        "args": [
+          {
+            "name": "email",
+            "parameters": {},
+            "isEnabled": true
+          }
+        ],
+        "status": 2,
+        "options": {
+          "exclusive": true,
+          "key": "task.notificationUpdateemail"
+        },
+        "startedAt": "2022-08-24T22:28:00.724Z",
+        "endAt": "2022-08-24T22:28:01.131Z"
+      },
+      {
+        "id": 9,
+        "args": [
+          {
+            "name": "email",
+            "parameters": {},
+            "isEnabled": false
+          }
+        ],
+        "status": 0,
+        "options": {
+          "exclusive": true,
+          "key": "task.notificationUpdateemail"
+        },
+        "startedAt": "2022-08-24T22:28:01.348Z"
+      }
+    ]
+  },
+  {
+    "key": "ui.isOffline",
+    "type": "atom",
+    "isModified": false,
+    "subNodes": 0,
+    "nodeSubscription": [],
+    "state": "hasValue",
+    "value": false
+  },
+  {
+    "key": "user._raw",
+    "type": "selector",
+    "isModified": false,
+    "subNodes": 2,
+    "nodeSubscription": [
+      "user.org",
+      "user.sidebar"
+    ],
+    "state": "hasValue",
+    "value": {
+      "avatar": "https://lh3.googleusercontent.com/a-/AOh14GhNxjxPOkFfFWzK7zHyCbnlMNAsg9Qp0UnGpYIh=s96-c",
+      "deletable": true,
+      "email": "salvoravida@metrika.co",
+      "id": "62d6d75d01bc46fa90769a62",
+      "organization": {
+        "apiKey": "41a029b340faed3de0e2391ed670d50971431236d3cd59d7d743e4fa9f52edd4",
+        "id": "668c7551-4958-4950-8b51-c824b60b5fdb",
+        "multiUser": true,
+        "name": "metrika",
+        "userType": "admin"
+      },
+      "sidebar": {
+        "main": {
+          "banner_url": "",
+          "children": [
+            {
+              "banner_url": "/assets/networks/algorand_logo_big.png",
+              "children": [
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "algorand-dashboard",
+                  "kind": "dashboards-menu",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Network Dashboards",
+                  "url": "",
+                  "urlMatch": "/dashboard/algorand"
+                },
+                {
+                  "banner_url": "",
+                  "children": [
+                    {
+                      "banner_url": "",
+                      "children": [],
+                      "enabled": true,
+                      "icon_url": "",
+                      "id": "algorand-alerts-home",
+                      "kind": "simple-link",
+                      "learnMore": "",
+                      "partnership_image_alt": "",
+                      "partnership_image_url": "",
+                      "title": "Home",
+                      "url": "/alerts/algorand/home",
+                      "urlMatch": ""
+                    },
+                    {
+                      "banner_url": "",
+                      "children": [],
+                      "enabled": true,
+                      "icon_url": "",
+                      "id": "algorand-alerts-subscriptions",
+                      "kind": "simple-link",
+                      "learnMore": "",
+                      "partnership_image_alt": "",
+                      "partnership_image_url": "",
+                      "title": "Subscriptions",
+                      "url": "/alerts/algorand/subscriptions",
+                      "urlMatch": ""
+                    }
+                  ],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "algorand-alerts",
+                  "kind": "alerts-menu",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Alerts",
+                  "url": "/alerts/algorand/home",
+                  "urlMatch": "/alerts/algorand"
+                },
+                {
+                  "banner_url": "",
+                  "children": [
+                    {
+                      "banner_url": "",
+                      "children": [],
+                      "enabled": true,
+                      "icon_url": "",
+                      "id": "algorand-kc-getting-started",
+                      "kind": "simple-link",
+                      "learnMore": "",
+                      "partnership_image_alt": "",
+                      "partnership_image_url": "",
+                      "title": "Getting Started",
+                      "url": "/docs/algorand/getting-started",
+                      "urlMatch": ""
+                    },
+                    {
+                      "banner_url": "",
+                      "children": [],
+                      "enabled": true,
+                      "icon_url": "",
+                      "id": "algorand-kc-quick-start-tutorial",
+                      "kind": "simple-link",
+                      "learnMore": "",
+                      "partnership_image_alt": "",
+                      "partnership_image_url": "",
+                      "title": "Quick Start Tutorial",
+                      "url": "/docs/algorand/quick-start-tutorial",
+                      "urlMatch": ""
+                    },
+                    {
+                      "banner_url": "",
+                      "children": [],
+                      "enabled": true,
+                      "icon_url": "",
+                      "id": "algorand-kc-faq",
+                      "kind": "simple-link",
+                      "learnMore": "",
+                      "partnership_image_alt": "",
+                      "partnership_image_url": "",
+                      "title": "FAQ",
+                      "url": "/docs/algorand/faq",
+                      "urlMatch": ""
+                    },
+                    {
+                      "banner_url": "",
+                      "children": [],
+                      "enabled": true,
+                      "icon_url": "",
+                      "id": "algorand-kc-alert-types",
+                      "kind": "simple-link",
+                      "learnMore": "",
+                      "partnership_image_alt": "",
+                      "partnership_image_url": "",
+                      "title": "Alert Types",
+                      "url": "/docs/algorand/alert-types",
+                      "urlMatch": ""
+                    },
+                    {
+                      "banner_url": "",
+                      "children": [],
+                      "enabled": true,
+                      "icon_url": "",
+                      "id": "algorand-kc-resources",
+                      "kind": "simple-link",
+                      "learnMore": "",
+                      "partnership_image_alt": "",
+                      "partnership_image_url": "",
+                      "title": "Resources",
+                      "url": "/docs/algorand/resources",
+                      "urlMatch": ""
+                    }
+                  ],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "algorand-kc",
+                  "kind": "simple-menu",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Knowledge Center",
+                  "url": "",
+                  "urlMatch": "/docs/algorand"
+                }
+              ],
+              "enabled": true,
+              "icon_url": "/assets/networks/algorand_logo.svg",
+              "id": "algorand",
+              "kind": "workspace",
+              "learnMore": "https://metrika.co/ethereum-operational-dashboards",
+              "partnership_image_alt": "Algorand Foundation",
+              "partnership_image_url": "/assets/networks/algorand_foundation.png",
+              "title": "Algorand Network",
+              "url": "/dashboard/algorand",
+              "urlMatch": ""
+            },
+            {
+              "banner_url": "/assets/networks/axelar_logo_big.png",
+              "children": [
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "axelar-dashboard",
+                  "kind": "dashboards-menu",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Network Dashboards",
+                  "url": "",
+                  "urlMatch": "/dashboard/axelar"
+                },
+                {
+                  "banner_url": "",
+                  "children": [
+                    {
+                      "banner_url": "",
+                      "children": [],
+                      "enabled": true,
+                      "icon_url": "",
+                      "id": "axelar-kc-about-metrics-and-charts",
+                      "kind": "simple-link",
+                      "learnMore": "",
+                      "partnership_image_alt": "",
+                      "partnership_image_url": "",
+                      "title": "About Metrics and Charts",
+                      "url": "/docs/axelar/about-metrics-and-charts",
+                      "urlMatch": ""
+                    },
+                    {
+                      "banner_url": "",
+                      "children": [],
+                      "enabled": true,
+                      "icon_url": "",
+                      "id": "axelar-kc-faq",
+                      "kind": "simple-link",
+                      "learnMore": "",
+                      "partnership_image_alt": "",
+                      "partnership_image_url": "",
+                      "title": "FAQ",
+                      "url": "/docs/axelar/faq",
+                      "urlMatch": ""
+                    }
+                  ],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "axelar-kc",
+                  "kind": "simple-menu",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Knowledge Center",
+                  "url": "",
+                  "urlMatch": "/docs/axelar"
+                }
+              ],
+              "enabled": true,
+              "icon_url": "/assets/networks/axelar_logo.png",
+              "id": "axelar",
+              "kind": "workspace",
+              "learnMore": "",
+              "partnership_image_alt": "Axelar",
+              "partnership_image_url": "/assets/networks/axelar_logo_big.png",
+              "title": "Axelar Network",
+              "url": "/dashboard/axelar",
+              "urlMatch": ""
+            },
+            {
+              "banner_url": "/assets/networks/hedera_logo_big.png",
+              "children": [
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "hedera-dashboard",
+                  "kind": "dashboards-menu",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Network Dashboards",
+                  "url": "",
+                  "urlMatch": "/dashboard/hedera"
+                },
+                {
+                  "banner_url": "",
+                  "children": [
+                    {
+                      "banner_url": "",
+                      "children": [],
+                      "enabled": true,
+                      "icon_url": "",
+                      "id": "hedera-kc-quick-start-tutorial",
+                      "kind": "simple-link",
+                      "learnMore": "",
+                      "partnership_image_alt": "",
+                      "partnership_image_url": "",
+                      "title": "Quick Start Tutorial",
+                      "url": "/docs/hedera/quick-start-tutorial",
+                      "urlMatch": ""
+                    },
+                    {
+                      "banner_url": "",
+                      "children": [],
+                      "enabled": true,
+                      "icon_url": "",
+                      "id": "hedera-kc-resources",
+                      "kind": "simple-link",
+                      "learnMore": "",
+                      "partnership_image_alt": "",
+                      "partnership_image_url": "",
+                      "title": "Resources",
+                      "url": "/docs/hedera/resources",
+                      "urlMatch": ""
+                    }
+                  ],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "hedera-kc",
+                  "kind": "simple-menu",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Knowledge Center",
+                  "url": "",
+                  "urlMatch": "/docs/hedera"
+                }
+              ],
+              "enabled": true,
+              "icon_url": "/assets/networks/hedera_logo.png",
+              "id": "hedera",
+              "kind": "workspace",
+              "learnMore": "",
+              "partnership_image_alt": "Hbar",
+              "partnership_image_url": "  /assets/networks/hbar_foundation.svg",
+              "title": "Hedera",
+              "url": "/dashboard/hedera",
+              "urlMatch": ""
+            },
+            {
+              "banner_url": "/assets/networks/ethereum_logo_big.png",
+              "children": [
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "ethereum-dashboard",
+                  "kind": "dashboards-menu",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Network Dashboards",
+                  "url": "",
+                  "urlMatch": "/dashboard/ethereum"
+                },
+                {
+                  "banner_url": "",
+                  "children": [
+                    {
+                      "banner_url": "",
+                      "children": [],
+                      "enabled": true,
+                      "icon_url": "",
+                      "id": "ethereum-kc-getting-started",
+                      "kind": "simple-link",
+                      "learnMore": "",
+                      "partnership_image_alt": "",
+                      "partnership_image_url": "",
+                      "title": "Getting Started",
+                      "url": "/docs/ethereum/getting-started",
+                      "urlMatch": ""
+                    }
+                  ],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "ethereum-kc",
+                  "kind": "simple-menu",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Knowledge Center",
+                  "url": "",
+                  "urlMatch": "/docs/ethereum"
+                }
+              ],
+              "enabled": true,
+              "icon_url": "/assets/networks/ethereum_logo_bk.png",
+              "id": "ethereum",
+              "kind": "workspace",
+              "learnMore": "https://metrika.co/ethereum-operational-dashboards/",
+              "partnership_image_alt": "",
+              "partnership_image_url": "",
+              "title": "Ethereum",
+              "url": "/dashboard/ethereum",
+              "urlMatch": ""
+            },
+            {
+              "banner_url": "/assets/networks/flow_logo_big_bk.svg",
+              "children": [],
+              "enabled": false,
+              "icon_url": "/assets/networks/flow_logo.png",
+              "id": "flow",
+              "kind": "workspace",
+              "learnMore": "",
+              "partnership_image_alt": "",
+              "partnership_image_url": "",
+              "title": "Flow",
+              "url": "/dashboard/flow",
+              "urlMatch": ""
+            }
+          ],
+          "enabled": true,
+          "icon_url": "",
+          "id": "root",
+          "kind": "root",
+          "learnMore": "",
+          "partnership_image_alt": "",
+          "partnership_image_url": "",
+          "title": "Root",
+          "url": "",
+          "urlMatch": ""
+        }
+      }
+    }
+  },
+  {
+    "key": "user.org",
+    "type": "selector",
+    "isModified": false,
+    "subNodes": 0,
+    "nodeSubscription": [],
+    "state": "hasValue",
+    "value": {
+      "apiKey": "41a029b340faed3de0e2391ed670d50971431236d3cd59d7d743e4fa9f52edd4",
+      "id": "668c7551-4958-4950-8b51-c824b60b5fdb",
+      "multiUser": true,
+      "name": "metrika",
+      "userType": "admin"
+    }
+  },
+  {
+    "key": "user.settings._raw",
+    "type": "selector",
+    "isModified": true,
+    "subNodes": 1,
+    "nodeSubscription": [
+      "user.settings.byProvider"
+    ],
+    "state": "hasValue",
+    "value": {
+      "global": {
+        "notification_settings": [
+          {
+            "isDown": false,
+            "isDownSince": "0",
+            "isGlobalEnabled": true,
+            "name": "pagerduty"
+          },
+          {
+            "isDown": false,
+            "isDownSince": "0",
+            "isGlobalEnabled": true,
+            "name": "slack"
+          },
+          {
+            "isDown": false,
+            "isDownSince": "0",
+            "isGlobalEnabled": true,
+            "name": "opsgenie"
+          },
+          {
+            "isDown": false,
+            "isDownSince": "0",
+            "isGlobalEnabled": true,
+            "name": "email"
+          }
+        ]
+      },
+      "own": {
+        "organization": {
+          "notification_settings": [
+            {
+              "hasError": false,
+              "isEnabled": false,
+              "isValidated": false,
+              "name": "pagerduty",
+              "parameters": {
+                "integrationKey": ""
+              }
+            },
+            {
+              "hasError": false,
+              "isEnabled": false,
+              "isValidated": false,
+              "name": "opsgenie",
+              "parameters": {
+                "apiKey": "",
+                "isEu": false
+              }
+            },
+            {
+              "hasError": false,
+              "isEnabled": false,
+              "isValidated": false,
+              "name": "slack",
+              "parameters": {
+                "webhookURL": ""
+              }
+            }
+          ]
+        },
+        "personal": {
+          "notification_settings": [
+            {
+              "hasError": false,
+              "isEnabled": true,
+              "isValidated": true,
+              "name": "email",
+              "parameters": {}
+            }
+          ]
+        }
+      }
+    }
+  },
+  {
+    "key": "user.settings.byProvider",
+    "type": "selector",
+    "isModified": true,
+    "subNodes": 0,
+    "nodeSubscription": [],
+    "state": "hasValue",
+    "value": {
+      "email": {
+        "name": "email",
+        "parameters": {},
+        "isEnabled": true,
+        "isValidated": true,
+        "hasError": false,
+        "isGlobalEnabled": true,
+        "isDown": false,
+        "isDownSince": "0"
+      },
+      "pagerduty": {
+        "name": "pagerduty",
+        "parameters": {
+          "integrationKey": ""
+        },
+        "isEnabled": false,
+        "isValidated": false,
+        "hasError": false,
+        "isGlobalEnabled": true,
+        "isDown": false,
+        "isDownSince": "0"
+      },
+      "opsgenie": {
+        "name": "opsgenie",
+        "parameters": {
+          "apiKey": "",
+          "isEu": false
+        },
+        "isEnabled": false,
+        "isValidated": false,
+        "hasError": false,
+        "isGlobalEnabled": true,
+        "isDown": false,
+        "isDownSince": "0"
+      },
+      "slack": {
+        "name": "slack",
+        "parameters": {
+          "webhookURL": ""
+        },
+        "isEnabled": false,
+        "isValidated": false,
+        "hasError": false,
+        "isGlobalEnabled": true,
+        "isDown": false,
+        "isDownSince": "0"
+      }
+    }
+  },
+  {
+    "key": "user.sidebar",
+    "type": "selector",
+    "isModified": false,
+    "subNodes": 0,
+    "nodeSubscription": [],
+    "state": "hasValue",
+    "value": {
+      "banner_url": "",
+      "children": [
+        {
+          "banner_url": "/assets/networks/algorand_logo_big.png",
+          "children": [
+            {
+              "banner_url": "",
+              "children": [],
+              "enabled": true,
+              "icon_url": "",
+              "id": "algorand-dashboard",
+              "kind": "dashboards-menu",
+              "learnMore": "",
+              "partnership_image_alt": "",
+              "partnership_image_url": "",
+              "title": "Network Dashboards",
+              "url": "",
+              "urlMatch": "/dashboard/algorand"
+            },
+            {
+              "banner_url": "",
+              "children": [
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "algorand-alerts-home",
+                  "kind": "simple-link",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Home",
+                  "url": "/alerts/algorand/home",
+                  "urlMatch": ""
+                },
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "algorand-alerts-subscriptions",
+                  "kind": "simple-link",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Subscriptions",
+                  "url": "/alerts/algorand/subscriptions",
+                  "urlMatch": ""
+                }
+              ],
+              "enabled": true,
+              "icon_url": "",
+              "id": "algorand-alerts",
+              "kind": "alerts-menu",
+              "learnMore": "",
+              "partnership_image_alt": "",
+              "partnership_image_url": "",
+              "title": "Alerts",
+              "url": "/alerts/algorand/home",
+              "urlMatch": "/alerts/algorand"
+            },
+            {
+              "banner_url": "",
+              "children": [
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "algorand-kc-getting-started",
+                  "kind": "simple-link",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Getting Started",
+                  "url": "/docs/algorand/getting-started",
+                  "urlMatch": ""
+                },
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "algorand-kc-quick-start-tutorial",
+                  "kind": "simple-link",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Quick Start Tutorial",
+                  "url": "/docs/algorand/quick-start-tutorial",
+                  "urlMatch": ""
+                },
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "algorand-kc-faq",
+                  "kind": "simple-link",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "FAQ",
+                  "url": "/docs/algorand/faq",
+                  "urlMatch": ""
+                },
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "algorand-kc-alert-types",
+                  "kind": "simple-link",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Alert Types",
+                  "url": "/docs/algorand/alert-types",
+                  "urlMatch": ""
+                },
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "algorand-kc-resources",
+                  "kind": "simple-link",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Resources",
+                  "url": "/docs/algorand/resources",
+                  "urlMatch": ""
+                }
+              ],
+              "enabled": true,
+              "icon_url": "",
+              "id": "algorand-kc",
+              "kind": "simple-menu",
+              "learnMore": "",
+              "partnership_image_alt": "",
+              "partnership_image_url": "",
+              "title": "Knowledge Center",
+              "url": "",
+              "urlMatch": "/docs/algorand"
+            }
+          ],
+          "enabled": true,
+          "icon_url": "/assets/networks/algorand_logo.svg",
+          "id": "algorand",
+          "kind": "workspace",
+          "learnMore": "https://metrika.co/ethereum-operational-dashboards",
+          "partnership_image_alt": "Algorand Foundation",
+          "partnership_image_url": "/assets/networks/algorand_foundation.png",
+          "title": "Algorand Network",
+          "url": "/dashboard/algorand",
+          "urlMatch": ""
+        },
+        {
+          "banner_url": "/assets/networks/axelar_logo_big.png",
+          "children": [
+            {
+              "banner_url": "",
+              "children": [],
+              "enabled": true,
+              "icon_url": "",
+              "id": "axelar-dashboard",
+              "kind": "dashboards-menu",
+              "learnMore": "",
+              "partnership_image_alt": "",
+              "partnership_image_url": "",
+              "title": "Network Dashboards",
+              "url": "",
+              "urlMatch": "/dashboard/axelar"
+            },
+            {
+              "banner_url": "",
+              "children": [
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "axelar-kc-about-metrics-and-charts",
+                  "kind": "simple-link",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "About Metrics and Charts",
+                  "url": "/docs/axelar/about-metrics-and-charts",
+                  "urlMatch": ""
+                },
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "axelar-kc-faq",
+                  "kind": "simple-link",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "FAQ",
+                  "url": "/docs/axelar/faq",
+                  "urlMatch": ""
+                }
+              ],
+              "enabled": true,
+              "icon_url": "",
+              "id": "axelar-kc",
+              "kind": "simple-menu",
+              "learnMore": "",
+              "partnership_image_alt": "",
+              "partnership_image_url": "",
+              "title": "Knowledge Center",
+              "url": "",
+              "urlMatch": "/docs/axelar"
+            }
+          ],
+          "enabled": true,
+          "icon_url": "/assets/networks/axelar_logo.png",
+          "id": "axelar",
+          "kind": "workspace",
+          "learnMore": "",
+          "partnership_image_alt": "Axelar",
+          "partnership_image_url": "/assets/networks/axelar_logo_big.png",
+          "title": "Axelar Network",
+          "url": "/dashboard/axelar",
+          "urlMatch": ""
+        },
+        {
+          "banner_url": "/assets/networks/hedera_logo_big.png",
+          "children": [
+            {
+              "banner_url": "",
+              "children": [],
+              "enabled": true,
+              "icon_url": "",
+              "id": "hedera-dashboard",
+              "kind": "dashboards-menu",
+              "learnMore": "",
+              "partnership_image_alt": "",
+              "partnership_image_url": "",
+              "title": "Network Dashboards",
+              "url": "",
+              "urlMatch": "/dashboard/hedera"
+            },
+            {
+              "banner_url": "",
+              "children": [
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "hedera-kc-quick-start-tutorial",
+                  "kind": "simple-link",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Quick Start Tutorial",
+                  "url": "/docs/hedera/quick-start-tutorial",
+                  "urlMatch": ""
+                },
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "hedera-kc-resources",
+                  "kind": "simple-link",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Resources",
+                  "url": "/docs/hedera/resources",
+                  "urlMatch": ""
+                }
+              ],
+              "enabled": true,
+              "icon_url": "",
+              "id": "hedera-kc",
+              "kind": "simple-menu",
+              "learnMore": "",
+              "partnership_image_alt": "",
+              "partnership_image_url": "",
+              "title": "Knowledge Center",
+              "url": "",
+              "urlMatch": "/docs/hedera"
+            }
+          ],
+          "enabled": true,
+          "icon_url": "/assets/networks/hedera_logo.png",
+          "id": "hedera",
+          "kind": "workspace",
+          "learnMore": "",
+          "partnership_image_alt": "Hbar",
+          "partnership_image_url": "  /assets/networks/hbar_foundation.svg",
+          "title": "Hedera",
+          "url": "/dashboard/hedera",
+          "urlMatch": ""
+        },
+        {
+          "banner_url": "/assets/networks/ethereum_logo_big.png",
+          "children": [
+            {
+              "banner_url": "",
+              "children": [],
+              "enabled": true,
+              "icon_url": "",
+              "id": "ethereum-dashboard",
+              "kind": "dashboards-menu",
+              "learnMore": "",
+              "partnership_image_alt": "",
+              "partnership_image_url": "",
+              "title": "Network Dashboards",
+              "url": "",
+              "urlMatch": "/dashboard/ethereum"
+            },
+            {
+              "banner_url": "",
+              "children": [
+                {
+                  "banner_url": "",
+                  "children": [],
+                  "enabled": true,
+                  "icon_url": "",
+                  "id": "ethereum-kc-getting-started",
+                  "kind": "simple-link",
+                  "learnMore": "",
+                  "partnership_image_alt": "",
+                  "partnership_image_url": "",
+                  "title": "Getting Started",
+                  "url": "/docs/ethereum/getting-started",
+                  "urlMatch": ""
+                }
+              ],
+              "enabled": true,
+              "icon_url": "",
+              "id": "ethereum-kc",
+              "kind": "simple-menu",
+              "learnMore": "",
+              "partnership_image_alt": "",
+              "partnership_image_url": "",
+              "title": "Knowledge Center",
+              "url": "",
+              "urlMatch": "/docs/ethereum"
+            }
+          ],
+          "enabled": true,
+          "icon_url": "/assets/networks/ethereum_logo_bk.png",
+          "id": "ethereum",
+          "kind": "workspace",
+          "learnMore": "https://metrika.co/ethereum-operational-dashboards/",
+          "partnership_image_alt": "",
+          "partnership_image_url": "",
+          "title": "Ethereum",
+          "url": "/dashboard/ethereum",
+          "urlMatch": ""
+        },
+        {
+          "id": "flow",
+          "kind": "workspace",
+          "title": "Flow",
+          "enabled": true,
+          "icon_url": "/assets/networks/flow_logo.png",
+          "banner_url": "/assets/networks/flow_logo_big_bk.svg",
+          "partnership_image_url": "/assets/networks/dapper_logo.svg",
+          "partnership_image_alt": "Dapper",
+          "url": "/node/flow",
+          "children": [
+            {
+              "id": "flow-node-monitoring",
+              "kind": "simple-menu",
+              "title": "Node Monitoring",
+              "urlMatch": "/node/flow",
+              "enabled": true,
+              "children": [
+                {
+                  "id": "flow-node-overview",
+                  "kind": "simple-link",
+                  "title": "Node Overview",
+                  "enabled": true,
+                  "url": "/node/flow/overview",
+                  "urlMatch": "/node/flow/node-details"
+                },
+                {
+                  "id": "flow-node-install-agent",
+                  "kind": "simple-link",
+                  "title": "Install Agents",
+                  "enabled": true,
+                  "url": "/node/flow/install-agent"
+                }
+              ]
+            },
+            {
+              "id": "flow-alerts",
+              "kind": "alerts-menu",
+              "title": "Alerts",
+              "enabled": true,
+              "url": "/alerts/flow/home",
+              "urlMatch": "/alerts/flow"
+            },
+            {
+              "id": "flow-kc",
+              "kind": "simple-menu",
+              "title": "Knowledge Center",
+              "urlMatch": "/docs/flow",
+              "enabled": true,
+              "children": [
+                {
+                  "id": "flow-kc-getting-started",
+                  "kind": "simple-link",
+                  "title": "Getting Started",
+                  "enabled": true,
+                  "url": "/docs/flow/getting-started"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "enabled": true,
+      "icon_url": "",
+      "id": "root",
+      "kind": "root",
+      "learnMore": "",
+      "partnership_image_alt": "",
+      "partnership_image_url": "",
+      "title": "Root",
+      "url": "",
+      "urlMatch": ""
+    }
+  }
+]}
+}

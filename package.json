@@ -1,5 +1,5 @@
 {
-   "name": "recol-toolkit-packages",
+   "name": "recol-toolkit-monorepo",
    "private": true,
    "repository": {
       "type": "git",
@@ -19,26 +19,32 @@
    },
    "homepage": "https://github.com/salvoravida/recoil-toolkit#readme",
    "scripts": {
-      "toolkit:build": "yarn workspace recoil-toolkit run build",
-      "toolkit:watch": "yarn workspace recoil-toolkit run watch",
-      "toolkit:test": "yarn workspace recoil-toolkit run test",
-      "toolkit:test:coverage": "yarn workspace recoil-toolkit run test:coverage",
-      "demo-main:start": "yarn workspace recoil-toolkit-demo-main start",
-      "outdated": "yarn outdated"
+      "clean": "node ./scripts/os-clean-all.js",
+      "reset": "pnpm run clean && pnpm install",
+      "toolkit:build": "pnpm run --filter recoil-toolkit build",
+      "toolkit:watch": "pnpm run --filter recoil-toolkit watch",
+      "toolkit:test": "pnpm run --filter recoil-toolkit test",
+      "toolkit:test:coverage": "pnpm run --filter recoil-toolkit test:coverage",
+      "demo-main:start": "pnpm run --filter demo-main start",
+      "outdated": "pnpm -r outdated"
    },
    "devDependencies": {
+      "@emotion/eslint-plugin": "^11.10.0",
       "@typescript-eslint/eslint-plugin": "^5.33.0",
       "@typescript-eslint/parser": "^5.33.0",
-      "eslint": "^8.22.0",
+      "eslint": "8.22.0",
       "eslint-config-airbnb": "^19.0.4",
       "eslint-config-prettier": "^8.5.0",
       "eslint-plugin-import": "^2.26.0",
       "eslint-plugin-jsx-a11y": "^6.6.1",
       "eslint-plugin-prettier": "^4.2.1",
-      "eslint-plugin-react": "^7.30.1",
       "eslint-plugin-react-hooks": "^4.6.0",
+      "eslint-config-react-app": "^7.0.1",
+      "eslint-plugin-react": "^7.31.1",
+      "eslint-plugin-unicorn": "^43.0.2",
       "rimraf": "^3.0.2",
-      "prettier": "^2.7.1"
+      "prettier": "^2.7.1",
+      "typescript": "^4.8.2"
    },
    "workspaces": {
       "packages": [

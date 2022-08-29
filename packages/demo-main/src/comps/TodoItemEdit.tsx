@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
 import { Box, Button, Input, InputGroup, InputRightElement, Text } from '@chakra-ui/react';
+import React, { useState } from 'react';
 import { useEditItemTask, useItemLocked, useItemStatus, ItemStatus } from '../recoil';
-import { TodoItemRemove } from './TodoItemRemove';
 import { Item } from '../server';
+import { TodoItemRemove } from './TodoItemRemove';
 
 export function TodoItemEdit({ id, text }: Item) {
    const editTask = useEditItemTask();
@@ -13,8 +13,8 @@ export function TodoItemEdit({ id, text }: Item) {
    const showInput = status === ItemStatus.Editing || status === ItemStatus.Saving;
 
    return (
-      <Box d={'flex'} alignItems={'top'} padding={'15px 0'} borderBottom={'1px solid gray'}>
-         <Box width={'100%'} d={'flex'}>
+      <Box display={'flex'} alignItems={'top'} padding={'15px 0'} borderBottom={'1px solid gray'}>
+         <Box width={'100%'} display={'flex'}>
             {showInput ? (
                <Box width={'100%'}>
                   <InputGroup size="md">
@@ -42,7 +42,7 @@ export function TodoItemEdit({ id, text }: Item) {
                         </Button>
                      </InputRightElement>
                   </InputGroup>
-                  <Text color="red.300">{editTask.error as string || ''}</Text>
+                  <Text color="red.300">{(editTask.error as string) || ''}</Text>
                </Box>
             ) : (
                <Text
@@ -58,7 +58,7 @@ export function TodoItemEdit({ id, text }: Item) {
                </Text>
             )}
          </Box>
-         <Box marginLeft={'auto'} d={'flex'}>
+         <Box marginLeft={'auto'} display={'flex'}>
             <Button
                minW={'150px'}
                marginLeft={'10px'}

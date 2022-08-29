@@ -17,12 +17,12 @@ function getSelectorId(selectorFunc: ReduxSelectorFunc): number {
 }
 
 export const reduxState = atom<unknown>({
-   key: 'recoil-toolkit/reduxState',
+   key: '@recoil-toolkit.reduxState',
    default: undefined,
 });
 
 const reduxSelectorFamily = selectorFamily<unknown, number>({
-   key: 'recoil-toolkit/reduxSelectors',
+   key: '@recoil-toolkit.reduxSelectors',
    get:
       (selectorId: number) =>
       ({ get }) => {

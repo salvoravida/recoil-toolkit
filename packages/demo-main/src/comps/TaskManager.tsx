@@ -1,5 +1,5 @@
-import React from 'react';
 import { Box, Table, TableCaption, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
+import React from 'react';
 import { useRunningTasks, TaskStatus } from 'recoil-toolkit';
 
 const TaskStatusLabel = {
@@ -12,7 +12,7 @@ export function TaskManager() {
    const runningTasks = useRunningTasks();
 
    return (
-      <Box d={'flex'} flexDirection={'column'} width={'500px'}>
+      <Box display={'flex'} flexDirection={'column'} width={'500px'}>
          <Table variant="striped" colorScheme="teal" size={'sm'}>
             <TableCaption>TaskManager</TableCaption>
             <Thead>

@@ -1,5 +1,5 @@
-import React from 'react';
 import { Box, Button, Heading, Skeleton, Stack, Text } from '@chakra-ui/react';
+import React from 'react';
 import { useIsLoading } from 'recoil-toolkit';
 import { useTodoList } from '../recoil';
 import { TodoItemEdit } from './TodoItemEdit';
@@ -10,7 +10,7 @@ export function Todolist() {
 
    return (
       <Box>
-         <Box d={'flex'} padding={'20px 0'} alignItems={'center'}>
+         <Box display={'flex'} padding={'20px 0'} alignItems={'center'}>
             <Heading fontSize="xl">List</Heading>
             <Button
                minW={'150px'}

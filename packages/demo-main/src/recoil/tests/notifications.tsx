@@ -6,14 +6,21 @@ const notifications = atom<{ id: number; text: string }[]>({
    default: [],
 });
 
-const getNotificationsTask = ({ set }: RecoilTaskInterface) => async () => {
-   const body = await fetch('/api/notifications');
-   const resp = await body.json();
-   set(notifications, resp);
-};
+const getNotificationsTask =
+   ({ set }: RecoilTaskInterface) =>
+   async () => {
+      const body = await fetch('/api/notifications');
+      const resp = await body.json();
+      set(notifications, resp);
+   };
 
 export const NotificationsView = () => {
-   const { loading, data, error, execute: refresh } = useRecoilTask(getNotificationsTask, [], {
+   const {
+      loading,
+      data,
+      error,
+      execute: refresh,
+   } = useRecoilTask(getNotificationsTask, [], {
       dataSelector: notifications,
    });
    if (loading) return 'Loading…';
@@ -33,10 +40,12 @@ const notificationRead = atomFamily<boolean, number>({
    default: false,
 });
 
-const notifyServerNotificationRead = ({ set }: RecoilTaskInterface) => async (id: number) => {
-   await fetch('/api/notification-read', { body: JSON.stringify({ id }), method: 'POST' });
-   set(notificationRead(id), true);
-};
+const notifyServerNotificationRead =
+   ({ set }: RecoilTaskInterface) =>
+   async (id: number) => {
+      await fetch('/api/notification-read', { body: JSON.stringify({ id }), method: 'POST' });
+      set(notificationRead(id), true);
+   };
 
 export const Notification = ({ id, text }: { id: number; text: string }) => {
    const read = useRecoilValue(notificationRead(id));

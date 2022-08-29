@@ -3,7 +3,7 @@ export type Item = {
    text: string;
 };
 
-let idCounter: number = 0;
+let idCounter = 0;
 
 let RemoteTodoList: Item[] = [];
 

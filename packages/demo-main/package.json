@@ -1,40 +1,40 @@
 {
-   "name": "recoil-toolkit-demo-main",
+   "name": "demo-main",
    "version": "0.0.3",
    "private": true,
    "dependencies": {
-      "@chakra-ui/react": "^1.1.2",
+      "@chakra-ui/react": "^2.2.9",
+      "@chakra-ui/styled-system": "^2.2.8",
       "@emotion/react": "^11.1.4",
       "@emotion/styled": "^11.0.0",
-      "@testing-library/jest-dom": "^5.11.4",
-      "@testing-library/react": "^11.1.0",
-      "@testing-library/user-event": "^12.1.10",
-      "@types/jest": "^26.0.15",
-      "@types/node": "^12.0.0",
-      "@types/react": "^16.9.53",
-      "@types/react-dom": "^16.9.8",
-      "framer-motion": "^3.1.4",
-      "react": "^17.0.2",
-      "react-dom": "^17.0.2",
-      "react-scripts": "4.0.1",
+      "framer-motion": "^7.2.1",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
       "recoil": "^0.7.5",
-      "recoil-toolkit": "^0.2.1",
+      "recoil-toolkit": "workspace:*",
       "redux": "^4.2.0"
    },
    "devDependencies": {
-      "typescript": "^4.6.4"
+      "@types/node": "^18.7.13",
+      "@types/react": "^18.0.17",
+      "@types/react-dom": "^18.0.6",
+      "@vitejs/plugin-react": "^1.3.2",
+      "cross-env": "^7.0.3",
+      "eslint-watch": "^8.0.0",
+      "concurrently": "^7.3.0",
+      "rollup-plugin-visualizer": "^5.7.1",
+      "sass": "^1.52.3",
+      "typescript": "^4.8.2",
+      "vite": "^2.9.14",
+      "vite-plugin-env-compatible": "^1.1.1"
    },
    "scripts": {
-      "start": "react-scripts start",
-      "build": "react-scripts build",
-      "test": "react-scripts test",
-      "eject": "react-scripts eject"
-   },
-   "eslintConfig": {
-      "extends": [
-         "react-app",
-         "react-app/jest"
-      ]
+      "start": "concurrently --names 'tsc,vite,eslint' -c 'bgMagenta,bgBlue,bgGreen' 'tsc --watch --noEmit' 'vite --host --force' 'pnpm run lint'",
+      "lint": "esw -w --ext .ts,.tsx ./src",
+      "build": "tsc --noEmit && vite build",
+      "build:serve": "vite preview --host",
+      "analyzer:bundle": "cross-env ANALYZE_MODE=bundle vite build",
+      "analyzer:depcheck": "npx depcheck"
    },
    "browserslist": {
       "production": [

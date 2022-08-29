@@ -24,7 +24,7 @@ export function addCancelSignal(key: string, signal: CancelSignal) {
 
 export function doCancelSignal(key: string) {
    if (signalStore[key]) {
-      Object.values(signalStore[key]).forEach((abortsignal) => {
+      Object.values(signalStore[key]).forEach(abortsignal => {
          try {
             abortsignal.cancel();
          } catch {

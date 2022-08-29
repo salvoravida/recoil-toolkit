@@ -25,8 +25,10 @@ function App() {
    return (
       <>
          <div>
-            reduxCounter : {reduxCount}
-            <button onClick={() => dispatch({ type: 'INCREMENT' })}>dispatch</button>
+            <>
+               reduxCounter : {reduxCount}
+               <button onClick={() => dispatch({ type: 'INCREMENT' })}>dispatch</button>
+            </>
          </div>
          <div>
             recoilCounter : {counter}

@@ -1,0 +1,54 @@
+{
+   "name": "recoil-toolkit-devtools",
+   "version": "0.0.3",
+   "private": true,
+   "dependencies": {
+      "@emotion/babel-plugin": "^11.10.0",
+      "@emotion/css": "^11.10.0",
+      "@emotion/react": "^11.10.0",
+      "@emotion/styled": "^11.10.0",
+      "@emotion/cache": "^11.10.1",
+      "@emotion/sheet": "^1.2.0",
+      "@emotion/serialize": "^1.1.0",
+      "dayjs": "^1.11.5",
+      "react": "^17.0.2",
+      "react-dom": "^17.0.2",
+      "react-json-view": "^1.21.3"
+   },
+   "devDependencies": {
+      "recoil": "^0.7.5",
+      "recoil-toolkit": "workspace:*",
+      "@types/chrome": "^0.0.195",
+      "@types/node": "^18.7.13",
+      "@types/react": "^17.0.48",
+      "@types/react-dom": "^17.0.11",
+      "@vitejs/plugin-react": "^1.3.2",
+      "y18n": "^5.0.8",
+      "concurrently": "^7.3.0",
+      "cross-env": "^7.0.3",
+      "eslint-watch": "^8.0.0",
+      "rollup-plugin-visualizer": "^5.7.1",
+      "sass": "^1.52.3",
+      "typescript": "^4.8.2",
+      "vite": "^2.9.14",
+      "vite-plugin-env-compatible": "^1.1.1"
+   },
+   "scripts": {
+      "start": "concurrently --names 'tsc,vite,eslint' -c 'bgMagenta,bgBlue,bgGreen' 'tsc --watch --noEmit' 'vite --host --force' 'pnpm run lint'",
+      "lint": "esw -w --ext .ts,.tsx ./src",
+      "build": "tsc --noEmit && vite build",
+      "build:serve": "vite preview --host"
+   },
+   "browserslist": {
+      "production": [
+         ">0.2%",
+         "not dead",
+         "not op_mini all"
+      ],
+      "development": [
+         "last 1 chrome version",
+         "last 1 firefox version",
+         "last 1 safari version"
+      ]
+   }
+}
