@@ -85,10 +85,10 @@ const { loading, data, error, execute } = useRecoilTask(task, []);
 
 ###  🕒 Tasks
 Task is a core concept of `recoil-toolkit`.
-Basically it's an async function (Promise) that have access to the store with a closure of `({ set, reset, snapshot })`.
+Basically it's an async function (Promise) that have access to the store with a closure of `({ set, reset, snapshot, refresh })`.
 
 ```javascript
-const task = ({ set, reset, snapshot }) => async () => {
+const task = ({ set, reset, snapshot, refresh }) => async () => {
    // await do something and update store
 };
    
@@ -101,7 +101,40 @@ function Component(){
     return ...
 }
 ```
-Fetching data example:
+
+Fetching data example with queries:
+```typescript
+import { selector } from 'recoil';
+import { RecoilTaskInterface, useRecoilQuery } from 'recoil-toolkit';
+
+const notifications = selector<{ id: number; text: string }[]>({
+   key: 'notifications',
+   get: async () => {
+      const body = await fetch('/api/notifications');
+      return await body.json();
+     };
+});
+
+export const NotificationsView = () => {
+   const { loading, data, error, refresh } = useRecoilQuery(notifications, {
+      refreshOnMount: 'error';
+      cancelOnUnmount: true
+   });
+   
+   if (loading) return 'Loading…';
+   if (error) return 'Sorry! Something went wrong. Please try again.';
+   return (
+      <div>
+         <button onClick={refresh}>Refresh</button>
+         {data.map(({ id, text }) => (
+            <NotificationItem key={id} text={text} id={id} />
+         ))}
+      </div>
+   );
+};
+```
+
+Fetching data example with tasks:
 ```typescript
 import { atom } from 'recoil';
 import { RecoilTaskInterface, useRecoilTask } from 'recoil-toolkit';
@@ -404,7 +437,7 @@ https://codesandbox.io/s/czobq
 |Can read Recoil states |  ✅  **yes**   | ❌ no|
 |Can read Redux states |  💡 `recoil-toolkit`  | ✅  **yes**|
 |Use outside React  |  💡 `recoil-toolkit`   | ✅  **yes**|
-|Dev Tools |  ⚠️ wip...   | ✅  **yes**|
+|Dev Tools |  ✅  **yes**   | ✅  **yes**|
 
 Performance: Recoil subscriptions are on atom/selector updaters, while in Redux are on all actions. So if you have N connected component and dispatch an action that should trigger only one component, even if re-render is stopped by useSelector optimization, redux have to execute N subscribtion callbacks.
 
@@ -416,9 +449,6 @@ Atomic states design allow you more flexiblity while thinking your app as small 
 You could have less than 5x boilerplate with redux, with many wrappers like RTK or redux-query, but even that you will write less code more powerful with recoil. Set(atom, value), Execute Task are much more easy concepts to managed with , than dispatch, actions, reducers, sagas, etc...
 
 RecoilReduxBridge (read redux states from recoil selectors) helps you to gradually migrate your redux monolithic app to recoil atomic states.
-
-DevTools: ok redux-devtools are much mature than recoilize or some others for recoil. But it is only a matter of time ...
-
 
 ## 💥 Demo Todolist CRUD
 live: https://8u0zc.csb.app  src: [codesandbox](https://codesandbox.io/s/recoil-toolkit-main-demo-8u0zc) - [github](https://github.com/salvoravida/recoil-toolkit/tree/master/packages/demo-main)
