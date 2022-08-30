@@ -17,7 +17,7 @@ What you get out of the box:
 - ❌ error states / error stack
 - :atom: immutable updaters
 - :boom: RecoilTunnel -> read/update a recoilStore outside of React
-- :electron: ReduxBridge -> mix redux and recoil selectors (gradually upgrade redux apps to recoil!)
+- :electron: RecoilReduxBridge -> mix redux and recoil selectors (gradually upgrade redux apps to recoil!)
 - :boom: Recoil Toolkit Devtools!
 
 <img src="https://user-images.githubusercontent.com/20126259/187123997-3f6e3a68-0329-4b1a-b041-ce88def23efe.png">
@@ -44,7 +44,7 @@ yarn add recoil recoil-toolkit
   + [Advanced Tasks](https://github.com/salvoravida/recoil-toolkit#-advanced-tasks)
   + [Immutable updaters](https://github.com/salvoravida/recoil-toolkit#wrench-immutable-updaters)
 - [Recoil Tunnel](https://github.com/salvoravida/recoil-toolkit#boom-recoiltunnel)
-- [Redux Bridge](https://github.com/salvoravida/recoil-toolkit#electron-reduxbridge)
+- [Recoil Redux Bridge](https://github.com/salvoravida/recoil-toolkit#electron-reduxbridge)
 - [Recoil vs Redux](https://github.com/salvoravida/recoil-toolkit#-recoil-vs-redux)
 - [Demo Todolist CRUD](https://github.com/salvoravida/recoil-toolkit#-demo-todolist-crud)
 - [Contributing](https://github.com/salvoravida/recoil-toolkit#-contributing)
@@ -334,7 +334,7 @@ getRecoilStore().then(store => {
 });
 ```
 
-## :electron: ReduxBridge
+## :electron: RecoilReduxBridge
 Read, Write from/to Redux. Mix redux and recoil selectors (gradually upgrade redux apps to recoil!)
 https://zhb1x.csb.app/ - src: https://codesandbox.io/s/zhb1x
 
@@ -342,7 +342,7 @@ https://zhb1x.csb.app/ - src: https://codesandbox.io/s/zhb1x
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { atom, RecoilRoot, useRecoilValue, useRecoilState, selector } from 'recoil';
-import { inc, reduxSelector, ReduxBridge, useDispatch, useSelector } from 'recoil-toolkit';
+import { inc, reduxSelector, RecoilReduxBridge, useDispatch, useSelector } from 'recoil-toolkit';
 import { store, State } from './store';
 
 const getReduxCount = (s: State) => s.count;
@@ -380,9 +380,9 @@ function App() {
 
 ReactDOM.render(
         <RecoilRoot>
-          <ReduxBridge store={store}>
+          <RecoilReduxBridge store={store}>
             <App />
-          </ReduxBridge>
+          </RecoilReduxBridge>
         </RecoilRoot>,
         document.getElementById('root'),
 );
@@ -415,7 +415,7 @@ Atomic states design allow you more flexiblity while thinking your app as small 
 
 You could have less than 5x boilerplate with redux, with many wrappers like RTK or redux-query, but even that you will write less code more powerful with recoil. Set(atom, value), Execute Task are much more easy concepts to managed with , than dispatch, actions, reducers, sagas, etc...
 
-ReduxBridge (read redux states from recoil selectors) helps you to gradually migrate your redux monolithic app to recoil atomic states.
+RecoilReduxBridge (read redux states from recoil selectors) helps you to gradually migrate your redux monolithic app to recoil atomic states.
 
 DevTools: ok redux-devtools are much mature than recoilize or some others for recoil. But it is only a matter of time ...
 

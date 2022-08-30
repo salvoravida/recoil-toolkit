@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { atom, RecoilRoot, useRecoilValue, useRecoilState, selector } from 'recoil';
-import { inc, reduxSelector, ReduxBridge, useDispatch, useSelector } from 'recoil-toolkit';
+import { inc, reduxSelector, RecoilReduxBridge, useDispatch, useSelector } from 'recoil-toolkit';
 import { store, State } from './store';
 
 const getReduxCount = (s: State) => s.count;
@@ -41,9 +41,9 @@ function App() {
 
 ReactDOM.render(
    <RecoilRoot>
-      <ReduxBridge store={store}>
+      <RecoilReduxBridge store={store}>
          <App />
-      </ReduxBridge>
+      </RecoilReduxBridge>
    </RecoilRoot>,
    document.getElementById('root'),
 );

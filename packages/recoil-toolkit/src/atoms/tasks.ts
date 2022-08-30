@@ -25,9 +25,9 @@ export const lastTaskByKey = selectorFamily<Task | undefined, string>({
    get:
       (key: string) =>
       ({ get }) => {
-            return get(tasks)
-               .filter(t => t?.options?.key === key)
-               .pop();
+         return get(tasks)
+            .filter(t => t?.options?.key === key)
+            .pop();
       },
 });
 

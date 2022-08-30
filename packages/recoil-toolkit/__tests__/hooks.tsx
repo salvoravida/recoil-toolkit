@@ -1,14 +1,14 @@
+import { act } from '@testing-library/react';
+import { renderHook } from '@testing-library/react-hooks';
 import * as React from 'react';
 import { atom, RecoilRoot, useRecoilValue } from 'recoil';
-import { renderHook } from '@testing-library/react-hooks';
-import { act } from '@testing-library/react';
 import {
    RecoilTaskInterface,
    useRecoilTask,
    delay,
    useRecoilRequest,
    useRecoilLocalTask,
-   useRecoilAsyncValue,
+   useRecoilQuery,
 } from '../src';
 
 const requestAtom = atom({
@@ -26,12 +26,14 @@ const notifications = atom<{ id: number; text: string }[]>({
    default: [],
 });
 
-const getNotificationsTask = ({ set }: RecoilTaskInterface) => async () => {
-   await delay(500);
-   const data = [{ id: 1, text: 'string' }];
-   set(notifications, data);
-   return data;
-};
+const getNotificationsTask =
+   ({ set }: RecoilTaskInterface) =>
+   async () => {
+      await delay(500);
+      const data = [{ id: 1, text: 'string' }];
+      set(notifications, data);
+      return data;
+   };
 
 const useNotificationsTask = () => {
    return useRecoilTask(getNotificationsTask, [], {
@@ -54,6 +56,7 @@ describe('hooks tests ', () => {
       expect(result.current.id).toEqual(1);
    });
 
+   // @ts-ignore
    test('useRecoilTask', async () => {
       const wrapper = ({ children }) => <RecoilRoot>{children}</RecoilRoot>;
       const { result, waitForNextUpdate } = renderHook(() => useNotificationsTask(), { wrapper });
@@ -65,6 +68,7 @@ describe('hooks tests ', () => {
       expect(result.current.data).toEqual([{ id: 1, text: 'string' }]);
    });
 
+   // @ts-ignore
    test('useRecoilLocalTask', async () => {
       const wrapper = ({ children }) => <RecoilRoot>{children}</RecoilRoot>;
       const { result, waitForNextUpdate } = renderHook(
@@ -79,9 +83,10 @@ describe('hooks tests ', () => {
       expect(result.current.data).toEqual([{ id: 1, text: 'string' }]);
    });
 
+   // @ts-ignore
    test('useRecoilAsyncValue', async () => {
       const wrapper = ({ children }) => <RecoilRoot>{children}</RecoilRoot>;
-      const { result } = renderHook(() => useRecoilAsyncValue(notifications), { wrapper });
+      const { result } = renderHook(() => useRecoilQuery(notifications), { wrapper });
 
       expect(result.current.loading).toEqual(false);
    });

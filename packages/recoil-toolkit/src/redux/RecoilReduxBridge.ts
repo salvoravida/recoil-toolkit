@@ -4,7 +4,7 @@ import { useRecoilCurrentSet } from '../_core';
 import { reduxState } from './atoms';
 import { RecoilReduxContext } from './context';
 
-export const ReduxBridge: React.FC<{ store: Store }> = ({ store, children }) => {
+export const RecoilReduxBridge: React.FC<{ store: Store }> = ({ store, children }) => {
    const set = useRecoilCurrentSet();
    const [sub, setSub] = useState(false);
    useEffect(() => {

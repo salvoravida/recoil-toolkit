@@ -1,3 +1,3 @@
 export * from './atoms';
 export * from './hooks';
-export * from './ReduxBridge';
+export * from './RecoilReduxBridge';

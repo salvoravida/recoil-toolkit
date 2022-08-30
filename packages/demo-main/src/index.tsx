@@ -2,7 +2,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RecoilRoot } from 'recoil';
-import { RecoilTunnel, ReduxBridge } from 'recoil-toolkit';
+import { RecoilTunnel, RecoilReduxBridge, RecoilDevTools } from 'recoil-toolkit';
 import App from './App';
 import { CurrentTime } from './CurrentTime';
 import { store } from './store';
@@ -13,13 +13,14 @@ if (container) {
    ReactDOM.createRoot(container).render(
       <React.StrictMode>
          <RecoilRoot>
+            <RecoilDevTools />
             <RecoilTunnel>
-               <ReduxBridge store={store}>
+               <RecoilReduxBridge store={store}>
                   <CurrentTime />
                   <ChakraProvider>
                      <App />
                   </ChakraProvider>
-               </ReduxBridge>
+               </RecoilReduxBridge>
             </RecoilTunnel>
          </RecoilRoot>
       </React.StrictMode>,

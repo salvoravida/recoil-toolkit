@@ -1,11 +1,14 @@
-import * as React from 'react';
 import { act } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
+import * as React from 'react';
 import { atom, RecoilRoot, selector, useRecoilState, useRecoilValue } from 'recoil';
 import { createStore } from 'redux';
-import { inc, reduxSelector, ReduxBridge, useDispatch, useSelector } from '../src';
+import { inc, reduxSelector, RecoilReduxBridge, useDispatch, useSelector } from '../src';
+
+jest.spyOn(console, 'error').mockImplementation(() => {});
 
 const getStore = () =>
+   // eslint-disable-next-line unicorn/no-object-as-default-parameter
    createStore((state: { count: number } = { count: 0 }, action) => {
       switch (action.type) {
          case 'INCREMENT':
@@ -51,18 +54,18 @@ function useReduxCounter() {
    };
 }
 
-describe('ReduxBridge tests ', () => {
-   test('ReduxBridge not found error', () => {
+describe('RecoilReduxBridge tests ', () => {
+   test('RecoilReduxBridge not found error', () => {
       const wrapper = ({ children }) => <RecoilRoot>{children}</RecoilRoot>;
       const { result } = renderHook(() => useReduxCounter(), { wrapper });
-      expect(result.error).toEqual(Error('ReduxBridge with store not found!'));
+      expect(result.error).toEqual(new Error('RecoilReduxBridge with store not found!'));
    });
 
    test('Recoil selector can access redux store', () => {
       const store = getStore();
       const wrapper = ({ children }) => (
          <RecoilRoot>
-            <ReduxBridge store={store}>{children}</ReduxBridge>
+            <RecoilReduxBridge store={store}>{children}</RecoilReduxBridge>
          </RecoilRoot>
       );
       const { result } = renderHook(() => useReduxCounter(), { wrapper });

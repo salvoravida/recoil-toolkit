@@ -1,8 +1,8 @@
-import { useRecoilValue } from 'recoil';
 import { useContext } from 'react';
+import { useRecoilValue } from 'recoil';
 import { reduxSelector } from './atoms';
-import { ReduxSelectorFunc } from './types';
 import { RecoilReduxContext } from './context';
+import { ReduxSelectorFunc } from './types';
 
 export function useSelector(selector: ReduxSelectorFunc) {
    return useRecoilValue(reduxSelector(selector));
@@ -10,6 +10,6 @@ export function useSelector(selector: ReduxSelectorFunc) {
 
 export function useDispatch() {
    const { store } = useContext(RecoilReduxContext);
-   if (!store) throw new Error('ReduxBridge with store not found!');
+   if (!store) throw new Error('RecoilReduxBridge with store not found!');
    return store.dispatch;
 }

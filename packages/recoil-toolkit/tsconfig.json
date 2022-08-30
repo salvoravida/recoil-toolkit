@@ -6,6 +6,7 @@
          "esnext"
       ],
       "target": "es5",
+      "downlevelIteration": true,
       "allowJs": false,
       "skipLibCheck": true,
       "esModuleInterop": true,

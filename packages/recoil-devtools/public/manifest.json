@@ -7,8 +7,6 @@
       "service_worker": "./rtdBackgroundScript.js"
    },
    "permissions": [
-      "activeTab",
-      "scripting"
    ],
    "content_scripts": [
       {

@@ -1,5 +1,5 @@
-import { useRecoilCallback, useRecoilValue } from 'recoil';
 import { useEffect, useRef, useState } from 'react';
+import { useRecoilCallback, useRecoilValue } from 'recoil';
 import { uniqueId, hide, show } from '../_core';
 import {
    lastTaskByKey,
@@ -9,8 +9,8 @@ import {
    loader,
    DEFAULT_LOADER,
 } from '../atoms';
-import { pushTask, updateTaskDone, updateTaskError, pushError } from '../updaters';
 import { TaskOptions, TaskStatus, RecoilTaskInterface } from '../types';
+import { pushTask, updateTaskDone, updateTaskError, pushError } from '../updaters';
 
 export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return = void, Data = unknown>(
    taskCreator: (a: RecoilTaskInterface) => (...args: Args) => Return,
