@@ -18,7 +18,7 @@ What you get out of the box:
 - :atom: immutable updaters
 - :boom: RecoilTunnel -> read/update a recoilStore outside of React
 - :electron: RecoilReduxBridge -> mix redux and recoil selectors (gradually upgrade redux apps to recoil!)
-- :boom: Recoil Toolkit Devtools!
+- :boom: Recoil Toolkit Devtools! https://chrome.google.com/webstore/detail/recoil-toolkit-devtools/mkeicpnjoopkgdhfobdpcepncbnfnnji
 
 <img src="https://user-images.githubusercontent.com/20126259/187123997-3f6e3a68-0329-4b1a-b041-ce88def23efe.png">
 
