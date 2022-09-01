@@ -22,7 +22,7 @@ What you get out of the box:
 
 <img src="https://user-images.githubusercontent.com/20126259/187123997-3f6e3a68-0329-4b1a-b041-ce88def23efe.png">
 
-## :boom: Recoil TookitDevtools
+## :boom: Recoil Tookit DevTools
 ```typescript
 import {RecoilDevTools} from 'recoil-toolkit'
 
@@ -33,13 +33,8 @@ ReactDOM.render(
    </RecoilRoot>,
    document.getElementById('root'),
 );
-
-/*
-   Note using key with dot notation, will allow DevTools to render atoms in tree. Ex: key: 'notifications.items', 'notifications.states',
-*/
-
 ```
-
+ Note using key with dot notation, will allow DevTools to render atoms in tree. Ex: key: 'notifications.items', 'notifications.states',
 
 and what is coming soon ...
 - 🔜 task statistics, kpi
