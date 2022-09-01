@@ -3,7 +3,21 @@ import { useRecoilSnapshot } from 'recoil';
 import { RecoilToolkitDevTools } from './consts';
 import { getSnapshotState } from './getSnapshotState';
 
-export const RecoilDevTools: React.FC<{ enableConsole?: boolean }> = ({ enableConsole }) => {
+const stringifyCircularJSON = obj => {
+   const seen = new WeakSet();
+   return JSON.stringify(obj, (k, v) => {
+      if (v !== null && typeof v === 'object') {
+         if (seen.has(v)) return '[Circular]';
+         seen.add(v);
+      }
+      return v;
+   });
+};
+
+export const RecoilDevTools: React.FC<{ enableConsole?: boolean; forceSerialize?: boolean }> = ({
+   enableConsole,
+   forceSerialize,
+}) => {
    const snapshot = useRecoilSnapshot();
 
    useEffect(() => {
@@ -17,10 +31,13 @@ export const RecoilDevTools: React.FC<{ enableConsole?: boolean }> = ({ enableCo
    useEffect(() => {
       const snapState = getSnapshotState(snapshot);
       window.postMessage(
-         { type: RecoilToolkitDevTools.eventMessageFromPage, data: snapState },
+         {
+            type: RecoilToolkitDevTools.eventMessageFromPage,
+            data: forceSerialize ? JSON.parse(stringifyCircularJSON(snapState)) : snapState,
+         },
          '*',
       );
-   }, [snapshot]);
+   }, [snapshot]); //eslint-disable-line
 
    /** Listen messages from DevTools **/
    useEffect(() => {

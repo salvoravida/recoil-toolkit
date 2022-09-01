@@ -1,6 +1,6 @@
 {
    "name": "recoil-toolkit",
-   "version": "0.2.7",
+   "version": "0.2.9",
    "description": "recoil-toolkit",
    "main": "./build/es5/index.js",
    "module": "./build/es6/index.js",
