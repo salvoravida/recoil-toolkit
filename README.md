@@ -28,7 +28,8 @@ import {RecoilDevTools} from 'recoil-toolkit'
 
 ReactDOM.render(
    <RecoilRoot>
-      <RecoilDevTools forceSerialize={false} />. // enable forceSerialize if you have issues with circular data or not serializable data
+       // enable forceSerialize if you have issues with not serializable data
+      <RecoilDevTools forceSerialize={false} />.
       <App />
    </RecoilRoot>,
    document.getElementById('root'),
