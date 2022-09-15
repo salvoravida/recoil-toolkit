@@ -2,17 +2,20 @@ import { push, updateObj } from '../_core';
 import { Task, TaskOptions, TaskStatus } from '../types';
 
 export const pushTask = ({
+   parentId,
    id,
    options,
    args,
    extra,
 }: {
+   parentId?: number;
    id: number;
    options?: TaskOptions;
    args: ReadonlyArray<unknown>;
    extra?: any;
 }) =>
    push({
+      parentId,
       id,
       args,
       status: TaskStatus.Running,

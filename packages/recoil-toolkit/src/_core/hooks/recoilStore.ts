@@ -7,7 +7,7 @@ export const useRecoilCurrentGetPromise = (): RecoilGetPromise =>
 export const useRecoilCurrentGetLoadable = (): RecoilGetLoadable =>
    useRecoilCallback(({ snapshot: { getLoadable } }) => getLoadable, []);
 
-export const useRecoilCurrentSnap = (): (() => Snapshot) =>
+export const useRecoilCurrentSnapshot = (): (() => Snapshot) =>
    useRecoilCallback(
       ({ snapshot }) =>
          () =>
@@ -20,5 +20,3 @@ export const useRecoilCurrentSet = () => useRecoilCallback(({ set }) => set, [])
 export const useRecoilCurrentReset = () => useRecoilCallback(({ reset }) => reset, []);
 
 export const useRecoilCurrentRefresh = () => useRecoilCallback(({ refresh }) => refresh, []);
-
-export const useRecoilCurrentGet = useRecoilCurrentGetPromise;

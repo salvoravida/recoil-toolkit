@@ -1,6 +1,25 @@
-import { CallbackInterface, Loadable, RecoilValue, Snapshot } from 'recoil';
+import type { CallbackInterface, Loadable, RecoilValue, Snapshot } from 'recoil';
 
-export type RecoilTaskInterface = CallbackInterface;
+export type Cancelled = () => boolean;
+export type WaitFor = <T>(promiseOrMs: Promise<T> | number) => Promise<T | void>;
+export type Fork = <Args extends readonly unknown[], Return = void>(
+   taskCreator: (recoilTask: RecoilTaskInterface) => (...args: Args) => Return,
+   executeArgs: Args,
+   debugKey?: string,
+) => {
+   id: number;
+   cancel: () => void;
+   task: Promise<Return | undefined>;
+   getTaskState: () => Task<Return> | undefined;
+};
+
+export type RecoilTaskInterface = CallbackInterface & {
+   getSnapshot: RecoilGetSnapshot;
+   getLoadable: Snapshot['getLoadable'];
+   cancelled: Cancelled;
+   waitFor: WaitFor;
+   fork: Fork;
+};
 
 export type RecoilGetPromise = <T>(recoilValue: RecoilValue<T>) => Promise<T>;
 export type RecoilGetLoadable = <T>(recoilValue: RecoilValue<T>) => Loadable<T>;
@@ -30,9 +49,11 @@ export type TaskOptions<Data = unknown, Args = unknown> = {
    exclusive?: boolean;
    dataSelector?: RecoilValue<Data>;
    autoStart?: Args;
+   cancelOnUnmount?: boolean;
 };
 
 export type Task<Data = unknown, Error = unknown> = {
+   parentId?: number;
    id: number;
    status: TaskStatus;
    args: ReadonlyArray<unknown>;

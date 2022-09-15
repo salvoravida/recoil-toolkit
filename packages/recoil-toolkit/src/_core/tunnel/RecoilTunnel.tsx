@@ -6,7 +6,7 @@ import {
    useRecoilCurrentRefresh,
    useRecoilCurrentReset,
    useRecoilCurrentSet,
-   useRecoilCurrentSnap,
+   useRecoilCurrentSnapshot,
 } from '../hooks';
 import { DEFAULT_STORE, flushGetStorePending, recoilStores } from './getStore';
 
@@ -21,7 +21,7 @@ export const RecoilTunnel: React.FC<{ name?: string; services?: unknown[] }> = (
    const set = useRecoilCurrentSet();
    const reset = useRecoilCurrentReset();
    const refresh = useRecoilCurrentRefresh();
-   const getSnapshot = useRecoilCurrentSnap();
+   const getSnapshot = useRecoilCurrentSnapshot();
    const gotoSnapshot = useGotoRecoilSnapshot();
 
    const [ready, setReady] = useState(false);
