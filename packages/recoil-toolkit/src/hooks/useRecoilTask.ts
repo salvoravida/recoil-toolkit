@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useRecoilCallback, useRecoilValue } from 'recoil';
 import type { CallbackInterface } from 'recoil';
 import {
@@ -108,6 +108,10 @@ export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return = void
       }
    }, [taskId]);
 
+   const resetTask = useCallback(() => {
+      setTaskId(0);
+   }, []);
+
    return {
       loading: task?.status === TaskStatus.Running,
       execute,
@@ -115,5 +119,6 @@ export function useRecoilTask<Args extends ReadonlyArray<unknown>, Return = void
       data: taskData as Data,
       success: task?.status === TaskStatus.Done,
       taskId,
+      resetTask,
    };
 }

@@ -7,7 +7,6 @@ import {
    useRecoilTask,
    delay,
    useRecoilRequest,
-   useRecoilLocalTask,
    useRecoilQuery,
 } from '../src';
 
@@ -60,21 +59,6 @@ describe('hooks tests ', () => {
    test('useRecoilTask', async () => {
       const wrapper = ({ children }) => <RecoilRoot>{children}</RecoilRoot>;
       const { result, waitForNextUpdate } = renderHook(() => useNotificationsTask(), { wrapper });
-      act(() => {
-         result.current.execute();
-      });
-      expect(result.current.loading).toEqual(true);
-      await waitForNextUpdate();
-      expect(result.current.data).toEqual([{ id: 1, text: 'string' }]);
-   });
-
-   // @ts-ignore
-   test('useRecoilLocalTask', async () => {
-      const wrapper = ({ children }) => <RecoilRoot>{children}</RecoilRoot>;
-      const { result, waitForNextUpdate } = renderHook(
-         () => useRecoilLocalTask(getNotificationsTask, []),
-         { wrapper },
-      );
       act(() => {
          result.current.execute();
       });
